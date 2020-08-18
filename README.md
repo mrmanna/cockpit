@@ -1,6 +1,6 @@
 
 # cockpit
-Java based PWA and microservice development framework with frontend with [bck2bwsr]([https://github.com/jtulach/bck2brwsr](https://github.com/jtulach/bck2brwsr)) and backend with [netty]([https://github.com/netty/netty](https://github.com/netty/netty)) and jersey
+Java based PWA and microservice development framework with frontend with [bck2bwsr]([https://github.com/jtulach/bck2brwsr](https://github.com/jtulach/bck2brwsr)) and backend with [netty]([https://github.com/netty/netty](https://github.com/netty/netty)) and jersey. This platform is to provide zero-code facilities to create modern apps with backend that can run everywhere. 
 
 ##### Core Components
 - **API Gateway**: Netty 4 based a HTTP/2 proxy 
