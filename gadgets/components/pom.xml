@@ -25,7 +25,7 @@
         <module>relateditem</module>
         <module>shareitem</module>
         <module>tagitem</module>
-        <module>desktop</module>
+<!--        <module>desktop</module>-->
         <module>basic</module>
     </modules>
     <name>Gadgets Components</name>
