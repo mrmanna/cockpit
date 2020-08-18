@@ -1,6 +1,6 @@
 
 # cockpit
-Java based PWA and Microservice development platfrom, frontend development components are developed based on [bck2bwsr]([https://github.com/jtulach/bck2brwsr](https://github.com/jtulach/bck2brwsr) and backend development components are developed with [netty]([https://github.com/netty/netty](https://github.com/netty/netty) and jersey. This platform is to provide zero-code facilities to create modern apps that can run everywhere. 
+Java based PWA and Microservice development platfrom, frontend development components are developed based on [bck2bwsr](https://github.com/jtulach/bck2brwsr) and backend development components are developed with [netty](https://github.com/netty/netty) and jersey. This platform is to provide zero-code facilities to create modern apps that can run everywhere. 
 
 ##### Core Components
 - **API Gateway**: Netty 4 based a HTTP/2 proxy 
