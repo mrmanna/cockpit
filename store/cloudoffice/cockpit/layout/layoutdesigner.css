@@ -1,0 +1,451 @@
+.layout .designer, .layout .designer .prop-box, .layout .designer .tree-box .path-tree .path-tree-drop, .layout .subscribed-comp .comp-list, .layout .path-panel .path-info {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */ }
+  .layout .designer::-webkit-scrollbar, .layout .designer .prop-box::-webkit-scrollbar, .layout .designer .tree-box .path-tree .path-tree-drop::-webkit-scrollbar, .layout .subscribed-comp .comp-list::-webkit-scrollbar, .layout .path-panel .path-info::-webkit-scrollbar {
+    width: 5px; }
+  .layout .designer::-webkit-scrollbar-track, .layout .designer .prop-box::-webkit-scrollbar-track, .layout .designer .tree-box .path-tree .path-tree-drop::-webkit-scrollbar-track, .layout .subscribed-comp .comp-list::-webkit-scrollbar-track, .layout .path-panel .path-info::-webkit-scrollbar-track {
+    background: #f1f1f1; }
+  .layout .designer::-webkit-scrollbar-thumb, .layout .designer .prop-box::-webkit-scrollbar-thumb, .layout .designer .tree-box .path-tree .path-tree-drop::-webkit-scrollbar-thumb, .layout .subscribed-comp .comp-list::-webkit-scrollbar-thumb, .layout .path-panel .path-info::-webkit-scrollbar-thumb {
+    background: #ccc; }
+  .layout .designer::-webkit-scrollbar-thumb:hover, .layout .designer .prop-box::-webkit-scrollbar-thumb:hover, .layout .designer .tree-box .path-tree .path-tree-drop::-webkit-scrollbar-thumb:hover, .layout .subscribed-comp .comp-list::-webkit-scrollbar-thumb:hover, .layout .path-panel .path-info::-webkit-scrollbar-thumb:hover {
+    background: #555; }
+
+.design-grid {
+  background-size: 5px 5px;
+  background-image: linear-gradient(to right, #ccc 1px, transparent 1px), linear-gradient(to bottom, #ccc 1px, transparent 1px); }
+  .design-grid .designmode-btn {
+    display: none; }
+
+.layout .path-panel .path-info .checkbox-content .chk-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  float: left;
+  margin: 2px 40px 0px 0px; }
+  .layout .path-panel .path-info .checkbox-content .chk-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0; }
+.layout .path-panel .path-info .checkbox-content .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  border: 2px solid #aaa;
+  border-radius: 2px; }
+.layout .path-panel .path-info .checkbox-content .chk-container:hover input ~ .checkmark {
+  background-color: #ccc;
+  border: none; }
+.layout .path-panel .path-info .checkbox-content .chk-container input:checked ~ .checkmark {
+  background-color: #99D600;
+  border: none; }
+.layout .path-panel .path-info .checkbox-content .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none; }
+.layout .path-panel .path-info .checkbox-content .chk-container input:checked ~ .checkmark:after {
+  display: block; }
+.layout .path-panel .path-info .checkbox-content .chk-container .checkmark:after {
+  left: 10px;
+  top: 5px;
+  width: 8px;
+  height: 16px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.active, .layout .designer .tree-box .path-tree:hover, .layout .designer .tree-box .path-tree .path-tree-drop li:hover, .layout .designer .tree-box .layout-tree:hover, .layout .designer .tree-box .layout-tree .layout-drop li:hover, .layout .designer .tree-box .rowlayout:hover, .layout .designer .tree-box .column:hover {
+  background: #5D6D7E;
+  color: white; }
+
+.layout .designer .tree-box .rowlayout .icon, .layout .designer .tree-box .column .icon, .layout .designer .tree-box .component .icon {
+  display: none;
+  float: right;
+  margin-right: 8px;
+  font-size: 12px;
+  text-indent: 1px; }
+  .layout .designer .tree-box .rowlayout .icon:hover, .layout .designer .tree-box .column .icon:hover, .layout .designer .tree-box .component .icon:hover {
+    font-size: 17px; }
+
+.layout .designer .prop-box .conf-header, .layout .subscribed-comp .conf-header, .layout .path-panel .conf-header {
+  font-size: 1.8em;
+  line-height: 2.2em;
+  padding-left: 20px;
+  background: #1B2631;
+  color: #EAEDED;
+  margin-bottom: 15px; }
+  .layout .designer .prop-box .conf-header .conf-title i, .layout .subscribed-comp .conf-header .conf-title i, .layout .path-panel .conf-header .conf-title i {
+    cursor: default; }
+  .layout .designer .prop-box .conf-header .conf-title span, .layout .subscribed-comp .conf-header .conf-title span, .layout .path-panel .conf-header .conf-title span {
+    padding-left: 5px; }
+  .layout .designer .prop-box .conf-header .conf-action, .layout .subscribed-comp .conf-header .conf-action, .layout .path-panel .conf-header .conf-action {
+    float: right;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-left: 1px solid #cdcecd; }
+  .layout .designer .prop-box .conf-header .conf-action:hover, .layout .subscribed-comp .conf-header .conf-action:hover, .layout .path-panel .conf-header .conf-action:hover {
+    color: #fff;
+    cursor: pointer; }
+  .layout .designer .prop-box .conf-header .conf-close:hover, .layout .subscribed-comp .conf-header .conf-close:hover, .layout .path-panel .conf-header .conf-close:hover {
+    background: #DC143C;
+    border-color: #DC143C; }
+  .layout .designer .prop-box .conf-header .conf-save:hover, .layout .subscribed-comp .conf-header .conf-save:hover, .layout .path-panel .conf-header .conf-save:hover {
+    background: #63B175;
+    border-color: #63B175; }
+  .layout .designer .prop-box .conf-header .conf-reset:hover, .layout .subscribed-comp .conf-header .conf-reset:hover, .layout .path-panel .conf-header .conf-reset:hover {
+    background: #3498DB;
+    border-color: #3498DB; }
+
+.layout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; }
+  .layout .designer {
+    position: absolute;
+    width: 21%;
+    border: 1px solid #5D6D7E;
+    height: 100vh;
+    float: right;
+    right: 0;
+    background: #212F3C;
+    color: #EAEDED;
+    padding: 5px; }
+    .layout .designer .heading {
+      padding: 8px;
+      background: #2E4053;
+      color: white; }
+      .layout .designer .heading span {
+        font-weight: bold;
+        font-size: 14px; }
+      .layout .designer .heading i {
+        float: right;
+        padding: 2px 4px 0px 0px;
+        font-size: 14px; }
+        .layout .designer .heading i:hover {
+          cursor: pointer;
+          color: red; }
+    .layout .designer .updateloader {
+      padding: 8px;
+      background: #99D600;
+      color: white; }
+      .layout .designer .updateloader span {
+        font-weight: bold;
+        font-size: 14px; }
+      .layout .designer .updateloader i {
+        font-size: 14px; }
+      .layout .designer .updateloader .fa-close {
+        float: right; }
+    .layout .designer .prop-box {
+      width: 500px;
+      top: 6px;
+      bottom: 6px;
+      position: fixed;
+      right: 20%;
+      z-index: 99;
+      background: #212F3C;
+      margin-right: 17px;
+      box-shadow: -2px -1px 4px -1px #5D6D7E;
+      color: #EAEDED;
+      padding-bottom: 10px;
+      height: 100vh; }
+      .layout .designer .prop-box li {
+        width: 100%;
+        padding: 3px;
+        position: relative;
+        float: left; }
+        .layout .designer .prop-box li .key {
+          font-family: roboto;
+          font-weight: 500;
+          line-height: 25px;
+          float: left;
+          text-align: right;
+          width: 50%;
+          padding-right: 10px; }
+        .layout .designer .prop-box li input {
+          height: 25px;
+          font-size: 12px;
+          border: 2px solid #eee;
+          padding: 3px;
+          min-width: 50%;
+          float: right;
+          color: #000; }
+    .layout .designer .tree-box {
+      font-family: roboto;
+      font-weight: 300;
+      cursor: pointer; }
+      .layout .designer .tree-box h3 {
+        font-size: 18px;
+        background: #bbb;
+        color: white;
+        padding: 5px; }
+      .layout .designer .tree-box .path-tree {
+        margin-top: 5px;
+        padding: 8px 5px; }
+        .layout .designer .tree-box .path-tree:hover .icon-right {
+          display: block; }
+        .layout .designer .tree-box .path-tree .currentpath {
+          font-weight: bold;
+          padding-left: 10px; }
+        .layout .designer .tree-box .path-tree .icon-right {
+          display: none;
+          float: right; }
+        .layout .designer .tree-box .path-tree .toggle-icon {
+          font-size: 16px;
+          font-weight: bold;
+          padding: 0px 8px 0px 16px; }
+        .layout .designer .tree-box .path-tree .newpath-icon {
+          font-size: 14px;
+          padding-top: 2px; }
+        .layout .designer .tree-box .path-tree .path-tree-drop {
+          height: 50vh;
+          width: 100%;
+          background: white;
+          border: 1px solid #efefef;
+          margin-top: 8px; }
+          .layout .designer .tree-box .path-tree .path-tree-drop li {
+            padding: 5px;
+            color: black;
+            text-indent: 5px; }
+            .layout .designer .tree-box .path-tree .path-tree-drop li:hover {
+              font-size: 17px; }
+              .layout .designer .tree-box .path-tree .path-tree-drop li:hover .edit, .layout .designer .tree-box .path-tree .path-tree-drop li:hover .remove {
+                display: block; }
+            .layout .designer .tree-box .path-tree .path-tree-drop li .edit, .layout .designer .tree-box .path-tree .path-tree-drop li .remove {
+              display: none;
+              float: right;
+              padding: 2px 5px 0px 5px; }
+            .layout .designer .tree-box .path-tree .path-tree-drop li .secured {
+              color: #99D600; }
+      .layout .designer .tree-box .new-path {
+        margin-top: 5px;
+        padding: 8px 5px; }
+        .layout .designer .tree-box .new-path input {
+          height: 36px;
+          border: none;
+          width: 70%;
+          border-radius: 4px;
+          padding: 5px;
+          color: black;
+          font-size: 14px;
+          outline: none; }
+          .layout .designer .tree-box .new-path input::placeholder {
+            color: #AEB6BF; }
+        .layout .designer .tree-box .new-path i {
+          float: right;
+          font-size: 14px;
+          padding: 8px 10px; }
+        .layout .designer .tree-box .new-path:hover .fa-remove {
+          color: #FF0000; }
+        .layout .designer .tree-box .new-path:hover .fa-check {
+          color: #99D600; }
+      .layout .designer .tree-box .layout-tree {
+        margin: 5px 0px;
+        padding: 8px 5px; }
+        .layout .designer .tree-box .layout-tree span {
+          font-weight: bold;
+          padding: 0px 0px 0px 5px; }
+        .layout .designer .tree-box .layout-tree i {
+          cursor: pointer; }
+        .layout .designer .tree-box .layout-tree:hover .changelayout, .layout .designer .tree-box .layout-tree:hover .configlayout, .layout .designer .tree-box .layout-tree:hover .changetheme {
+          display: block; }
+        .layout .designer .tree-box .layout-tree .changelayout, .layout .designer .tree-box .layout-tree .configlayout, .layout .designer .tree-box .layout-tree .changetheme {
+          display: none;
+          float: right;
+          margin-right: 8px;
+          font-size: 12px; }
+          .layout .designer .tree-box .layout-tree .changelayout:hover, .layout .designer .tree-box .layout-tree .configlayout:hover, .layout .designer .tree-box .layout-tree .changetheme:hover {
+            font-size: 17px; }
+        .layout .designer .tree-box .layout-tree .layout-drop {
+          height: 30vh;
+          width: 100%;
+          background: white;
+          border: 1px solid #efefef; }
+          .layout .designer .tree-box .layout-tree .layout-drop li {
+            padding: 5px;
+            color: black;
+            text-indent: 5px; }
+            .layout .designer .tree-box .layout-tree .layout-drop li:hover {
+              font-size: 17px; }
+        .layout .designer .tree-box .layout-tree .editfield {
+          width: 100px;
+          color: #000; }
+      .layout .designer .tree-box .rowlayout {
+        text-indent: 3px;
+        padding: 8px;
+        box-shadow: 0px 0px 1px 0px #bbb;
+        margin-bottom: 5px; }
+        .layout .designer .tree-box .rowlayout:hover .icon {
+          display: block; }
+        .layout .designer .tree-box .rowlayout .editfield {
+          width: 100px;
+          color: #000; }
+      .layout .designer .tree-box .column {
+        text-indent: 6px;
+        padding: 8px;
+        box-shadow: 0px 0px 1px 0px #bbb;
+        margin: 5px 0px 2px 4px; }
+        .layout .designer .tree-box .column:hover .icon {
+          display: block; }
+        .layout .designer .tree-box .column .editfield {
+          width: 100px;
+          color: #000; }
+      .layout .designer .tree-box .columnlayout {
+        padding: 8px;
+        box-shadow: 0px 0px 1px 0px #bbb;
+        margin: 5px 0px 2px 10px; }
+      .layout .designer .tree-box .columnlayout-drop {
+        margin: 5px 0px 2px 10px;
+        border: 1px solid #eee;
+        padding: 10px; }
+      .layout .designer .tree-box .component {
+        text-indent: 6px;
+        padding: 8px;
+        margin: 4px 0px 4px 11px;
+        background: #efefef;
+        color: black; }
+        .layout .designer .tree-box .component:hover .icon {
+          display: block; }
+  .layout .subscribed-comp {
+    transform: scale(.78);
+    -ms-transform: scale(.78);
+    /* IE 9 */
+    -webkit-transform: scale(.78);
+    /* Safari 3-8 */
+    margin-left: -10.5%;
+    height: 100vh;
+    width: 100vw;
+    background: #283747;
+    display: block !important; }
+    .layout .subscribed-comp .comp-list {
+      max-height: 85vh;
+      padding: 10px 10px 100px 10px; }
+      .layout .subscribed-comp .comp-list .comp-item {
+        margin: 0px 10px 10px 0px;
+        width: calc((100% - 6*10px)/6);
+        float: left;
+        border: 1px solid #EAEDED;
+        border-radius: 4px;
+        padding: 5px;
+        background: #EAEDED;
+        cursor: pointer; }
+        .layout .subscribed-comp .comp-list .comp-item .comp-image {
+          height: 100px;
+          text-align: center; }
+          .layout .subscribed-comp .comp-list .comp-item .comp-image i {
+            font-size: 70px;
+            padding-top: 10px; }
+        .layout .subscribed-comp .comp-list .comp-item .comp-name {
+          text-align: center;
+          font-size: 14px;
+          border-top: 1px solid #fff;
+          padding-top: 5px;
+          color: #555; }
+        .layout .subscribed-comp .comp-list .comp-item:hover {
+          background: #5D6D7E; }
+          .layout .subscribed-comp .comp-list .comp-item:hover .comp-image i {
+            color: #EAEDED; }
+          .layout .subscribed-comp .comp-list .comp-item:hover .comp-name {
+            border-top: 1px solid #EAEDED; }
+            .layout .subscribed-comp .comp-list .comp-item:hover .comp-name span {
+              color: #EAEDED; }
+  .layout .path-panel {
+    transform: scale(.78);
+    -ms-transform: scale(.78);
+    /* IE 9 */
+    -webkit-transform: scale(.78);
+    /* Safari 3-8 */
+    margin-left: -10.5%;
+    height: 100vh;
+    width: 100vw;
+    background: #283747;
+    display: block !important; }
+    .layout .path-panel .path-info {
+      max-height: 85vh;
+      padding: 10px 10px 100px 10px;
+      text-align: center; }
+      .layout .path-panel .path-info input[type="text"] {
+        outline: none;
+        width: 50%;
+        line-height: 50px;
+        font-size: 24px;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px; }
+      .layout .path-panel .path-info .checkbox-content {
+        margin: 10px 0px 0px 0px;
+        display: inline-block;
+        width: 50%; }
+        .layout .path-panel .path-info .checkbox-content .checkbox-content-txt {
+          float: left; }
+          .layout .path-panel .path-info .checkbox-content .checkbox-content-txt b {
+            font-size: 20px;
+            line-height: 32px; }
+      .layout .path-panel .path-info .checkbox-alert {
+        margin: 10px 0px 0px 0px;
+        display: inline-block;
+        width: 50%;
+        font-size: 16px;
+        text-align: left; }
+        .layout .path-panel .path-info .checkbox-alert i {
+          color: #FFFF00; }
+  .layout .designermode {
+    transform: scale(.78);
+    -ms-transform: scale(.78);
+    /* IE 9 */
+    -webkit-transform: scale(.78);
+    /* Safari 3-8 */
+    margin-left: -10.5%;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.6); }
+    .layout .designermode .drow {
+      margin-bottom: 3px; }
+    .layout .designermode .dcolumn {
+      border: 2px solid gray; }
+      .layout .designermode .dcolumn:hover {
+        border: 5px solid #37db9f !important; }
+      .layout .designermode .dcolumn .conf-panel {
+        position: relative;
+        z-index: 9;
+        background: rgba(0, 0, 0, 0.2);
+        color: #FFF;
+        font-size: 24px;
+        width: 100%;
+        height: 100%;
+        text-align: right;
+        padding: 0px 10px;
+        line-height: 50px; }
+        .layout .designermode .dcolumn .conf-panel i {
+          cursor: pointer; }
+  .layout .designmode-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    background: #ff7621;
+    border-radius: 50%;
+    box-shadow: 0px 1px 16px #888888;
+    color: #FFF;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 10px; }

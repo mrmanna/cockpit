@@ -1,0 +1,12 @@
+@import 'row1-variables.scss';
+
+##{$row1id}{
+    background: $row1background;
+    height:$row1height;
+    width:$row1width;
+    position:$row1position;
+    float:$row1float;
+    padding: $row1padding;
+    margin: $row1margin;
+    border: $row1border;
+}

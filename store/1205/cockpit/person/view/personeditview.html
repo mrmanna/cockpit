@@ -1,0 +1,166 @@
+<div class="edit-view">
+    <div class="person-item">
+        <div class="loader">
+            <mini-loader-component params="data: $data.loader()"></mini-loader-component>
+        </div>
+        <div class="person-item-contents">
+            
+            <div class="inp-row header-row">
+                <div class="img">
+                    <!-- ko if: itemImage().length>0 -->
+                    <img data-bind="attr: {src: itemImage}" class="img-circle" alt="image" height="100" width="100">
+                    <!-- /ko -->
+                </div>
+                <label data-bind="text: itemName" class="name"></label>
+            </div>
+            
+            <div class="inp-row">
+                <label class="inp-label">First Name*</label>
+                <input data-bind="textInput: firstName" type="text" class="inp-field" placeholder="">
+            </div>
+            <div class="inp-row">
+                <label class="inp-label">Initials*</label>
+                <input data-bind="textInput: initials" type="text" class="inp-field"  placeholder="">
+            </div>
+
+            <div class="inp-row">
+                <label class="inp-label">Surname Prefixes</label>
+                <input data-bind="textInput: surnamePrefix" type="text" class="inp-field" placeholder="">
+            </div>
+
+            <div class="inp-row">
+                <label class="inp-label">Surname*</label>
+                <input data-bind="textInput: surname" type="text" class="inp-field" placeholder="">
+            </div>
+
+            <div class="inp-row">
+                <label class="inp-label">Title</label>
+                <input data-bind="textInput: title" type="text" class="inp-field" placeholder="" >
+            </div>
+
+            <div class="inp-row">
+                <label class="inp-label">Gender</label>
+                <select data-bind="options: genderList, optionsText: 'itemName', optionsValue: 'itemId', value: selectedGender, optionsCaption: 'Not Specified'" class="inp-field"></select>
+            </div>
+
+            <div class="inp-row">
+                <label class="inp-label">Date of Birth</label>
+                <input class="inp-field date-level" data-bind="attr:{id: datePickerId}, click: showDatePicker, textInput: dateOfBirth" placeholder="DD-MM-YYYY">
+            </div>
+
+            <div class="inp-row">
+                <label class="inp-label">Pers. Phone</label>
+                <input data-bind="textInput: persPhone" name="telephone" type="text" class="inp-field">
+            </div>
+
+            <div class="inp-row">
+                <label class="inp-label">Pers. Mobile</label>
+                <input data-bind="textInput: persMobile" name="mobile" type="text" class="inp-field">
+            </div>
+
+            <div class="inp-row">
+                <label class="inp-label">Pers. eMail*</label>
+                <input data-bind="textInput: emailAddress" name="email" type="text" class="inp-field">
+            </div>
+
+            <!-- ko if: primaryEmail -->
+            <div class="inp-row">
+                <label class="inp-label">Primary Email</label>
+                <input data-bind="textInput: primaryEmail, enable: false" name="primaryemail" type="text" class="inp-field">
+            </div>
+            <!-- /ko -->
+            
+            <div class="inp-row" data-bind="with: fileData" >
+                <label class="inp-label">Photo</label>
+                <div class="pull-left">
+                    <input id="profilepic" type="file" data-bind="fileInput: $data"  name="photo">
+                </div>
+            </div>
+            
+            <ul class="collapsible-area">
+                <li>
+                    <a  href="#"> 
+                        <b class="pull-left" data-bind="click: socialMediaCollaps">Social Media</b>
+                        <!-- ko if: socialMediaUp -->
+                        <span data-bind="click: socialMediaCollaps" class="fa fa-angle-down pull-right" aria-hidden="true"></span>
+                        <!-- /ko -->
+                        <!-- ko if: socialMediaDown -->
+                        <span data-bind="click: socialMediaCollaps" class="fa fa-angle-up pull-right" aria-hidden="true"></span>
+                        <!-- /ko -->
+                    </a>
+                    <div class="clearfix"></div>
+                    <!-- ko if: socialMediaDown -->
+                    <div data-bind="with: socialMedia" aria-labelledby="headingOne" role="tabpanel" class="panel-collapse collapse in" style="" aria-expanded="true">
+
+                        <div class="inp-row">
+                            <label class="inp-label">
+                                <i class="fa fa-facebook"></i>
+                            </label>
+                            <input data-bind="textInput: facebook" type="text" placeholder="" class="inp-field">
+                        </div>
+                        <div class="inp-row">
+                            <label class="inp-label">
+                                <i class="fa fa-twitter"></i>
+                            </label>
+                            <input data-bind="textInput: twitter" type="text" placeholder="" class="inp-field">
+                        </div>
+                        <div class="inp-row">
+                            <label class="inp-label">
+                                <i class="fa fa-linkedin"></i>
+                            </label>
+                            <input data-bind="textInput: linkedIn" type="text" placeholder="" class="inp-field">
+                        </div>
+                    </div>
+                    <!-- /ko -->
+
+                </li>
+            </ul>
+            <ul class="collapsible-area">
+                <li>
+                    <a href="#" >
+                        <b class="pull-left" data-bind="click: visitAddressCollaps">Private Address</b>
+                        <!-- ko if: visitAddressUp -->
+                        <span data-bind="click: visitAddressCollaps" class="fa fa-angle-down pull-right" aria-hidden="true"></span>
+                        <!-- /ko -->
+                        <!-- ko if: visitAddressDown -->
+                        <span data-bind="click: visitAddressCollaps" class="fa fa-angle-up pull-right" aria-hidden="true"></span>
+                        <!-- /ko -->
+                    </a>
+                    <div class="clearfix"></div>
+                    <!-- ko if: visitAddressDown -->
+                    <div data-bind="with: privateAddress" aria-labelledby="headingOne" role="tabpanel" class="panel-collapse collapse in">
+
+                        <div class="inp-row">
+                            <label class="inp-label">Street</label>
+                            <input data-bind="textInput: street" type="text" placeholder="" class="inp-field">
+                        </div>
+                        <div class="inp-row">
+                            <label class="inp-label">Number</label>
+                            <input data-bind="textInput: number" type="text" placeholder="" class="inp-field">
+                        </div>
+                        <div class="inp-row">
+                            <label class="inp-label">Zip Code</label>
+                            <input data-bind="textInput: zipCode" type="text" placeholder="" class="inp-field">
+                        </div>
+                        <div class="inp-row">
+                            <label class="inp-label">City</label>
+                            <input data-bind="textInput: city" type="text" placeholder="" class="inp-field">
+                        </div>
+
+                        <div class="inp-row">
+                            <label class="inp-label">Country</label>
+                            <select data-bind="options: countries, optionsText: 'itemName', optionsValue: 'itemId', value: selectedCountryId, optionsCaption: 'Not Specified'" class="inp-field"></select>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                </li>
+            </ul>
+            
+            <div class="btnList">
+                <button data-bind="click: backToList" class="btn">Cancel</button>
+                <button data-bind="click: createPerson" class="btn">Submit</button>
+            </div>
+            
+        </div>
+    </div>
+</div>

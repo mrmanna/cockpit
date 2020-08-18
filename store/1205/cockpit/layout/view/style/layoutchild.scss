@@ -1,0 +1,13 @@
+@import 'layoutchild-variables.scss';
+##{$layoutchildid}{
+    background:$layoutchildbackground;
+    width:$layoutchildwidth;
+    height:$layoutchildheight;
+    position:$layoutchildposition;
+    float:$layoutchildfloat;
+    padding:$layoutchildpadding;
+    margin:$layoutchildmargin;
+    border:$layoutchildborder;
+    
+    
+}

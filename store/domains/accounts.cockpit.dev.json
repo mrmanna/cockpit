@@ -1,0 +1,22 @@
+{
+   "workspace":{
+      "itemId":"2401",
+      "itemName":"Accounts",
+      "itemType":"GROUP"
+   },
+   "site":{
+      "itemId":"cockpit",
+      "itemName":"COCKPIT",
+      "itemType":"SITE",
+      "authType":"private",
+      "subscribed":["media","adminmenu"]
+   },
+   "paths":[
+      {
+         "path":"/signin",
+         "layout":"layout33",
+	 "isHome":true,
+         "isSecure":false
+      }
+   ]
+}

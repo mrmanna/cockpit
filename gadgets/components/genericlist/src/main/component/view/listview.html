@@ -1,0 +1,30 @@
+<div class="loader">
+    <mini-loader-component params="data: $data.loader()"></mini-loader-component>
+</div>
+<div class="list-view" data-bind="foreach: rows">
+    <div class="list-item-view" data-bind="click: $parent.loadDetail">
+        
+        <div class="item-check">
+            <label class="chk-container">
+                <input type="checkbox" data-bind="stopBubble: true, checked: isSelected">
+                <span class="checkmark" data-bind="stopBubble: true, click: $parent.selectSingle"></span>
+            </label>
+        </div>
+        <div class="menu-actions action-right" title="Actions" data-bind="clickBubble: false, click: $parent.showActionMenu">
+            <i class="fa fa-ellipsis-h" aria-hidden="true" title="More actions"></i>
+        </div>
+        <div data-bind="foreach: columns">
+            <!-- ko if: isVisible -->
+            <div data-bind="attr: {'class': columnClass}, style: {'float': columnPosition, 'width': columnWidth}">
+                <!-- ko if: ($parent.itemType() === 'PERSON' && columnId() === 'NAME') -->
+                <img data-bind="attr: {src: $parent.avatar}" class="item-image">
+                <!-- /ko -->
+                <!-- ko ifnot: ($parent.itemType() === 'PERSON' && columnId() === 'NAME') -->
+                <i data-bind="attr: {'class': itemIconClass}, style: {'color': itemIconColor}" aria-hidden="true"></i>
+                <!-- /ko -->
+                <span data-bind="text: itemText"></span>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+</div>

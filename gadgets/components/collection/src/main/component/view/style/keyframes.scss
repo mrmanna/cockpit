@@ -1,0 +1,120 @@
+/* EXPAND NEW COLLECTION : Start */
+@keyframes "expandnewcollectioncontent" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: $newcollectioninputwidth;
+    }
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes "expandnewcollectioncontent" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: $newcollectioninputwidth;
+    }
+}
+@-moz-keyframes "expandnewcollectioncontent" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: $newcollectioninputwidth;
+    }
+}
+@-ms-keyframes "expandnewcollectioncontent" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: $newcollectioninputwidth;
+    }
+}
+@-o-keyframes "expandnewcollectioncontent" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: $newcollectioninputwidth;
+    }
+}
+/* EXPAND NEW COLLECTION : End */
+
+/* EXPAND : Start */
+@keyframes "expand" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: $hoverwidth;
+    }
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes "expand" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: $hoverwidth;
+    }
+}
+@-moz-keyframes "expand" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: $hoverwidth;
+    }
+}
+@-ms-keyframes "expand" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: $hoverwidth;
+    }
+}
+@-o-keyframes "expand" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: $hoverwidth;
+    }
+}
+@-webkit-keyframes "expandcomplete" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+@-moz-keyframes "expandcomplete" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+@-ms-keyframes "expandcomplete" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+@-o-keyframes "expandcomplete" {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+/* EXPAND : End */
+

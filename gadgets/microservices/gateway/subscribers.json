@@ -1,0 +1,22 @@
+{
+    "content.cockpit.dev": {
+        "keyfile": "cert/cockpit/server.key",
+        "certfile": "cert/cockpit/server.crt"
+    }, 
+    "cockpit.cockpit.dev": {
+        "keyfile": "cert/cockpit/server.key",
+        "certfile": "cert/cockpit/server.crt"
+    },
+     "captains.cockpit.dev": {
+       "keyfile": "cert/cockpit/server.key",
+        "certfile": "cert/cockpit/server.crt"
+    },
+     "www.cockpit.dev": {
+       "keyfile": "cert/cockpit/server.key",
+        "certfile": "cert/cockpit/server.crt"
+    },
+     "accounts.cockpit.dev": {
+       "keyfile": "cert/cockpit/server.key",
+        "certfile": "cert/cockpit/server.crt"
+    }
+}

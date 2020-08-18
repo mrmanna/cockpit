@@ -1,0 +1,328 @@
+@import 'theme.scss';
+@import 'tagitem-variables.scss';
+
+##{$id}{
+    float: left;
+    width: 100%;
+    padding: $padding;
+    margin: $margin;
+    .tag-item{
+        .item-bar{
+            position:absolute;
+            background:#FFF;
+            bottom:0;
+            z-index:99999;
+            padding:5px 1%;
+            width:100%;
+            height:100vh;
+            .headerDiv{
+                .item-header{
+                    width:100%;
+                    .itemNameDiv{
+                        width: 100%;
+                        .itemDiv{
+                            width: 90%;
+                            float: left;
+                            span{
+                                float:left;
+                                padding:15px;
+                                i{
+                                    font-size:1.6em;
+                                    color:#00b4d1;
+                                }
+                            }
+                            h3{
+                                float:left;
+                                padding:14px 10px 0 0;
+                            }
+                            .item-badge{
+                                font-size: 15px;
+                                width: auto;
+                                line-height: 35px;
+                                margin-top: 5px;
+                                border: 1px solid #75efde;
+                                display: inline-block;
+                                padding: 0px 10px;
+                            }
+                        }
+                        .close-item{
+                            float: right;
+                            font-size: 20px;
+                            padding: 10px 20px 0 0;
+                            width: 10%;
+                            text-align: right;
+                            i{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+                .item-select {
+                    width: 100%;
+                    float: left;
+                    .inputBox{
+                        border: 1px solid #CCC;
+                        height: 40px;
+                        padding: 7px 10px;
+                        margin: 15px 10px 0 15px;
+                        background: #FFF;
+                        .autoCompleteInput {
+                            width: 100%;
+                            height: 24px;
+                            border: none;
+                            background: none;
+                            font-size: 14px;
+                        }
+                        .autoCompleteInput:focus,.autoCompleteInput:hover{
+                            outline: 0;
+                            border: none;
+                        }
+                    }
+                    .autocompleteDrop {
+                        background: #FFF;
+                        position: relative;
+                        left: 0;
+                        right: 0;
+                        z-index: 99;
+                        box-shadow: 0 3px 3px 0px #d4d4d4;
+                        top: 0;
+                        border: 1px solid #CCC;
+                        margin: 0 10px 15px 15px;
+                        .itemListLoader{
+                            text-align: center;
+                            font-size: 22px;
+                            color: #0796d8;
+                            .loader-body{
+                                padding-top: 5px;
+                            }
+                        }
+                        .dropdownlist {
+                            @extend %customscroll;
+                            max-height: 170px;
+                            ul{
+                                margin: 0 !important;
+                                li{
+                                    cursor: pointer;
+                                    border-bottom: 1px solid #CCC;
+                                    padding: 10px;
+                                    span{
+                                        display: block;
+                                        float: left;
+                                        /*width: 4%;*/
+                                        font-size: 18px;
+                                        margin-right: 10px;
+                                        i{
+                                            color: #75efde;
+                                        }
+                                    }
+                                    b {
+                                        display: block;
+                                        float: left;
+                                        width: 80%;
+                                        font-weight: normal;
+                                        font-size: 15px;
+                                        padding-top: 2px;
+                                        text-overflow: ellipsis;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                    }
+                                    em{
+                                        display: block;
+                                        float: right;
+                                        /*width: 6%;*/
+                                        text-align: right;
+                                        font-style: normal;
+                                        i{
+                                            font-size: 0.8em;
+                                            color: #007499;
+                                        }
+                                    }
+                                }
+                                .new-tag{
+                                    background: #e1e1e1;
+                                    em{
+                                        background: #e1e1e1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .bodyContentDiv{
+                padding:10px;
+                .bodyHeader{
+                    width: 100%;
+                    float: left;
+                    padding: 10px;
+                    border-bottom: 1px solid #CCC;
+                    margin-bottom: 12px;
+                    h3{
+                        float: left;
+                    }
+                    .loader{
+                        float: right;
+                        font-size: 22px;
+                        color: #0796d8;
+                    }
+                }
+                .item-list{	
+                    li{
+                        border-bottom: 1px solid #ccc;
+                        padding: 12px;
+                        .item-icon{
+                            /*width: 4%;*/
+                            float: left;
+                            color: #75efde;
+                            font-size: 18px;
+                            margin-right: 10px;
+                        }
+                        .item-name{
+                            width: 80%;
+                            float: left;
+                            padding-top: 2px;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            b{
+                                display: block;
+                                font-weight: normal;
+                                font-size: 16px;
+                                color: #007499;
+                                cursor: pointer;
+                            }
+                        }
+                        em{
+                            display: block;
+                            float: right;
+                            /*width: 5%;*/
+                            text-align: right;
+                            font-style: normal;
+                            padding-top: 4px;
+                            i{
+                                cursor: pointer;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .config{
+            position:fixed;
+            width:100vw;
+            height:100vh;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            background: #555;
+            color: #DCDCDC;
+            z-index: 999;
+            .conf-header{
+                font-size: 2em;
+                line-height: 2em;
+                padding-left: 20px;
+                .conf-title{
+                    i{
+                        cursor: default;
+                    }
+                    b{
+                        padding-left: 5px;
+                    }
+                }
+                .conf-progress{
+                    background: #3CB371;
+                    border: 1px solid #3CB371;
+                    border-radius: 15px;
+                    color: #fff;
+                    font-size: 18px;
+                    i{
+                        font-size: 18px;
+                    }
+                    span{
+                        padding-right: 7px;
+                    }
+                }
+                .conf-action{
+                    float: right;
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    border-left: 1px solid #cdcecd;
+                }
+                .conf-action:hover{
+                    color: #fff;
+                    cursor: pointer;
+                }
+                .conf-close:hover{
+                    background: #DC143C;
+                    border-color: #DC143C;
+                }
+                .conf-save:hover{
+                    background: #3CB371;
+                    border-color: #3CB371;
+                }
+                .conf-reset:hover{
+                    background: #3498DB;
+                    border-color: #3498DB;
+                }
+            }
+            .conf-body{
+                @extend %customscroll;
+                background: #F0F8FF;
+                font-size: 14px;
+                color: #555;
+                height: 100%;
+                padding: 10px 20px;
+                .body-row{
+                    min-height: 40px;
+                    margin-top: 10px;
+                    .conf-title{
+                        height: 100%;
+                        float: left;
+                        font-size: 24px;
+                        font-weight: bold;
+                        line-height: 40px;
+                    }
+                    .conf-item{
+                        width: auto;
+                        float: left;
+                        margin-top: 8px;
+                        .item-area{
+                            height:100%;
+                            float:left;
+                            input{
+                                height: 24px;
+                                width: 24px;
+                                cursor: pointer;
+                                margin: 0px 0px 0px 10px;
+                            }
+                            i{
+                                font-size: 20px;
+                            }
+                            span{
+                                font-size: 20px;
+                                padding-left: 10px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                    .conf-comp{
+                        float: left;
+                        width: 70%;
+                        padding: 0px 10px;
+                        input{
+                            width: 100%;
+                            line-height: 40px;
+                            border: none;
+                            font-size: 24px;
+                            padding: 0px 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

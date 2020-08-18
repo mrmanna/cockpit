@@ -1,0 +1,9 @@
+{
+    "instance":"relatediteminstance1",
+    "configuration": {
+        "searchBoxComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.searchbox.SearchBoxComponent",
+            "instanceId": "searchboxinstance1"
+        }
+    }
+}

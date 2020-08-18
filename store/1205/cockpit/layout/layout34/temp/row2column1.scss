@@ -1,0 +1,7 @@
+@import 'row2column1-variables.scss';
+
+##{$row2column1id}{
+position:$row2column1position;
+height:$row2column1height;
+width:$row2column1width;
+}

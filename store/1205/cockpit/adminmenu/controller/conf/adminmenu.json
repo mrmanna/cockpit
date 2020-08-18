@@ -1,0 +1,69 @@
+{
+    "instance": "adminmenuinstance1",
+    "configuration": {
+        "apps": [{
+            "appsId": "ACCOUNT",
+            "appsName": "Account",
+            "appsIcon": "fa fa-user",
+            "appsColor": "#d4d4d4",
+            "appsUrl": "",
+            "enable": true
+        }, {
+            "appsId": "CONTACT",
+            "appsName": "Contacts",
+            "appsIcon": "fa fa-address-card",
+            "appsColor": "#ff5733",
+            "appsUrl": "/person",
+            "enable": true
+        }, {
+            "appsId": "SEARCH",
+            "appsName": "search",
+            "appsIcon": "fa fa-search",
+            "appsColor": "#d4d4d4",
+            "appsUrl": "",
+            "enable": true
+        }, {
+            "appsId": "FILE",
+            "appsName": "Documents",
+            "appsIcon": "fa fa-file",
+            "appsColor": "#00aacd",
+            "appsUrl": "/file",
+            "enable": true
+        }, {
+            "appsId": "MESSENGER",
+            "appsName": "Messenger",
+            "appsIcon": "fa fa-commenting",
+            "appsColor": "#d4d4d4",
+            "appsUrl": "",
+            "enable": true
+        }, {
+            "appsId": "ARTICLES",
+            "appsName": "Articles",
+            "appsIcon": "fa fa-newspaper-o",
+            "appsColor": "#a569bd",
+            "appsUrl": "/article",
+            "enable": true
+        }, {
+            "appsId": "MAIL_TEMPLATES",
+            "appsName": "Templates",
+            "appsIcon": "fa fa-telegram",
+            "appsColor": "#d4d4d4",
+            "appsUrl": "",
+            "enable": true
+        }, {
+            "appsId": "CAMPAIGNS",
+            "appsName": "Campaigns",
+            "appsIcon": "fa fa-bullhorn",
+            "appsColor": "#d4d4d4",
+            "appsUrl": "",
+            "enable": true
+        }, {
+            "appsId": "TASKS",
+            "appsName": "Tickets",
+            "appsIcon": "fa fa-ticket",
+            "appsColor": "#d4d4d4",
+            "appsUrl": "",
+            "enable": true
+        }]
+    }
+}

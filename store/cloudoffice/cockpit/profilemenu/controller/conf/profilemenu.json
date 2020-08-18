@@ -1,0 +1,9 @@
+{
+    "instance": "profilemenuinstance1",
+    "configuration": {
+        "signinComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.signin.SigninComponent",
+            "instanceId": "signininstance1"
+        }
+    }
+}

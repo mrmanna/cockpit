@@ -1,0 +1,257 @@
+body{
+    background: #023958;
+}
+.login-page .form-signin .form-signin-heading{
+    background-image: url("../images/cO-temporarily-logo-generic.png");
+}
+.login-page .form-signin input[type="email"],.login-page .form-signin input[type="password"] {
+    border: 1px solid #13A3AE;
+}
+.login-page button{
+    background: #2AC3B7;
+}
+.login-page button.btn-info:hover,.login-page button.btn-info:focus{
+    background: #2AC3B7;
+}
+.top-bar{
+    background:#007499;
+    color: #fff;
+}
+.top-bar h2{
+	background:#007499;
+    color:#fff;
+}
+.top-bar .tools{
+    background:#95d3e6;
+}
+.top-bar .tools a{
+    color:#FFF;
+}
+.workSpace-bar{
+	background:#e5f1f5;
+}
+.workSpace-title{
+	color:#007499 ;
+}
+.workSpace-drop{
+	background:#e5f1f5;
+}
+.workSpace-list li:hover{
+	background:#95d3e6;
+}
+.workSpace-list li .hoverIcon span i{
+	color:#007499;
+}
+.inp01{
+	color:#007499 ;
+}
+.inp01::-moz-placeholder{
+	color:#007499;
+  	opacity: 1;
+}
+.inp01::-webkit-input-placeholder{
+	color:#007499;
+}
+.search-info .search-title:hover{
+	background:rgba(121,107,108,0.5);
+}
+.search-info .search-title.search-title-bg{
+	background:#fff;
+}
+.selectedItem-box2 label{
+	background:#00aacd;
+	color:#fff;
+}
+.selectedItem-box1{
+	background:#00aacd;
+	color:#fff;
+}
+.selectedItem-box2{
+	border:1px solid #40bfda;
+}
+.selectedItem-box1-all{
+    background:#d35400;
+}
+.selectedItem-box1-my{
+    background:#3dd94a;
+}
+.selectedItem-box1-other{
+    background:#FF5733;
+}
+.selectedItem-box1-system{
+    background:#633974;
+}
+.selectedItem-box1-before{
+    background:#DE064E;
+}
+.selectedItem-box1-after{
+    background:#8A0868;
+}
+.selectedItem-box1-related{
+    background:#eee300;
+}
+.selectedItem-box2-all{
+    border:1px solid #d35400;
+}
+.selectedItem-box2-my{
+    border:1px solid #3dd94a;
+}
+.selectedItem-box2-other{
+    border:1px solid #FF5733;
+}
+.selectedItem-box2-system{
+    border:1px solid #633974;
+}
+.selectedItem-box2-before{
+    border:1px solid #DE064E;
+}
+.selectedItem-box2-after{
+    border:1px solid #8A0868;
+}
+.selectedItem-box2-related{
+    border:1px solid #eee300;
+}
+.h4_01{
+	color:#007499;
+}
+.more-btn01{
+	color:#00b4d1;
+}
+.history-list > ul > li > a{
+	color:#4d9eb8;
+}
+.userCollection-h{
+	color:#0079c0;
+}
+.h3-01{
+	color:#0079c0;
+}
+.span-02 i{
+	color:#0079c0;
+}
+.addItem-list li:hover{
+	background:#00aacd;
+	color:#fff;
+}
+.viewIcon-list li:hover,.viewIcon-list li.active{
+	background:#007499;
+	color:#fff;
+}
+.msg-send-bar{
+	background:#FFF;
+	border:2px solid #daf0f6;
+}
+.msg-send-btn{
+	background:#95d3e6;
+	color:#fff;
+}
+.msg-send-action li a:hover,.msg-send-action li.active a{
+	background:#339eac;
+}
+.msg-send-action li a:hover i,.msg-send-action li.active a i{
+    color:#fff;
+}
+.overlay-hdr{
+    background-color: #007499;
+    color: #fff;
+}
+.save-btn{
+    background: #007499;
+    border: 2px solid #007499;
+    color: #fff;
+}
+.searchRecent-list li:hover{
+	background:#95d3e6;
+	color:#fff;
+}
+.searchRecent-list li:hover b{
+	color:#fff;
+}
+.span-04 b{
+	color:#0079c0;
+}
+.span-10{
+	color:#00b4d1;
+}
+.chat-box1{
+    background:#fff;
+	border:1px solid #e1e1e1;
+}
+.chat-box1 .span-13{
+	background:#f2f2f2;
+}
+.chat-box1 .span-13 i{
+	color:#b2b2b2;
+}
+.chat-box2{
+    background:#d7f3f8;
+}
+.chat-box2 .span-13{
+	background:#b7eaf3;
+}
+.chat-box2 .span-13 i{
+	color:#fff;
+}
+.chat-box1 .sendMsg-add li > span{
+	background:#8b8b8b;
+}
+.chat-box2 .sendMsg-add li > span{
+	background:#0293b2;
+}
+.span-12{
+	background:#95d3e6;
+	color:#fff;
+}
+.search-item-list li a:hover,.search-item-list li a.active{
+	background:#00aacd ;
+	color:#fff;
+}
+.search-list li:hover{
+    background: #95d3e6;
+}
+.search-drop-list li a.active{
+	background:#fff;
+	color:#007499; 
+}
+.searchClose-btn01{
+	color:#00b4d1;
+}
+.searchClose-btn01:hover{
+	color:#58595b;
+}
+.sub-drop2 ul li a:hover{
+	color:#58595b;
+	background:#99c1da;
+}
+.show-h-list li fieldset p b{
+	color:#0079c0;
+}
+.show-h-list > li:hover, .show-h-list > li.selected {
+    background: #00aacd;
+}
+.span-05 b{
+	color:#0079c0;
+}
+.all-opt01 a{
+	color:#0079c0;
+}
+.facetSearch-sort-btn span{
+	background:#007499;
+	color:#FFF;
+}
+.facetSearch-sort-btn span:first-child{
+	background:#cce3eb ;
+}
+span.check{
+    background:#60c7dc;
+    color:#fff;
+    border:1px solid #60a6bd;
+}
+span.check i{
+    color:#fff;
+}
+@media (max-width:767px){
+	.topbar-list{
+		background:#007499;
+	}
+}

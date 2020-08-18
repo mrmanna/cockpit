@@ -1,0 +1,47 @@
+<div class="edit-view">
+    <div class="loader">
+        <mini-loader-component params="data: $data.loader()"></mini-loader-component>
+    </div>
+    
+    <div class="upload-file" data-bind="with: fileData">
+
+        <!-- UPLOAD button : For web -->
+    <!--    <div class="inp-row" data-bind="visible: !($root.mobileDevice())">-->
+        <div class="inp-row">
+            <label for="fileupload" class="inp-label"><i class="fa fa-2x fa-upload" style="cursor: pointer "></i></label>Select files
+            <div >
+                <input type="file" id="fileupload" data-bind="file: {data:$data, content:fileContent, name:fileName,mimeType:mimeType,size:fileSize}" style="display: none"/>
+            </div>
+            <div data-bind="if:!single()">
+                <input type="file" id="fileupload" data-bind="file: {data:$data, content:fileContent, name:fileName,mimeType:mimeType,size:fileSize}" style="display: none" multiple/>
+            </div>
+        </div>
+        <!-- UPLOAD button : For mobile -->
+    <!--    <div class="inp-row" data-bind="visible: $root.mobileDevice()">
+            <label for="fileupload" class="inp-label">
+                <i data-bind="click: browseFilesOnAndroid" class="fa fa-2x fa-upload" style="cursor: pointer"></i>
+            </label>
+            Select files 
+        </div>-->
+
+        <!-- QUEUE : Selected file list -->
+        <div data-bind="visible: fileList().length>0">
+            <div class="list" data-bind="foreach: fileList">
+                <div class="file-item clearfix">
+                    <p data-bind="html: fileName"></p>
+                    <span class="close"><i class="fa fa-times" aria-hidden="true" data-bind="click: $parent.removeFileItem"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="inp-row"> 
+        <label class="inp-label">Title:</label>
+        <input class="inp-field" type="text" data-bind="textInput: title,disable: fileData().fileList().length>1" />
+    </div>
+
+    <div class="btnList">
+        <button class="btn" data-bind="click: backToList">Cancel</button>
+        <button class="btn" data-bind="click: createDocument">Submit</button>
+    </div>
+</div>

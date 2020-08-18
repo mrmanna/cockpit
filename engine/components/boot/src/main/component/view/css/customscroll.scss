@@ -1,0 +1,22 @@
+@import 'customscroll-variables';
+%customscroll{
+    /* width */
+    &::-webkit-scrollbar {
+        width: $scrollbarWidth;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: $scrollbarTrackColor; 
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $scrollbarThumbColor; 
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: $scrollbarThumbHoverColor; 
+    }
+}

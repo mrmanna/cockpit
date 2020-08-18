@@ -1,0 +1,23 @@
+{
+    "name": "Cockpit 33 Layout",
+    "themeId": "theme1",
+    "style": {},
+    "id": "layout33",
+    "propOn": false,
+    "designerOn": false,
+    "rows": [{
+            "columns": [{
+                    "components": [{
+                            "component": "io.cloudoffice.platform.cockpit.signin.SigninComponent",
+                            "instance": true,
+                            "instanceId": "instance1",
+                            "name": "signin-component",
+                            "model": "io.cloudoffice.platform.cockpit.signin.SigninView"
+                        }],
+                    "name": "First Column",
+                    "id": "row1column1"
+                }],
+            "name": "First Row",
+            "id": "row1"
+        }]
+}

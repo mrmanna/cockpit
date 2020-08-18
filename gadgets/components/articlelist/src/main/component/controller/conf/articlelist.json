@@ -1,0 +1,39 @@
+{
+    "instance": "articlelistinstance1",
+    "configuration": {
+        "visibleCreateButon": "HIDE",
+        "defaultitemview": "LIST",
+        "filters": [{
+            "itemId": "37",
+            "itemType": "ARTICLE",
+            "itemName": "Article",
+            "filterType": null,
+            "isSelected": true
+        }],
+        "columns": [{
+            "columnId": "NAME",
+            "columnHeader": "Name",
+            "columnIndex": 1,
+            "columnPosition": "left",
+            "columnWidth": "95%",
+            "isVisible": true,
+            "isSortable": false
+        }],
+        "detailComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.text.TextComponent",
+            "instanceId": "textinstance1"
+        },
+        "actionMenuComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.actionmenu.ActionMenuComponent",
+            "instanceId": "actionmenuinstance1"
+        },
+        "collectionComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.collection.CollectionComponent",
+            "instanceId": "collectioninstance1"
+        },
+        "searchBoxComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.searchbox.SearchBoxComponent",
+            "instanceId": "searchboxinstance1"
+        }
+    }
+}

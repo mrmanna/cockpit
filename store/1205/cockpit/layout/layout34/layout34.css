@@ -1,0 +1,57 @@
+#row1column1 {
+  position: relative;
+  height: 45px;
+  width: 25%;
+  float: left; }
+
+#row1column2 {
+  position: relative;
+  height: 45px;
+  width: 50%;
+  float: left; }
+
+#row1column3 {
+  position: relative;
+  height: 45px;
+  width: 25%;
+  float: left; }
+
+#row1 {
+  position: relative;
+  height: 45px;
+  width: 100vw;
+  float: left; }
+
+#row2column1 {
+  position: absolute;
+  height: 100vh;
+  width: 54px; }
+
+#row2column2 {
+  position: relative;
+  height: 100vh;
+  width: 25%;
+  float: left; }
+
+#row2column3 {
+  position: relative;
+  height: 100vh;
+  width: 50%;
+  float: left; }
+
+#row2column4 {
+  position: relative;
+  height: 100vh;
+  width: 25%;
+  float: right; }
+
+#row2 {
+  position: relative;
+  height: 45px;
+  width: 100vw;
+  float: left; }
+
+#layout34 {
+  color: #888;
+  height: 100vh;
+  width: 100vw; }

@@ -1,0 +1,38 @@
+<div class="loader">
+    <mini-loader-component params="data: $data.loader()"></mini-loader-component>
+</div>
+
+<div class="grid-view" data-bind="foreach: rows">
+    <div class="grid-item-view">
+
+        <!-- ko if: (itemType() === 'FILE') -->
+        <div class="item-preview" data-bind="style: { backgroundImage: 'url(\'' + thumbnail() + '\')' }">
+            <div class="item-name">
+                <b data-bind="text: columns()[0].itemText, clickBubble: false, click: $parent.loadDetail"></b>
+            </div>
+        </div>
+        <!-- /ko -->
+
+        <!-- ko if: (itemType() !== 'FILE') -->
+        <div class="item-preview-other">
+            <div ondblclick="ArticleListManager.showFullText(this)" data-bind="attr:{'id': itemId}, html: columns()[0].itemShortDescription"></div>
+        </div>
+        <div class="item-name-other">
+            <div class="item-header">
+                <div class="item-check">
+                    <label class="chk-container">
+                        <input type="checkbox" data-bind="stopBubble: true, checked: isSelected">
+                        <span class="checkmark" data-bind="stopBubble: true, click: $parent.selectSingle"></span>
+                    </label>
+                </div>
+                <div class="menu-actions action-right" title="More actions" data-bind="clickBubble: false, click: $parent.showActionMenu">
+                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                </div>
+            </div>
+            <b data-bind="text: columns()[0].itemText, clickBubble: false, click: $parent.loadDetail"></b>
+        </div>
+        <!-- /ko -->
+
+
+    </div>
+</div>

@@ -1,0 +1,199 @@
+@import 'theme.scss';
+@import 'adminmenu-variables.scss';
+##{$id}{
+    height:$height;
+    width: $width;
+    float: $float;
+    padding: $padding;
+    margin: $margin;
+    .admin-menu{
+        display:inline;
+        height: 45px;
+        z-index: 9;
+        .admin-menu-btn{
+            width: 45px;
+            height: 45px;
+            float: right;
+            background: $background;
+            cursor: pointer;
+            text-align: center;
+            padding-top: 10px;
+            i{
+                font-size: $menuButtonIconSize;
+                color: $foreground;
+            }   
+        }
+        .admin-menu-dropdown{
+            width: 100%;
+            position: absolute;
+            margin-top: 50px;
+            border:none;
+            border-radius: 4px;
+            z-index: 9;
+            right: 0;
+            left: unset;
+            ul{
+                @extend %customscroll;
+                border: none;
+                display: inline-block;
+                width: 100%;
+                padding: 5px;
+                background: #FFF;
+                max-height: 80vh;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                li{
+                    width: 98px;
+                    height: 98px;
+                    float: right;
+                    border: none;
+                    margin: 2px;
+                    padding: 5px;
+                    text-align: center;
+                    cursor: pointer;
+                    color: #FFF;
+                    border-radius: 5px;
+                    display: inline-block;
+                    i{
+                        font-size: 36px;
+                        padding: 16px 0px 5px 0px;
+                    }
+                    p{
+                        margin: 0;
+                        padding: 5px 0px;
+                    }
+                }
+            }
+        }
+        .config{
+            position:fixed;
+            width:100vw;
+            height:100vh;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            background: #555;
+            color: #DCDCDC;
+            z-index: 999;
+            .conf-header{
+                font-size: 2em;
+                line-height: 2em;
+                padding-left: 20px;
+                .conf-title{
+                    i{
+                        cursor: default;
+                    }
+                    b{
+                        padding-left: 5px;
+                    }
+                }
+                .conf-progress{
+                    background: #3CB371;
+                    border: 1px solid #3CB371;
+                    border-radius: 15px;
+                    color: #FFF;
+                    font-size: 18px;
+                    i{
+                        font-size: 18px;
+                    }
+                    span{
+                        padding-right: 7px;
+                    }
+                }
+                .conf-action{
+                    float: right;
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    border-left: 1px solid #cdcecd;
+                }
+                .conf-action:hover{
+                    color: #FFF;
+                    cursor: pointer;
+                }
+                .conf-close:hover{
+                    background: #DC143C;
+                    border-color: #DC143C;
+                }
+                .conf-save:hover{
+                    background: #3CB371;
+                    border-color: #3CB371;
+                }
+                .conf-reset:hover{
+                    background: #3498DB;
+                    border-color: #3498DB;
+                }
+            }
+            .conf-body{
+                @extend %customscroll;
+                background: #F0F8FF;
+                font-size: 14px;
+                color: #555;
+                height: 100%;
+                padding: 10px 20px;
+                .body-row{
+                    margin-bottom: 10px;
+                }
+                .conf-title{
+                    font-size: 24px;
+                    font-weight: bold;
+                    text-align: right;
+                }
+                .col-conf-row{
+                    margin-top: 10px;
+                    padding: 20px;
+                    width: 75%;
+                    margin-left: 12px;
+                    border-radius: 5px;
+                    background: rgba(52, 152, 219, 0.05);
+                    .col-conf-title{
+                        font-size: 20px;
+                        font-weight: bold;
+                        margin-bottom: 14px;
+                        i{
+                            margin-right: 10px;
+                        }
+                        span{
+                            margin-right: 5px;
+                        }
+                    }
+                    .col-conf-subrow{
+                        height: 40px;
+                        margin-bottom: 10px;
+                        .sub-row-title{
+                            height: 40px;
+                            font-size: 18px;
+                            font-weight: bold;
+                            text-align: right;
+                            padding-top: 8px;
+                        }
+                        .sub-row-input{
+                            height: 40px;
+                            input[type="text"]{
+                                width: 100%;
+                                border: none;
+                                padding: 5px 10px;
+                                font-size: 18px;
+                                font-weight: bold;
+                                height: 100%;
+                                outline:none;
+                            }
+                            input[type="checkbox"]{
+                                height: 22px;
+                                width: 22px;
+                                cursor: pointer;
+                                margin: 10px 10px 0px 0px;
+                            }
+                            input[type="color"]{
+                                width: 50%;
+                                height: 100%;
+                                cursor: crosshair;
+                                outline: 0;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

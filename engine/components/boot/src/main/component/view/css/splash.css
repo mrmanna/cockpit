@@ -1,0 +1,291 @@
+#progress {
+    position: fixed;
+    z-index: 1007;
+    top: 0px;
+    left: -6px;
+    width: 0%;
+    height: 4px;
+    background: #37db9f;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    -moz-transition: width 500ms ease-out,opacity 400ms linear;
+    -ms-transition: width 500ms ease-out,opacity 400ms linear;
+    -o-transition: width 500ms ease-out,opacity 400ms linear;
+    -webkit-transition: width 500ms ease-out,opacity 400ms linear;
+    transition: width 500ms ease-out,opacity 400ms linear
+}
+#progress.done {
+    opacity: 0
+}
+#progress dd,#progress dt {
+    position: absolute;
+    top: 2px;
+    height: 2px;
+    -moz-box-shadow: #b91f1f 1px 0 6px 1px;
+    -ms-box-shadow: #b91f1f 1px 0 6px 1px;
+    -webkit-box-shadow: #b91f1f 1px 0 6px 1px;
+    box-shadow: #b91f1f 1px 0 6px 1px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%
+}
+#progress dd {
+    opacity: 1;
+    width: 20px;
+    right: 0;
+    clip: rect(-6px,22px,14px,10px)
+}
+#progress dt {
+    opacity: 1;
+    width: 180px;
+    right: -80px;
+    clip: rect(-6px,90px,14px,-6px)
+}
+@-moz-keyframes pulse {
+    30% {
+        opacity: 1
+    }
+    60% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+@-ms-keyframes pulse {
+    30% {
+        opacity: .6
+    }
+    60% {
+        opacity: 0
+    }
+    100% {
+        opacity: .6
+    }
+}
+@-o-keyframes pulse {
+    30% {
+        opacity: 1
+    }
+    60% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+@-webkit-keyframes pulse {
+    30% {
+        opacity: .6
+    }
+    60% {
+        opacity: 0
+    }
+    100% {
+        opacity: .6
+    }
+}
+@keyframes pulse {
+    30% {
+        opacity: 1
+    }
+    60% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+#progress.waiting dd,#progress.waiting dt {
+    -moz-animation: pulse 2s ease-out 0s infinite;
+    -ms-animation: pulse 2s ease-out 0s infinite;
+    -o-animation: pulse 2s ease-out 0s infinite;
+    -webkit-animation: pulse 2s ease-out 0s infinite;
+    animation: pulse 2s ease-out 0s infinite
+}
+
+
+.hero-bkg-animated {
+    background: #00b4d1;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    height: 100vh;
+    box-sizing: border-box;
+    -webkit-animation: slide 20s linear infinite;
+    position: relative;
+    background-size: auto 170%;
+}
+
+.hero-bkg-animated h1 {
+    font-family: sans-serif;
+}
+
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}   
+.mask {
+    /*background: linear-gradient(-45deg, #23981d, #00b4d1, #d7d321, #00b4d1);*/
+    background: linear-gradient(-45deg,lightyellow,whitesmoke,linen,lightyellow,lightcyan,lightskyblue);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 5s ease infinite;
+    -moz-animation: Gradient 5s ease infinite;
+    animation: Gradient 5s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+@keyframes wars {
+    0% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+.typewriter {
+    width: 100vw;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: normal; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    animation:typing 10.5s steps(40, end);
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+/* The typing effect */
+@keyframes downarrow {
+    0% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.loader-item{
+    display: none;
+}
+
+.loader-item .heading{
+    font-family: 'Roboto', sans-serif;
+    font-size: 4em;
+    font-weight: 900;
+    /*  color: #37db9f;*/
+    color:#1e9289;
+    letter-spacing: 3.5px;
+    padding-top: 20px;
+}
+.updateFound {
+    display: none;
+    margin:0 auto;
+    top:20vh;
+    left:20vw;
+    opacity: .9;
+    box-shadow: 5px 0px 8px 0px rgba(100,100,100,.3);
+    width:60vw;height:30vh;position:fixed;background: #0076ff;z-index: 99999;
+}
+.updateFound .sub-heading{
+    position: relative;
+    margin:0 auto;
+    width: 100%;
+    padding-right: 20px;
+   
+}
+.updateFound .btn{
+    border: 1px solid white;
+    border-radius: 0px;
+    margin: 2px;
+    color:white;
+    width: 200px;
+    float: right;
+}
+.updateFound .btn:hover{
+    background: white;
+    color:black;
+}
+.updateFound .heading{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 3.5px;
+    padding: 20px;
+}
+@media (max-width:992px){
+    .loader-item .heading{
+        font-size: 3em;
+    }
+}
+.loader-item .sub-heading,.updateFound .sub-heading{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: gray;
+    letter-spacing: 5.5px;
+}
+.loader-item-button{
+    border-radius: 50%;cursor:pointer;
+    background:#37db9f;
+    width:40px;height: 40px;margin:0 auto;margin-top:-15px; opacity: .9;padding:5px;color:white;
+    animation:downarrow 1s ease infinite;
+}
+.getstarted-button{
+    display: none;
+    border-radius: 5px;
+    cursor:pointer;
+    background:#37db9f;
+    vertical-align: middle;
+    width:300px;height: 100px;margin:0 auto;margin-top: -30px;opacity: .9;padding:1px;color:white;
+}
+.active{
+    display: block;
+    margin-top:-700px;
+}

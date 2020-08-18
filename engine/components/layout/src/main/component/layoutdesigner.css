@@ -1,0 +1,232 @@
+.layout .designer .prop-box {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */ }
+  .layout .designer .prop-box::-webkit-scrollbar {
+    width: 5px; }
+  .layout .designer .prop-box::-webkit-scrollbar-track {
+    background: #f1f1f1; }
+  .layout .designer .prop-box::-webkit-scrollbar-thumb {
+    background: #ccc; }
+  .layout .designer .prop-box::-webkit-scrollbar-thumb:hover {
+    background: #555; }
+
+.design-grid {
+  background-size: 2px 2px;
+  background-image: linear-gradient(to right, #ccc 1px, transparent 1px), linear-gradient(to bottom, #ccc 1px, transparent 1px); }
+
+.active, .layout .designer .tree-box .path-tree:hover, .layout .designer .tree-box .path-tree .path-tree-drop li:hover, .layout .designer .tree-box .layout-tree:hover, .layout .designer .tree-box .layout-tree .layout-drop li:hover, .layout .designer .tree-box .rowlayout:hover, .layout .designer .tree-box .column:hover, .layout .designer .tree-box .component:hover {
+  background: #888;
+  color: white; }
+
+.layout .designer .tree-box .rowlayout .icon, .layout .designer .tree-box .column .icon, .layout .designer .tree-box .component .icon {
+  display: none;
+  float: right;
+  margin-right: 8px;
+  font-size: 12px;
+  text-indent: 1px; }
+  .layout .designer .tree-box .rowlayout .icon:hover, .layout .designer .tree-box .column .icon:hover, .layout .designer .tree-box .component .icon:hover {
+    font-size: 17px; }
+
+.layout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; }
+  .layout .designer {
+    position: absolute;
+    width: 21%;
+    border: 1px solid #ccc;
+    height: 100vh;
+    float: right;
+    right: 0;
+    background: #888;
+    color: #fff;
+    padding: 5px; }
+    .layout .designer .heading {
+      padding: 5px;
+      background: #bbb;
+      color: white;
+      font-size: 14px;
+      margin-bottom: 5px; }
+      .layout .designer .heading i {
+        float: right;
+        padding: 5px;
+        cursor: pointer; }
+        .layout .designer .heading i:hover {
+          font-size: 17px; }
+    .layout .designer .prop-box {
+      width: 500px;
+      top: 6px;
+      bottom: 6px;
+      position: fixed;
+      right: 20%;
+      z-index: 99;
+      background: #555;
+      margin-right: 17px;
+      box-shadow: -2px -1px 4px -1px #bbb;
+      color: #bbb;
+      padding-bottom: 10px;
+      height: 100vh; }
+      .layout .designer .prop-box .conf-header {
+        font-size: 1.8em;
+        line-height: 1.8em;
+        padding-left: 20px;
+        background: #222;
+        margin-bottom: 15px; }
+        .layout .designer .prop-box .conf-header .conf-title i {
+          cursor: default; }
+        .layout .designer .prop-box .conf-header .conf-title b {
+          padding-left: 5px; }
+        .layout .designer .prop-box .conf-header .conf-action {
+          float: right;
+          padding-left: 14px;
+          padding-right: 14px;
+          border-left: 1px solid #cdcecd; }
+        .layout .designer .prop-box .conf-header .conf-action:hover {
+          color: #fff;
+          cursor: pointer; }
+        .layout .designer .prop-box .conf-header .conf-close:hover {
+          background: #DC143C;
+          border-color: #DC143C; }
+        .layout .designer .prop-box .conf-header .conf-save:hover {
+          background: #3CB371;
+          border-color: #3CB371; }
+        .layout .designer .prop-box .conf-header .conf-reset:hover {
+          background: #3498DB;
+          border-color: #3498DB; }
+      .layout .designer .prop-box li {
+        width: 100%;
+        padding: 3px;
+        position: relative;
+        float: left; }
+        .layout .designer .prop-box li .key {
+          font-family: roboto;
+          font-weight: 500;
+          line-height: 25px;
+          float: left;
+          text-align: right;
+          width: 50%;
+          padding-right: 10px; }
+        .layout .designer .prop-box li input {
+          height: 25px;
+          font-size: 12px;
+          border: 2px solid #eee;
+          padding: 3px;
+          min-width: 50%;
+          float: right;
+          color: #000; }
+    .layout .designer .tree-box {
+      font-family: roboto;
+      font-weight: 300;
+      cursor: pointer; }
+      .layout .designer .tree-box h3 {
+        font-size: 18px;
+        background: #bbb;
+        color: white;
+        padding: 5px; }
+      .layout .designer .tree-box .path-tree {
+        margin-top: 5px;
+        padding: 5px; }
+        .layout .designer .tree-box .path-tree .path-tree-drop {
+          height: 30vh;
+          width: 100%;
+          background: white;
+          border: 1px solid #efefef; }
+          .layout .designer .tree-box .path-tree .path-tree-drop li {
+            padding: 5px;
+            color: black;
+            text-indent: 5px; }
+            .layout .designer .tree-box .path-tree .path-tree-drop li:hover {
+              font-size: 17px; }
+      .layout .designer .tree-box .layout-tree {
+        margin-top: 5px;
+        padding: 5px; }
+        .layout .designer .tree-box .layout-tree:hover .changelayout, .layout .designer .tree-box .layout-tree:hover .configlayout, .layout .designer .tree-box .layout-tree:hover .changetheme {
+          display: block; }
+        .layout .designer .tree-box .layout-tree .changelayout, .layout .designer .tree-box .layout-tree .configlayout, .layout .designer .tree-box .layout-tree .changetheme {
+          display: none;
+          float: right;
+          margin-right: 8px;
+          font-size: 12px; }
+          .layout .designer .tree-box .layout-tree .changelayout:hover, .layout .designer .tree-box .layout-tree .configlayout:hover, .layout .designer .tree-box .layout-tree .changetheme:hover {
+            font-size: 17px; }
+        .layout .designer .tree-box .layout-tree .layout-drop {
+          height: 30vh;
+          width: 100%;
+          background: white;
+          border: 1px solid #efefef; }
+          .layout .designer .tree-box .layout-tree .layout-drop li {
+            padding: 5px;
+            color: black;
+            text-indent: 5px; }
+            .layout .designer .tree-box .layout-tree .layout-drop li:hover {
+              font-size: 17px; }
+      .layout .designer .tree-box .rowlayout {
+        text-indent: 3px;
+        padding: 8px;
+        box-shadow: 0px 0px 1px 0px #bbb;
+        margin-bottom: 5px; }
+        .layout .designer .tree-box .rowlayout:hover .icon {
+          display: block; }
+      .layout .designer .tree-box .column {
+        text-indent: 6px;
+        padding: 8px;
+        box-shadow: 0px 0px 1px 0px #bbb;
+        margin: 5px 0px 2px 4px; }
+        .layout .designer .tree-box .column:hover .icon {
+          display: block; }
+      .layout .designer .tree-box .columnlayout {
+        padding: 8px;
+        box-shadow: 0px 0px 1px 0px #bbb;
+        margin: 5px 0px 2px 10px; }
+      .layout .designer .tree-box .columnlayout-drop {
+        margin: 5px 0px 2px 10px;
+        border: 1px solid #eee;
+        padding: 10px; }
+      .layout .designer .tree-box .component {
+        text-indent: 6px;
+        padding: 8px;
+        margin: 4px 0px 4px 11px;
+        background: #efefef;
+        color: black; }
+        .layout .designer .tree-box .component:hover span {
+          display: none; }
+        .layout .designer .tree-box .component:hover .icon {
+          display: block; }
+  .layout .designermode {
+    transform: scale(.78);
+    -ms-transform: scale(.78);
+    /* IE 9 */
+    -webkit-transform: scale(.78);
+    /* Safari 3-8 */
+    margin-left: -10.5%;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.8); }
+    .layout .designermode .drow {
+      margin-bottom: 3px;
+      height: auto !important; }
+    .layout .designermode .dcolumn {
+      box-shadow: 0px 0 1px 1px #eee;
+      height: auto !important; }
+      .layout .designermode .dcolumn:hover {
+        border: 2px solid #37db9f;
+        cursor: pointer; }
+      .layout .designermode .dcolumn .conf-panel {
+        position: relative;
+        z-index: 9;
+        background: rgba(0, 0, 0, 0.2);
+        color: #FFF;
+        font-size: 24px;
+        width: 100%;
+        height: 100%;
+        text-align: right;
+        padding: 0px 10px;
+        line-height: 50px; }
+        .layout .designermode .dcolumn .conf-panel i {
+          cursor: pointer; }

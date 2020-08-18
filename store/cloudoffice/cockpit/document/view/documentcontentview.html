@@ -1,0 +1,26 @@
+<div class="file-viewer">
+    <div class="loader">
+        <mini-loader-component params="data: $data.loader()"></mini-loader-component>
+    </div>
+    <div style="text-align: center" data-bind="ifnot:isImage">
+        <div>
+            <object data-bind="style: {width: viewerWidth, height: viewerHeight},attr: {data: dataURL}"></object>
+            <div data-bind="if: isBrowserIE">
+                <div class="pdf-pagination">
+                    <button id="prev"><i class="fa fa-step-backward"></i></button>
+                    <button id="next"><i class="fa fa-step-forward"></i></button>
+                    <span class="page-no">Page: <span id="page_num">2</span> / <span id="page_count">10</span></span>
+                </div>
+
+                <div id="pdf-viewer-container" style="border: 5px solid #474747;">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div style="text-align: center" data-bind="if: isImage">
+        <!-- ko if: (null!==dataURL && dataURL().length>0) -->
+        <img data-bind="style: {maxWidth: viewerWidth}, attr: {src: dataURL}" alt="image">
+        <!-- /ko -->
+    </div>
+</div>

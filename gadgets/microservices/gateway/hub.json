@@ -1,0 +1,40 @@
+{
+    "ports": [
+        {
+            "id": 1,
+            "server": {
+                "serverHost": "localhost",
+                "serverPort": 8282,
+                "name": "SHELL",
+                "domain": "*",
+                "path": "/",
+                "secure": false,
+                "proxy": false
+            }
+        },
+        {
+            "id": 2,
+            "server": {
+                "serverHost": "localhost",
+                "serverPort": 8181,
+                "domain": "content.cockpit.dev",
+                "name": "CONTENT",
+                "path": "/content",
+                "secure": false,
+                "proxy": false
+            }
+        },
+        {
+            "id": 3,
+            "server": {
+                "serverHost": "localhost",
+                "serverPort": 8383,
+                "domain": "accounts.cockpit.dev",
+                "name": "AUTH",
+                "path": "/o",
+                "secure": false,
+                "proxy": false
+            }
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>io.cloudoffice.platform.cockpit</groupId>
+        <artifactId>engine</artifactId>
+        <version>1.1</version>
+    </parent>
+    <groupId>io.cloudoffice.platform.cockpit</groupId>
+    <artifactId>components</artifactId>
+    <packaging>pom</packaging>
+    <name>Engine Components</name>
+    <modules>
+        <module>ccore</module>
+        <module>js</module>
+        <module>mqtt</module>
+        <module>boot</module>
+        <module>layout</module>
+        <module>signin</module>     
+    </modules>
+    <properties>
+        <store.location>${basedir}/../../../store/cloudoffice/cockpit/</store.location>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.cloudoffice.platform.cockpit</groupId>
+                <artifactId>js</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.cloudoffice.platform.cockpit</groupId>
+                <artifactId>ccore</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.cloudoffice.platform.cockpit</groupId>
+                <artifactId>boot</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.cloudoffice.platform.cockpit</groupId>
+                <artifactId>layouter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.cloudoffice.platform.cockpit</groupId>
+                <artifactId>signin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

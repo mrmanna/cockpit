@@ -1,0 +1,58 @@
+<div class="meta-view">
+    <div class="loader">
+        <mini-loader-component params="data: $data.loader()"></mini-loader-component>
+    </div>
+    <div class="item-contents">
+        <div class="header-row">
+            <div class="img">
+                <!-- ko if: itemImage().length>0 -->
+                <img data-bind="attr: {src: itemImage}" class="img-circle" alt="image" height="75" width="75">
+                <!-- /ko -->
+            </div>
+            <label data-bind="text: fullName" class="name"></label>
+        </div>
+        <div class="single-row">
+            <div class="name-label">eMail</div>
+            <div data-bind="text: emailAddress" class="value-label"></div>
+        </div>
+        <div class="single-row">
+            <div class="name-label">Phone</div>
+            <div data-bind="text: persPhone" class="value-label"></div>
+        </div>
+
+        <div class="single-row">
+            <div class="name-label">Mobile</div>
+            <div data-bind="text: persMobile" class="value-label"></div>
+        </div>
+        <div class="single-row">
+            <div class="name-label">Owner</div>
+            <div data-bind="text: createdBy" class="value-label"></div>
+        </div>
+        <div class="single-row">
+            <div class="name-label">Modified</div>
+            <div data-bind="text: lastModifiedDate" class="value-label"></div>
+        </div>
+        <div class="single-row">
+            <div class="name-label">Created</div>
+            <div data-bind="text: createdDate" class="value-label"></div>
+        </div>
+        <div class="single-row">
+            <div class="name-label">Related</div>
+            <div class="value-label" data-bind="foreach: relatedItemList">
+                <div>
+                    <i data-bind="css: itemTypeIconCss"></i>
+                    <b data-bind="text: itemName"></b>
+                </div>
+            </div>
+        </div>
+        <div class="single-row">
+            <div class="name-label">Shared</div>
+            <div class="value-label" data-bind="foreach: sharedItemList">
+                <div>
+                    <i data-bind="css: itemTypeIconCss"></i>
+                    <b data-bind="text: itemName"></b>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

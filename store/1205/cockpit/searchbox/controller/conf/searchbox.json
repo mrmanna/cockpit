@@ -1,0 +1,43 @@
+{
+    "instance": "searchboxinstance1",
+    "configuration": {
+        "hasItemFilter": true,
+        "filters": [{
+            "itemId": "1",
+            "itemType": "PERSON",
+            "itemName": "Person",
+            "filterType": null,
+            "isSelected": false
+        }, {
+            "itemId": "3",
+            "itemType": "FILE",
+            "itemName": "Documents",
+            "filterType": null,
+            "isSelected": true
+        }, {
+            "itemId": "4",
+            "itemType": "ORGANIZATION",
+            "itemName": "Organization",
+            "filterType": null,
+            "isSelected": false
+        }, {
+            "itemId": "37",
+            "itemType": "USER_DEFINE",
+            "itemName": "Artice",
+            "filterType": null,
+            "isSelected": false
+        }],
+        "listComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.genericlist.GenericListComponent",
+            "instanceId": "genericlistinstance1"
+        },
+        "detailComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.document.DocumentComponent",
+            "instanceId": "documentinstance1"
+        },
+        "actionMenuComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.actionmenu.ActionMenuComponent",
+            "instanceId": "actionmenuinstance1"
+        }
+    }
+}

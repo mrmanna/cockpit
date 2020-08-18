@@ -1,0 +1,10 @@
+/gadgets/microservices/gateway/cert/install-selftsigned-cert.bat
+/gadgets/microservices/gateway/cert/cloudoffice.io/
+/gadgets/microservices/gateway/cert/store.jks
+/gadgets/microservices/gateway/cert/local/
+/gadgets/microservices/gateway/cert/testcompany01.local.cert
+/gadgets/microservices/gateway/cert/server.digitalgovernor.com/
+/gadgets/microservices/gateway/cert/README
+.project
+.classpath
+.settings/

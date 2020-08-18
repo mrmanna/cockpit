@@ -1,0 +1,24 @@
+<div class="loader">
+    <mini-loader-component params="data: $data.loader()"></mini-loader-component>
+</div>
+<div class="list-view" data-bind="foreach: rows">
+    <div class="list-item-view" data-bind="click: $parent.loadDetail">
+        
+        <div class="item-check">
+            <label class="chk-container">
+                <input type="checkbox" data-bind="stopBubble: true, checked: isSelected">
+                <span class="checkmark" data-bind="stopBubble: true, click: $parent.selectSingle"></span>
+            </label>
+        </div>
+        <div class="menu-actions action-right" title="Actions" data-bind="clickBubble: false, click: $parent.showActionMenu">
+            <i class="fa fa-ellipsis-h" aria-hidden="true" title="More actions"></i>
+        </div>
+        <div data-bind="foreach: columns">
+            <!-- ko if: isVisible -->
+            <div class="item-title" data-bind="style: {'float': columnPosition, 'width': columnWidth}">
+                <div data-bind="html: itemShortDescription"></div>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+</div>

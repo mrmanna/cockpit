@@ -1,0 +1,114 @@
+<div data-bind="attr:{'id': instance}">
+    <div class="admin-menu">
+        <div class="admin-menu-btn" data-bind="click: toggleAdminMenu">
+            <i class="fa fa-2x fa-th"></i>
+        </div>
+        <div class="admin-menu-dropdown" data-bind="visible: showApps">
+            <ul data-bind="foreach: apps">
+                <!-- ko if: enable -->
+                <li class="clearfix" data-bind="style: {'background': appsColor}, click: $parent.openApplication">
+                    <i data-bind="attr: {'class': appsIcon}" aria-hidden="true"></i><br>
+                    <p data-bind="text: appsName"></p>
+                </li>
+                <!-- /ko -->
+            </ul> 
+        </div>
+        <!-- ko if: designerMode -->
+        <div class="config" data-bind="with: configuration">
+
+            <div class="conf-header"> 
+                <span class="conf-title">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    <b>Configuration Panel</b>
+                </span>
+                <!-- ko if: configurationProgressLoader -->
+                <span class="conf-progress">
+                    <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i>
+                    <span>updating configuration</span>
+                </span>
+                <!-- /ko -->
+                <span data-bind="clickBubble: false, click: $parent.closeConfigurationPanel" class="conf-action conf-close" title="Close">
+                    <i class="fa fa-close"></i>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.save" class="conf-action conf-save" title="Save">
+                    <i class="fa fa-floppy-o"></i>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.resetConfiguration" class="conf-action conf-reset" title="Reset">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </span>
+            </div>
+            <div class="conf-body">
+                <div class="row body-row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="conf-title">Apps :</div>
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                <!-- ko if: apps().length>0 -->
+                <div data-bind="foreach: apps">
+                            <div class="row col-conf-row">
+                                <div class="col-conf-title">
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span>Configure apps</span>
+                        <span data-bind="text: appsName"></span>
+                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                        <div class="sub-row-title">Name : </div>
+                                    </div>
+                                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: appsName, enable: enable" type="text" placeholder="Column Header">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                        <div class="sub-row-title">Url : </div>
+                                    </div>
+                                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                                        <div class="sub-row-input">
+                                            <input type="text" data-bind="textInput: appsUrl, enable: enable" placeholder="apps url">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                        <div class="sub-row-title">Icon : </div>
+                                    </div>
+                                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: appsIcon, enable: enable" type="text" placeholder="Column Index">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                        <div class="sub-row-title">Color : </div>
+                                    </div>
+                                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                                        <div class="sub-row-input">
+                                            <input type="color" name="favcolor" data-bind="value: appsColor, enable: enable" value="#ff0000">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                        <div class="sub-row-title">Visible : </div>
+                                    </div>
+                                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                                        <div class="sub-row-input">
+                                            <input type="checkbox" data-bind="checked: enable, value: appsId">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                <!-- /ko -->
+            </div>
+        </div>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

@@ -1,0 +1,27 @@
+{
+    "id": "blanklayout",
+    "name": "Blank layout",
+    "currentPath": "",
+    "paths": [],
+    "pathDrop": false,
+    "themeId": "theme1",
+    "designerOn": false,
+    "componentListDisplay": false,
+    "componentListLoader": false,
+    "subscribedComponents": [],
+    "subscribedComponentDropZone": null,
+    "layoutDrop": false,
+    "props": [],
+    "propOn": false,
+    "propPanel": null,
+    "rows": [{
+        "id": "row1",
+        "name": "Row 1",
+        "columns": [],
+        "editable": false,
+        "inputfieldvalue": null
+    }],
+    "editable": false,
+    "inputfieldvalue": "",
+    "updateloader": false
+}

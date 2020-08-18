@@ -1,0 +1,383 @@
+<div data-bind="attr:{'id': instance}">
+    <div class="articlelist">
+        <!-- ko if: visible -->
+        <div class="header-view">
+            <div class="header-check">
+                <label class="chk-container">
+                    <input type="checkbox" data-bind="stopBubble: true, checked: batchSelected">
+                    <span class="checkmark" data-bind="stopBubble: true, click: selectBatch"></span>
+                </label>
+            </div>
+            
+            <!-- ko if: headerTitle -->
+            <div class="header-title">
+                <span data-bind="text: headerTitle"></span>
+            </div>
+            <!-- /ko -->
+
+
+            <!-- ko if: isVisibleCreateButon -->
+            <div data-bind="clickBubble: false, click: createNewItem" class="header-actions action-left" title="Add new item">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </div>
+            <!-- /ko -->
+            <div class="header-pagination">
+                <span data-bind="text: currentItemCount"></span>
+                <span>of</span>
+                <span data-bind="text: totalItems"></span>
+<!--                <i data-bind="enable: enablePrevious, clickBubble: false, click: previous" class="fa fa-chevron-left" aria-hidden="true" title="Previous"></i>
+                <i data-bind="enable: enableNext, clickBubble: false, click: next" class="fa fa-chevron-right" aria-hidden="true" title="Next"></i>-->
+            </div>
+            <!-- ko ifnot: (gridViewEnabled) -->
+            <div data-bind="clickbubble: false, click: enableGridView" class="header-actions action-right" title="Grid view">
+                <i class="fa fa-th-large" aria-hidden="true"></i> 
+            </div>
+            <!-- /ko -->
+            <!-- ko if: (gridViewEnabled) -->
+            <div data-bind="clickbubble: false, click: enableListView" class="header-actions action-right" title="List view">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+            <!-- /ko-->
+            <!--            <div class="header-actions action-right" title="Sort descending">
+                            <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+                        </div>
+                        <div class="header-actions action-right" title="Sort ascending">
+                            <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+                        </div>-->
+            <div data-bind="clickbubble: false, click: reloadList" class="header-actions action-right" title="Refresh">
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+            </div>
+
+            <div data-bind="clickBubble: false, click: showCollectionHoverAction" class="header-actions action-right" title="Collection">
+                <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
+            </div>
+        </div>
+
+        <!-- ko if: listnotavailablemessagedisplay -->
+        <div class="empty-list-view">
+            <div class="empty-list-view-content">
+                <i class="fa fa-meh-o" aria-hidden="true"></i>
+            </div>
+            <div class="empty-list-view-content">
+                <span>No item available.</span>
+            </div>
+        </div>
+        <!-- /ko-->
+
+        <!-- ko ifnot: (gridViewEnabled) -->
+        <articlelistview-component params="data: $data"></articlelistview-component>
+        <!-- /ko-->
+
+        <!-- ko if: (gridViewEnabled) -->
+        <articlegridview-component params="data: $data"></articlegridview-component>
+        <!-- /ko-->
+        <!-- /ko-->
+
+
+
+
+        <!-- ko if: designerMode -->
+        <div class="config" data-bind="with: configuration">
+            <div class="conf-header"> 
+                <span class="conf-title">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    <b>Configuration Panel</b>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.closeConfigurationPanel" class="conf-action conf-close" title="Close">
+                    <i class="fa fa-close"></i>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.save" class="conf-action conf-save" title="Save">
+                    <i class="fa fa-floppy-o"></i>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.resetConfiguration" class="conf-action conf-reset" title="Reset">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </span>
+            </div>
+            <div class="conf-body">
+                <div class="row body-row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="conf-title">Visible Create Button :</div>
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                        <div class="conf-item">
+                            <div class="conf-area cus-radio-btn">
+                                <input type="radio" name="visibility" value="SHOW" data-bind="checked: visibleCreateButon">
+                            </div>
+                            <div class="conf-area cus-radio-txt">
+                                <span>Show</span>
+                            </div>
+                        </div>
+                        <div class="conf-item">
+                            <div class="conf-area cus-radio-btn">
+                                <input type="radio" name="visibility" value="HIDE" data-bind="checked: visibleCreateButon">
+                            </div>
+                            <div class="conf-area cus-radio-txt">
+                                <span>Hide</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row body-row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="conf-title">Default item view :</div>
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                        <div class="conf-item">
+                            <div class="conf-area cus-radio-btn">
+                                <input type="radio" name="type" value="LIST" data-bind="checked: defaultitemview">
+                            </div>
+                            <div class="conf-area cus-radio-txt">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                                <span>List</span>
+                            </div>
+                        </div>
+                        <div class="conf-item">
+                            <div class="conf-area cus-radio-btn">
+                                <input type="radio" name="type" value="GRID" data-bind="checked: defaultitemview">
+                            </div>
+                            <div class="conf-area cus-radio-txt">
+                                <i class="fa fa-th-large" aria-hidden="true"></i>
+                                <span>Grid</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row body-row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="conf-title">Item filter :</div>
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                        <!-- ko if: (filters().length>0) -->
+                        <div data-bind="foreach: filters">
+                            <div class="conf-item">
+                                <div class="conf-area cus-checkbox-btn">
+                                    <input type="checkbox" data-bind="checked: isSelected, value: itemType">
+                                </div>
+                                <div class="conf-area cus-checkbox-txt">
+                                    <span data-bind="text: itemName"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+
+
+
+                <div class="row body-row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="conf-title">Columns :</div>
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                        <!-- ko if: (columns().length>0) -->
+                        <div data-bind="foreach: columns">
+                            <div class="row col-conf-row">
+                                <div class="col-conf-title">
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span>Configure column</span>
+                                    <span data-bind="text: columnHeader"></span>
+                                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                        <div class="sub-row-title">Header : </div>
+                                    </div>
+                                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: columnHeader" type="text" placeholder="Column Header">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                        <div class="sub-row-title">Index : </div>
+                                    </div>
+                                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: columnIndex" type="text" placeholder="Column Index">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                        <div class="sub-row-title">Position : </div>
+                                    </div>
+                                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: columnPosition" type="text" placeholder="Column Position">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                        <div class="sub-row-title">Width : </div>
+                                    </div>
+                                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: columnWidth" type="text" placeholder="Column Width">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                        <div class="sub-row-title">Visible : </div>
+                                    </div>
+                                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                                        <div class="sub-row-input">
+                                            <input type="checkbox" data-bind="checked: isVisible, value: isVisible">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                        <div class="sub-row-title">Sortable : </div>
+                                    </div>
+                                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                                        <div class="sub-row-input">
+                                            <input type="checkbox" data-bind="checked: isSortable, value: isSortable">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+
+
+
+                <div class="row body-row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="conf-title">Talk to Detail :</div>
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                        <div data-bind="with: detailComponentDefinition">
+                            <div class="row row-conf-row">
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                        <div class="sub-row-title">Instance ID : </div>
+                                    </div>
+                                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: instanceId" type="text" placeholder="instance id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                        <div class="sub-row-title">Component Name : </div>
+                                    </div>
+                                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: component" type="text" placeholder="component">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="row body-row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="conf-title">Talk to Action Menu :</div>
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                        <div data-bind="with: actionMenuComponentDefinition">
+                            <div class="row row-conf-row">
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                        <div class="sub-row-title">Instance ID : </div>
+                                    </div>
+                                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: instanceId" type="text" placeholder="instance id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                        <div class="sub-row-title">Component Name : </div>
+                                    </div>
+                                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: component" type="text" placeholder="component">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row body-row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="conf-title">Talk to Collection :</div>
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                        <div data-bind="with: collectionComponentDefinition">
+                            <div class="row row-conf-row">
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                        <div class="sub-row-title">Instance ID : </div>
+                                    </div>
+                                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: instanceId" type="text" placeholder="instance id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                        <div class="sub-row-title">Component Name : </div>
+                                    </div>
+                                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: component" type="text" placeholder="component">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row body-row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="conf-title">Talk to Search Box :</div>
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                        <div data-bind="with: searchBoxComponentDefinition">
+                            <div class="row row-conf-row">
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                        <div class="sub-row-title">Instance ID : </div>
+                                    </div>
+                                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: instanceId" type="text" placeholder="instance id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row col-conf-subrow">
+                                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                        <div class="sub-row-title">Component Name : </div>
+                                    </div>
+                                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                        <div class="sub-row-input">
+                                            <input data-bind="textInput: component" type="text" placeholder="component">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

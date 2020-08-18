@@ -1,0 +1,87 @@
+{  
+   "id":"layout34",
+   "name":"Cockpit Default Layout",
+   "themeId":"theme1",
+   "propOn":false,
+   "style":{},
+   "designerOn":false,
+   "rows":[  
+      {  
+         "id":"row1",
+		 "name":"First Row",
+         "columns":[  
+            {  
+               "id":"row1column1",
+			   "name":"First Column",
+               "components":[  
+                  {  
+                     "name":"workspace-component",
+                     "model":"io.cloudoffice.platform.cockpit.workspace.WorkspaceView"
+                  }
+               ]
+            },
+			{  
+               "id":"row1column2",
+			   "name":"Second Column",
+               "components":[  
+                  {  
+                     "name":"searchbox-component",
+                     "model":"io.cloudoffice.platform.cockpit.searchbox.SearchBoxView"
+                  }
+               ]
+            },
+			{  
+               "id":"row1column3",
+			   "name":"Third Column",
+               "components":[  
+                  {  
+                     "name":"profile-menu-component",
+                     "model":"io.cloudoffice.platform.cockpit.profilemenu.ProfileMenuView"
+                  }
+               ]
+            }
+			
+         ]
+      },
+	  {  
+         "id":"row2",
+		 "name":"Second Row",
+         "columns":[  
+            {  
+               "id":"row2column1",
+			   "name":"First Column",
+               "components":[  
+                  {  
+                     "name":"left-toolbar-component",
+                     "model":"io.cloudoffice.platform.cockpit.lefttoolbar.LeftToolbarView"
+                  }
+               ]
+            },
+			{  
+               "id":"row2column2",
+			   "name":"Second Column",
+               "components":[  
+                  {  
+                     "name":"recents-list-component",
+                     "model":"io.cloudoffice.platform.cockpit.recentslist.RecentsListView"
+                  }
+               ]
+            },
+			{  
+               "id":"row2column3",
+			   "name":"Third Column",
+               "components":[  
+                  {  
+                     "name":"centercolumnlayout-component",
+                     "model":"io.cloudoffice.platform.cockpit.centercolumnlayout.CenterColumnLayout"
+                  }
+               ]
+            },
+			{  
+               "id":"row2column4",
+			   "name":"Fourth Column"
+            }			
+         ]
+      }
+   ]
+}

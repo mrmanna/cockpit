@@ -1,0 +1,16 @@
+{
+   "ports":[      
+       {
+           "id":3,
+           "server":{
+               "serverHost":"localhost",
+               "serverPort":8383,
+               "domain":"accounts.cloudoffice.io",
+               "name":"AUTH",
+               "path":"/o",
+               "secure":true,
+               "proxy":false
+           }
+       }
+   ]
+}

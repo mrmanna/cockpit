@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-minstal</actionName>
+            <displayName>minstal</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>-Dcheckstyle.skip</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-clean install</actionName>
+            <displayName>clean install</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>-DskipTests</goal>
+                <goal>-Dcheckstyle.skip</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-only install</actionName>
+            <displayName>only install</displayName>
+            <goals>
+                <goal>install</goal>
+                <goal>-DskipTests</goal>
+                <goal>-Dcheckstyle.skip</goal>
+            </goals>
+        </action>
+    </actions>

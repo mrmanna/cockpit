@@ -1,0 +1,11 @@
+<div class="edit-view">
+    <!-- ko if: (itemId()=== '0') -->
+    <div id="editor1" class="editable" data-placeholder="Write Article here ..." spellcheck="false">
+    </div>
+    <!-- /ko-->
+    
+    <!-- ko if: (itemId()!== '0') -->
+    <div id="editor1" class="editable" data-placeholder=" " spellcheck="false">
+    </div>
+    <!-- /ko-->
+</div>

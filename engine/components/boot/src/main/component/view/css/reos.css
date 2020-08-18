@@ -1,0 +1,356 @@
+body{
+    background: #554445;
+}
+.login-page .form-signin .form-signin-heading{
+    background-image: url("../images/cO-temporarily-logo-reos.png");
+}
+.login-page .form-signin input[type="email"],.login-page .form-signin input[type="password"] {
+    border: 1px solid #aca386;
+}
+.login-page button{
+    background: #ff4141 ;
+}
+.login-page button.btn-info:hover,.login-page button.btn-info:focus{
+    background: #ff4141;
+}
+.top-bar{
+    background:#554445;
+    color: #fff;
+}
+.top-bar h2{
+	background:#fff;
+    color:#fff;
+}
+.top-bar .tools{
+    background:#ef4b30;
+}
+.top-bar .tools a{
+    color:#FFF;
+}
+.workSpace-bar{
+	background:#ffede5;
+}
+.workSpace-title{
+	color:#ff4f00 ;
+}
+.workSpace-drop{
+	background:#ffede5;
+}
+.workSpace-list li:hover{
+	background:#ffe2d6;
+}
+.workSpace-list li .hoverIcon span i{
+	color:#ff4f00;
+}
+.inp01{
+	color:#ff4f00 ;
+}
+.inp01::-moz-placeholder{
+	color:#ff4f00;
+  	opacity: 1;
+}
+.inp01::-webkit-input-placeholder{
+	color:#ff4f00;
+}
+.search-info .search-title:hover{
+	background:rgba(121,107,108,1);
+}
+.search-info .search-title.search-title-bg{
+	background:#fff;
+}
+.selectedItem-box2 label{
+	background:#aba285;
+	color:#fff;
+}
+.selectedItem-box1{
+	background:#aba285;
+	color:#fff;
+}
+.selectedItem-box2{
+	border:1px solid #e2ded4;
+}
+.selectedItem-box1-all{
+    background:#d35400;
+}
+.selectedItem-box1-my{
+    background:#3dd94a;
+}
+.selectedItem-box1-other{
+    background:#FF5733;
+}
+.selectedItem-box1-system{
+    background:#633974;
+}
+.selectedItem-box1-before{
+    background:#DE064E;
+}
+.selectedItem-box1-after{
+    background:#8A0868;
+}
+.selectedItem-box1-related{
+    background:#eee300;
+}
+.selectedItem-box2-all{
+    border:1px solid #d35400;
+}
+.selectedItem-box2-my{
+    border:1px solid #3dd94a;
+}
+.selectedItem-box2-other{
+    border:1px solid #FF5733;
+}
+.selectedItem-box2-system{
+    border:1px solid #633974;
+}
+.selectedItem-box2-before{
+    border:1px solid #DE064E;
+}
+.selectedItem-box2-after{
+    border:1px solid #8A0868;
+}
+.selectedItem-box2-related{
+    border:1px solid #eee300;
+}
+.h4_01{
+	color:#ff4f00;
+}
+.more-btn01{
+	color:#ff4f00;
+}
+.history-list > ul > li > a{
+	color:#887c7d;
+}
+.userCollection-h{
+	color:#ff4f00;
+}
+.h3-01{
+	color:#ff4f00;
+}
+.span-02 i{
+	color:#ff4f00;
+}
+.addItem-list li:hover{
+	background:#aba285;
+	color:#fff;
+}
+.viewIcon-list li:hover,.viewIcon-list li.active{
+	background:#aba285;
+	color:#fff;
+}
+.msg-send-bar{
+	background:#FFF;
+	border:2px solid #e2ded4;
+}
+.msg-send-btn{
+	background:#aba285;
+	color:#fff;
+}
+.msg-send-action li a:hover,.msg-send-action li.active a{
+	background:#aba285;
+}
+.msg-send-action li a:hover i,.msg-send-action li.active a i{
+    color:#fff;
+}
+.overlay-hdr{
+    background-color: #554445;
+    color: #fff;
+}
+.save-btn{
+    background: #554445;
+    border: 2px solid #554445;
+    color: #fff;
+}
+.searchRecent-list li:hover{
+	background:#aba285;
+	color:#fff;
+}
+.searchRecent-list li:hover b{
+	color:#fff;
+}
+.span-04 b{
+	color:#ff4f00;
+}
+.span-10{
+	color:#ff4f00;
+}
+.chat-box1{
+    background:#fff;
+	border:1px solid #e1e1e1;
+}
+.chat-box1 .span-13{
+	background:#f2f2f2;
+}
+.chat-box1 .span-13 i{
+	color:#b2b2b2;
+}
+.chat-box2{
+    background:#eeebe2;
+}
+.chat-box2 .span-13{
+	background:#e3dfc6;
+}
+.chat-box2 .span-13 i{
+	color:#fff;
+}
+.chat-box1 .sendMsg-add li > span{
+	background:#8b8b8b;
+	color:#fff;
+}
+.chat-box2 .sendMsg-add li > span{
+	background:#ccc8b0;
+	color:#fff;
+}
+.span-12{
+	background:#ef4b30;
+	color:#fff;
+}
+.search-item-list li a:hover,.search-item-list li a.active{
+	background:#aba285 ;
+	color:#fff;
+}
+.search-list li:hover{
+    background: #aba285;
+}
+.search-drop-list li a.active{
+	background:#fff;
+	color:#ff4f00; 
+}
+.searchClose-btn01{
+	color:#ff4f00;
+}
+.searchClose-btn01:hover{
+	color:#58595b;
+}
+.sub-drop2 ul li a:hover{
+	color:#fff;
+	background:#aba285;
+}
+.show-h-list li fieldset p b{
+	color:#ff4f00;
+}
+.show-h-list > li:hover, .show-h-list > li.selected {
+    background: #aba285;
+}
+.span-05 b{
+	color:#ff4f00;
+}
+.all-opt01 a{
+	color:#ff4f00;
+}
+.facetSearch-sort-btn span{
+	background:#aba285;
+	color:#FFF;
+}
+.facetSearch-sort-btn span:first-child{
+	background:#e2ded4;
+}
+span.check{
+    background:#aba285;
+    color:#fff;
+    border:1px solid #aba285;
+}
+span.check i{
+    color:#fff;
+}
+.cus-col-lft{
+    background:#c1b696;
+}
+.collection-name li a{
+    color: #fff !important;
+}
+.chat-list01 > li{
+    background:#a49d81;
+}
+.chat-list01 > li > span i{
+    color:#7f785e;
+}
+.chat-list01 > li > em{
+    background:#FFF;
+    color:#abaa9b;
+}
+.addCollection-h i{
+    color:#83785a;
+}
+.add-inp01{
+    color:#83785a;
+}
+.add-inp01::-moz-placeholder{
+    color:#83785a;
+}
+.add-inp01::-webkit-input-placeholder{
+    color:#83785a;
+}
+.h3-05{
+    background:#a49d81;
+    color:#fff;
+}
+.collection-list li .hoverIcon span i{
+	color:#fff;
+}
+.span-09{
+    color:#a7a9ac;
+}
+.span-09 b{
+    color:#ff4f00;
+}
+.exLeft-col{
+	background:#aba387;
+}
+.exLeft-colTab li{
+	color:#ccc;
+}
+.exLeft-colTab li:hover,.exLeft-colTab li.active{
+	background:#a59d81;
+	color:#FFF;
+}
+.sendMsg-box{
+    background:#fff;
+}
+.sendMsg-inner{
+    background:#eeebe2;
+}
+.kind-msg span{
+    background:#eeebe2;
+    color:#b5b1a2;
+    border:1px solid #eeebe2;
+}
+.sendMsg-add > li > span{
+    background:#eeebe2;
+    color:#b5b1a2;
+}
+.send-btn01 i{
+	color:#e3dfc6;
+}
+.auto-completeList01 li:hover{
+	background:#aba285;
+	color:#fff;
+}
+.auto-completeList01 li:hover span i,.auto-completeList01 li:hover em i{
+	color:#fff;
+}
+.recent-list01 li:hover{
+	background:#aba285;
+	color:#fff;
+}
+.msgList01 li{
+	border-bottom:1px solid #ccc;
+}
+.span-28{
+	background:#aba387;
+	border:1px solid #a59d81;
+}
+.p-06{
+	color:#496f78;
+}
+.msgList01 li:hover,.msgList01 li.active{
+	background:#847d67;
+}
+.msgList01 li:hover .span-28,.msgList01 li.active .span-28{
+	background:#847d67;
+	border:1px solid #fff;
+}
+@media (max-width:767px){
+	.topbar-list{
+		background:#554445;
+	}
+}

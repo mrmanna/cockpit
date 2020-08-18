@@ -1,0 +1,30 @@
+{
+    "instance": "textinstance1",
+    "configuration": {
+        "selectedTextItems": [{
+            "itemId": "0",
+            "itemName": "CLOUDOFFICE",
+            "itemType": "USER_DEFINE",
+            "itemText": "CLOUDOFFICE",
+            "itemUserId": "0",
+            "hasOwnerPermission": false,
+            "hasAdminPermission": false,
+            "hasWritePermission": false,
+            "hasReadPermission": false
+        }],
+        "displayTextItem": false,
+        "layoutColumnId":"row2column2",
+        "listComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.articlelist.ArticleListComponent",
+            "instanceId": "articlelistinstance1"
+        },
+        "actionMenuComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.actionmenu.ActionMenuComponent",
+            "instanceId": "actionmenuinstance1"
+        },
+        "searchBoxComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.searchbox.SearchBoxComponent",
+            "instanceId": "searchboxinstance1"
+        }
+    }
+}

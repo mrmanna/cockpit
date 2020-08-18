@@ -1,0 +1,27 @@
+{
+    "ports": [
+        {
+            "id": 3,
+            "server": {
+                "serverHost": "localhost",
+                "serverPort": 8282,
+                "domain": "*.cloudoffice.io",
+                "name": "SHELL",
+                "path": "/",
+                "secure": false,
+                "proxy":false
+            }
+        }, {
+            "id": 4,
+            "server": {
+                "serverHost": "37.97.221.77",
+                "serverPort": 8080,
+                "domain": "backendcockpit.cloudoffice.io",
+                "name": "API",
+                "path": "/api",
+                "secure": true,
+                "proxy":false
+            }
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{  
+   "id":"mobilelayout",
+   "themeId":"weblayout1",
+   "propOn":false,
+   "style":{},
+   "designerOn":false,
+   "rows":[  
+      {  
+         "id":"toprow",
+         "columns":[  
+            {  
+               "id":"toprow-firstcolumn",
+               "components":[  
+                  {  
+                     "name":"workspace-component",
+                     "model":"io.cloudoffice.platform.cockpit.workspace.WorkspaceView"
+                  }
+				  
+               ]
+            }
+			
+         ]
+      }
+   ]
+}

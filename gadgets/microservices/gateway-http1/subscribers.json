@@ -1,0 +1,26 @@
+{
+    "content.cloudoffice.io": {
+        "keyfile": "cert/cloudoffice.io/key.pem",
+        "certfile": "cert/cloudoffice.io/star_cloudoffice_io.crt"
+    }, 
+    "cockpit.cloudoffice.io": {
+        "keyfile": "cert/cloudoffice.io/key.pem",
+        "certfile": "cert/cloudoffice.io/star_cloudoffice_io.crt"
+    },
+     "captains.cloudoffice.io": {
+        "keyfile": "cert/cloudoffice.io/key.pem",
+        "certfile": "cert/cloudoffice.io/star_cloudoffice_io.crt"
+    },
+     "www.cloudoffice.io": {
+        "keyfile": "cert/cloudoffice.io/key.pem",
+        "certfile": "cert/cloudoffice.io/star_cloudoffice_io.crt"
+    },
+     "accounts.cloudoffice.io": {
+        "keyfile": "cert/cloudoffice.io/key.pem",
+        "certfile": "cert/cloudoffice.io/star_cloudoffice_io.crt"
+    },
+    "server.digitalgovernor.com": {
+        "keyfile": "cert/server.digitalgovernor.com/key.pem",
+        "certfile": "cert/server.digitalgovernor.com/cert.pem"
+    }
+}

@@ -1,0 +1,10 @@
+@import 'theme.scss';
+@import 'layout-variables.scss';
+@import 'row1.scss';
+
+##{$id}{
+color:$color;
+height:$height;
+width:$width;
+}
+

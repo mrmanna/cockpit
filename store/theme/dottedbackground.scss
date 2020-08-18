@@ -1,0 +1,10 @@
+@import 'dottedbackground-variables';
+%dottedbackground{
+    background-image: -webkit-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0.6) 1px, rgba(0, 0, 0, 0.2) 100%);
+    background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0.6) 1px, rgba(0, 0, 0, 0.2) 100%);
+    background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0.6) 1px, rgba(0, 0, 0, 0.2) 100%);
+    background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0.6) 1px, rgba(0, 0, 0, 0.2) 100%);
+    background-size: $backgroundsize;
+    -moz-background-size: $backgroundsize;
+    -webkit-background-size: $backgroundsize;
+}

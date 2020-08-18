@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Digital Workspace</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="${serverImage}images/cloudofficelogo.png">
+        <script type="text/javascript" src="${serverJs}js/jquery.js"></script>
+        <script src="${serverJs}js/splash.js " type="text/javascript"></script>
+        <style>
+            @font-face{
+                font-family: "FontAwesome";
+                font-weight: normal;
+                font-style : normal;
+                src : url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0");
+                src : url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"),
+                    url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2");
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="${serverCss}css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="${serverCss}css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="${serverCss}css/style.css" />
+        <script type="text/javascript" src="${serverJs}js/bootstrap.min.js"></script>
+        
+
+
+
+
+        <!-- <script src="js/app.js" type="text/javascript"></script>-->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js"></script>-->
+        <!--        <script type='text/javascript' 
+                src='http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js'></script>-->
+
+        <!--        <script src="${serverJs}server-agent.js" type="text/javascript"></script>-->
+        <!--FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,900" rel="stylesheet">
+    </head>
+    <body style="overflow: hidden;width: 100%;height: 100%; font-family: roboto, sans-serif">
+
+        <div class="splash-bg" id="splash" style="overflow: hidden;z-index: 99999;position:fixed;">
+          
+            <ul id="presentation" style="width: 100vw;height:85vh;
+                border-radius: 10px 0px;
+                margin:0 auto;opacity:1;vertical-align: top;">
+            <li class="loader-item" >
+                <div><img width="150px" height="150px" src="${serverImage}images/cloudofficelogo.png" style="margin-top: 50px;" /></div>
+                <div style="font-size: 3em;letter-spacing:.3em;padding-top: 26px;">GATEWAY TO CLOUD</div>
+                <span style="font-size: 1.5em;letter-spacing: .1em;padding-top: 20px;display: block;color: lightgray;">Build your own Internet<br> for your country, company or community</span>
+            </li>
+                <li class="loader-item" >
+                    <div><img width="150px" height="150px" src="${serverImage}images/cloudofficelogo.png" style="margin-top: 50px;animation: wars 2s ease;" /></div>
+                    <div class="heading-cap">cockpit</div>
+                    <div class="heading" >Engine to build Intra-net</div>
+
+                    <div class="sub-heading" style="padding:10px;color:#555" >
+                        <b style="margin-bottom:10px;display:block;font-weight: normal">Twelve-Factor Microservice architecture over HTTP/2</b>
+                        <b style="margin-bottom:10px;display:block;font-weight: normal;color: lightgray;">FRONTEND & BACKEND single codebase, single build</b>
+                    </div>
+
+                </li>
+                <li class="loader-item">
+                    <div><img src="${serverImage}images/cloudofficelogo.png" /></div>
+                    <div class="heading">JAVA in Browser - Blazing fast</div>
+                    <div> 
+                        <div class="sub-heading" style="padding:10px;color:#555">
+                            <b style="margin-bottom:10px;display:block;font-weight: normal">FRONTEND REACTIVE JAVA FRAMEWORK</b>
+                            <b style="margin-bottom:10px;display:block;font-weight: normal;color: lightgray;">Java code works directly in browser through AOT compiling, no plug-in needed</b><br>
+                            Enjoy Java benefits over JS for large scale solutions with reactive framework<br>
+                        </div>
+                </li>
+                <li class="loader-item">
+                    <div><img src="${serverImage}images/cloudofficelogo.png" /></div>
+                    <div class="heading">Non-blocking Asynchronous Microservices & API Gateway on NETTY</div>
+                    <div> 
+                        <div class="sub-heading" style="padding:10px;color:#555">
+                            <b style="margin-bottom:10px;display:block;font-weight: normal">BACKEND JAVA FRAMEWORK</b>
+                            <b style="margin-bottom:10px;display:block;font-weight: normal;color: lightgray;">SSE/Websocket based realtime reactive communication</b><br>
+                        </div>
+                </li>
+                <li class="loader-item">
+                    <div><img src="${serverImage}images/cloudofficelogo.png" /></div>
+                    <div class="heading">Develop Android, iOS and Desktop native Apps</div>
+                    <div> 
+                        <div class="sub-heading" style="padding:10px;color:#555">
+                                <b style="margin-bottom:10px;display:block;font-weight: normal">MOBILE READY</b>
+                            <b style="color:gray">Write once - run everywhere</b><br>  can use any Java API</div>
+                    </div>
+                </li>
+
+            </ul> 
+            <div onclick="hideSplash()" class="loader-item-button fa fa-angle-double-down fa-3x"></div>
+            <div class="getstarted-button" onclick="hideSplash()">
+                <div class="h3">Get Started</div>
+            </div>
+        </div>
+                    <script type="text/javascript">
+                   console.log("DOM fully loaded and parsed");
+                   document.querySelector("ul#presentation > li:first-child").classList.add("activa");
+                   document.querySelector("ul#presentation > li:first-child").style.marginTop=0;
+                    </script>
+        <!--        <div>
+                    <div id="index-messagebar">
+                        <messagebar-component params="data:messagebar()"></messagebar-component>
+                    </div>
+                </div>-->
+        <!-- APP CONTAINER -->
+        <div style="overflow: hidden;width: 100vw;height: 100vh;" id="app-container">
+            <div style="overflow: hidden;width: 100vw;height: 100vh;"  data-bind="component: {name:view().name ,params: {name:view().model}}"></div>
+        </div>
+
+
+        <!--        <script>
+                    var vm = bck2brwsr();
+                    var cockpitBaseController = vm.loadClass('${mainclass}');
+                    cockpitBaseController.invoke('main');
+                </script>-->
+        <!-- end of initialization -->
+
+
+
+        <link rel="stylesheet" type="text/css" media="screen" href="${serverCss}css/dev.css " />
+        <link href="${server}css/perfect-scrollbar.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="${serverCss}css/custom.css " />
+        <link rel="stylesheet" type="text/css" media="screen" href="${serverCss}css/co-prod.css " />
+
+        <!--        <link rel="stylesheet" type="text/css" media="screen" href="css/uploadfile.css" />-->
+        <!--        <link href="${server}css/splash.css" rel="stylesheet" type="text/css"/>-->
+
+        
+        
+        <!-- Medium Text Editor start-->
+        <script src="${serverJs}js/medium-editor.js"></script>
+        <link rel="stylesheet" href="${serverCss}css/medium-editor.css">
+        <link rel="stylesheet" href="${serverCss}css/medium-editor-default-theme.css">
+        <!-- Medium Text Editor end-->
+        
+
+        <script src="${serverJs}js/moment.js" type="text/javascript"></script>
+        <script src="${serverJs}js/perfect-scrollbar.js" type="text/javascript"></script>
+        <script src="${serverJs}js/services.js " type="text/javascript"></script>
+
+        <script type="text/javascript" src="${serverJs}../controller/vm.js"></script>
+        <script src="${server}app.js " type="text/javascript"></script>
+        <script src="${server}properties.js" type="text/javascript"></script>
+<!--        <script src="${serverJs}js/EventSource.js" type="text/javascript"></script>-->
+        <script type="text/javascript">
+                // window.localStorage.clear();
+                if (null !== window.localStorage.getItem("splashseen")) {
+                    $("#splash").hide();
+                }
+
+//                if (!!window.EventSource) {
+//                    var source = new EventSource('/sse');
+//
+//                    source.addEventListener('message', function (e) {
+//                        console.log(e.data);
+//                    }, false);
+//                    source.addEventListener('connection', function (e) {
+//                        console.log(e);
+//                    }, false);
+//                    source.addEventListener('open', function (e) {
+//                        console.log(e);
+//                    }, false);
+//                    source.addEventListener('udpateCache', function (e) {
+//                        console.log(e);
+//                        if (navigator.serviceWorker) {
+//                            navigator.serviceWorker.controller.postMessage("updateCache");
+//                        }
+//                        ;
+//
+//                    }, false);
+//
+//                    source.addEventListener('error', function (e) {
+//                        console.log(e);
+//                        if (e.readyState == EventSource.CLOSED) {
+//                            // Connection was closed.
+//                        }
+//                    }, false);
+//                }
+        </script>
+        <!-- initialize bck2brwsr -->
+        <script type="text/javascript">
+            window.localStorage.setItem("company", JSON.stringify(${companyJSON}));
+                    company = ${company};
+                    site = ${site};
+                    layout = ${layout};
+                    path = ${path};
+                    componentClassPath = ${componentClassPath};
+        </script>
+        
+    </body>
+</html>

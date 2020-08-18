@@ -1,0 +1,49 @@
+<div data-bind="attr:{'id': instance}">
+    <div class="toggle-menu">
+        <div class="toggle-menu-btn" data-bind="click: toggle">
+            <i class="fa fa-bars"></i>
+        </div>
+
+        <!-- ko if: designerMode -->
+        <div class="config" data-bind="with: configuration">
+
+            <div class="conf-header"> 
+                <span class="conf-title">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    <b>Configuration Panel</b>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.closeConfigurationPanel" class="conf-action conf-close" title="Close">
+                    <i class="fa fa-close"></i>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.save" class="conf-action conf-save" title="Save">
+                    <i class="fa fa-floppy-o"></i>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.resetConfiguration" class="conf-action conf-reset" title="Reset">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </span>
+            </div>
+            <div class="conf-body">
+                <div data-bind="with: talkToComponentDefinition">
+                    <div class="body-row">
+                        <div class="conf-title">Talk to Component :</div>
+                    </div>
+
+                    <div class="body-row">
+                        <div class="conf-title">Instance ID : </div>
+                        <div class="conf-comp">
+                            <input data-bind="textInput: instanceId" type="text" placeholder="instance id">
+                        </div>
+                    </div>
+
+                    <div class="body-row">
+                        <div class="conf-title">Component Name : </div>
+                        <div class="conf-comp">
+                            <input data-bind="textInput: component" type="text" placeholder="component">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

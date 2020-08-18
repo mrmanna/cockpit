@@ -1,0 +1,22 @@
+{
+    "instance": "actionmenuinstance1",
+    "configuration": {
+        "viewType": "dropdown",
+        "tagItemComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.tagitem.TagItemComponent",
+            "instanceId": "tagiteminstance1"
+        },
+        "shareItemComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.shareitem.ShareItemComponent",
+            "instanceId": "shareiteminstance1"
+        },
+        "relatedItemComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.relateditem.RelatedItemComponent",
+            "instanceId": "relatediteminstance1"
+        },
+        "searchBoxComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.searchbox.SearchBoxComponent",
+            "instanceId": "searchboxinstance1"
+        }
+    }
+}

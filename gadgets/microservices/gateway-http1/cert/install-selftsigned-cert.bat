@@ -1,0 +1,2 @@
+keytool  -genkey -noprompt -trustcacerts -keyalg RSA -alias $1 -dname  $1 -keypass 123456 -keystore store.jks -storepass 123456 -dname CN=$1
+keytool -export -keystore store.jks -storepass 123456  -alias $1 -file $1.cert 

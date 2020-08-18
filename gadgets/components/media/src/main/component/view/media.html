@@ -1,0 +1,115 @@
+<div data-bind="attr:{'id': instance}">
+    <div class="media-component">
+
+        <!-- ko if: displaymediaitem -->
+        <div class="media-object" data-bind="with: mediaitem">
+            <img data-bind="attr:{'src': itemUrl}" alt="image"/>
+        </div>
+        <!-- /ko -->
+
+        <!-- ko if: designerMode -->
+        <div class="config" data-bind="with: configuration">
+            <div class="conf-header"> 
+                <span class="conf-title">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    <b>Configuration Panel</b>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.closeConfigurationPanel" class="conf-action conf-close" title="Close">
+                    <i class="fa fa-close"></i>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.save" class="conf-action conf-save" title="Save">
+                    <i class="fa fa-floppy-o"></i>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.resetConfiguration" class="conf-action conf-reset" title="Reset">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </span>
+            </div>
+
+
+
+            <div class="conf-body">
+                <div class="row body-row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="conf-title">Media Type :</div>
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9" data-bind="foreach: filters">
+                        <div class="conf-item">
+                            <div class="conf-area cus-checkbox-btn">
+                                <input type="checkbox" data-bind="checked: isSelected">
+                            </div>
+                            <div class="conf-area cus-checkbox-txt">
+                                <span data-bind="text: filterName"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row body-row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="conf-title">Display Media :</div>
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                        <div class="conf-item">
+                            <div class="conf-area cus-checkbox-btn">
+                                <input type="checkbox" data-bind="checked: displaymediaitem">
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                
+                
+                
+                <div class="item-bar">
+                    <div class="headerDiv">
+                        <div class="inp-select">
+                            <div class="inputBox clearfix">
+                                <input class="autoCompleteInput" data-bind="textInput: autocompleteinputbox" placeholder="type here to search media ..." type="text">
+                            </div>
+                            <div data-bind="if: showItemList">
+                                <div class="autocompleteDrop">
+                                    <div class="itemListLoader">
+                                        <mini-loader-component params="data: $data.itemListLoader()"></mini-loader-component>
+                                    </div>
+                                    <div class="dropdownlist">
+                                        <ul data-bind="foreach: itemList">
+                                            <li class="clearfix" data-bind="click: $parent.selectItem">
+                                                <span>
+                                                    <i data-bind="attr: {'class': itemTypeIconCss}"></i>
+                                                </span>
+                                                <b data-bind="text: itemName"></b>
+                                                <em><i class="fa fa-plus" aria-hidden="true"></i></em>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bodyContentDiv">
+                        <div class="bodyHeader">
+                            <h3>Selected Media</h3>
+                        </div>
+                        <ul class="item-list" data-bind="foreach: selectedItems">
+                            <li class="clearfix">
+                                <span class="item-icon">
+                                    <i data-bind="attr: {'class': itemTypeIconCss}"></i>
+                                </span>
+                                <div class="item-name">
+                                    <b data-bind="text: itemName"></b>
+                                </div>
+                                <em>
+                                    <i data-bind="click: $parent.removeItemFromSelectedList" class="fa fa-trash" aria-hidden="true"></i>
+                                </em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

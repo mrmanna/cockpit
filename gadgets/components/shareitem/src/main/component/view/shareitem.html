@@ -1,0 +1,137 @@
+<div data-bind="attr:{'id': instance}">
+    <div class="share-item">
+        <!-- ko if: visible -->
+        <div class="item-bar">
+            <div class="headerDiv">
+                <div class="item-header clearfix">
+                    <div class="itemNameDiv">
+                        <div class="itemDiv">
+                            <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                            <h3>Share with </h3>
+                            <div class="item-badge" data-bind="text: selectedItemName"></div>
+                        </div>
+                        <div class="close-item">
+                            <i class="fa fa-times" aria-hidden="true" data-bind="click: toogleShareItem"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-select">
+                    <div class="inputBox clearfix">
+                        <input class="autoCompleteInput" data-bind="textInput: inputBoxText" placeholder="+ enter person name ..." type="text">
+                    </div>
+                    <div data-bind="if: showItemList">
+                        <div class="autocompleteDrop">
+                            <div class="itemListLoader">
+                                <mini-loader-component params="data: $data.itemListLoader()"></mini-loader-component>
+                            </div>
+                            <div class="dropdownlist">
+                                <ul data-bind="foreach: itemList">
+                                    <li class="clearfix" data-bind="click: $parent.selectItem">
+                                        <span>
+                                            <i class="fa fa-user-circle-o"></i>
+                                        </span>
+                                        <b data-bind="text: itemName"></b>
+                                        <em><i class="fa fa-plus" aria-hidden="true"></i></em>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bodyContentDiv">
+                <div class="bodyHeader">
+                    <h3>Shared Items</h3>
+                    <div class="loader">
+                        <mini-loader-component params="data: $data.loader()"></mini-loader-component>
+                    </div>
+                </div>
+                <ul class="item-list" data-bind="foreach: shareItemList">
+                    <li class="clearfix">
+                        <span class="item-icon">
+                            <i class="fa fa-user-circle-o"></i>
+                        </span>
+                        <div class="item-name">
+                            <b data-bind="text: itemName"></b>
+                        </div>
+                        <div class="type-name">
+                            <b class="txt" data-bind="text: selectedPermission, style: {color: selectedPermissionColor}"></b>
+                            <b class="icon" data-bind="if: isRemovable">
+                                <i class="fa fa-angle-down" aria-hidden="true" data-bind="click: $parent.showPermissionMenu"></i>
+                            </b>
+                        </div>
+                        <em data-bind="if: isRemovable">
+                            <i data-bind="click: $parent.removeShareItemFromList" class="fa fa-trash" aria-hidden="true"></i>
+                        </em>
+                    </li>
+                    <!-- ko if: showPermissionMenu -->
+                    <div class="drop-menu">
+                        <div class="list">
+                            <div class="close-drop" data-bind="click: $parent.closePermissionMenu">
+                                <i class="fa fa-close"></i>
+                            </div>
+                        </div>
+                        <ul class="list">
+                            <!-- ko if: ($parent.maximumPermission()=='Admin' || $parent.maximumPermission()=='Owner') -->
+                            <li class="clearfix" onclick="ShareItemManager.changePermission('Admin')">
+                                <span class="txt">Admin</span>
+                            </li>
+                            <!-- /ko-->
+                            <!-- ko if: ($parent.maximumPermission()=='Write' || $parent.maximumPermission()=='Admin' || $parent.maximumPermission()=='Owner') -->
+                            <li class="clearfix" onclick="ShareItemManager.changePermission('Write')">
+                                <span class="txt">Write</span>
+                            </li>
+                            <!-- /ko-->
+                            <li class="clearfix" onclick="ShareItemManager.changePermission('Read')">
+                                <span class="txt">Read</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /ko-->
+                </ul>
+            </div>
+        </div>
+        <!-- /ko -->
+
+        <!-- ko if: designerMode -->
+        <div class="config" data-bind="with: configuration">
+            <div class="conf-header"> 
+                <span class="conf-title">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    <b>Configuration Panel</b>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.closeConfigurationPanel" class="conf-action conf-close" title="Close">
+                    <i class="fa fa-close"></i>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.save" class="conf-action conf-save" title="Save">
+                    <i class="fa fa-floppy-o"></i>
+                </span>
+                <span data-bind="clickBubble: false, click: $parent.resetConfiguration" class="conf-action conf-reset" title="Reset">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </span>
+            </div>
+            <div class="conf-body">
+                <div data-bind="with: searchBoxComponentDefinition">
+                    <div class="body-row">
+                        <div class="conf-title">Talk to Search Box :</div>
+                    </div>
+
+                    <div class="body-row">
+                        <div class="conf-title">Instance ID : </div>
+                        <div class="conf-comp">
+                            <input data-bind="textInput: instanceId" type="text" placeholder="instance id">
+                        </div>
+                    </div>
+
+                    <div class="body-row">
+                        <div class="conf-title">Component Name : </div>
+                        <div class="conf-comp">
+                            <input data-bind="textInput: component" type="text" placeholder="component">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

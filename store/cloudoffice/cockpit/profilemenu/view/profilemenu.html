@@ -1,0 +1,41 @@
+<div data-bind="attr:{'id': instance}">
+    <div class="profile-menu">
+        <div class="title clearfix" data-bind="click:toggle">
+            <img data-bind="attr:{src:potrait}">
+        </div> 
+        <div class="drop" data-bind="visible:showdrop" style="z-index: 9999">
+            <div class="profile">
+                <div class="img-section">
+                    <img data-bind="attr:{src:potrait}">
+                </div>
+                <div class="info-section">
+                    <p class="info-profile">
+                        <span class="name" data-bind="html:inputField, click: showMyProfile"></span>
+                        <span class="email" data-bind="html:email"></span>
+                    </p>
+                </div>
+            </div>
+            <ul class="list">
+                <li data-bind="click:syncCache" class="clearfix">
+                    <span class="icon">
+                        <i class="fa fa-retweet fa-2x" aria-hidden="true"></i>
+                    </span>
+                    <span class="txt">Sync Cache<em class="warning" data-bind="visible:newVersionAvailable">Update Available</em></span>
+                </li>
+                <li data-bind="click:syncOfflineData" class="clearfix">
+                    <span class="icon">
+                        <i class="fa fa-adjust fa-2x" aria-hidden="true"></i>
+                    </span>
+                    <span class="txt">Sync Offline Data<em class="warning" data-bind="visible:newVersionAvailable">Update Available</em></span>
+                </li>
+                
+                <li data-bind="click:logout" class="clearfix">
+                    <span class="icon">
+                        <i class="fa fa-power-off fa-2x" aria-hidden="true"></i>
+                    </span>
+                    <span class="txt">Sign out</span>
+                </li>
+            </ul>            
+        </div>
+    </div>
+</div>

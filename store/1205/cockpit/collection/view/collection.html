@@ -1,0 +1,350 @@
+<div data-bind="attr:{'id':instance}">
+
+    <div class="collection-component">
+        <div data-bind="attr: {class: collectionClass}">
+            
+            
+            <div class="create-new-item">
+                <div class="icon" data-bind="click: createNewItem">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </div>
+            </div>
+            
+            <ul class="create-new-col">
+                <li data-bind="clickBubble: false, click: openActionHoverWithCollectionCreateMode">
+                    <div class="icon">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    </div>
+                    <div class="item-name">New collection</div>
+                </li>
+            </ul>
+            
+            <ul class="collection-toolbar-col" data-bind="foreach: collectionItemList">
+                <li data-bind="css:{'active': isActive}">
+                    <div class="short-name" data-bind="text: itemShortName"></div>
+                    <div class="icon"><i class="fa fa-circle-o-notch" aria-hidden="true"></i></div>
+                    <div class="item-name" data-bind="text: itemName, clickBubble: false, click: $parent.loadParentCollectionItemsToList"></div>
+                    <div class="angle-icon" data-bind="ifnot: openCollectionBox">
+                        <i data-bind="click: $parent.toogleCollectionBox" class="fa fa-angle-right" aria-hidden="true"></i>
+                    </div>
+                    <div class="angle-icon" data-bind="if: openCollectionBox">
+                        <i data-bind="click: $parent.toogleCollectionBox" class="fa fa-angle-down" aria-hidden="true"></i>
+                    </div>
+
+                    <div data-bind="if: openCollectionBox">
+                        <div data-bind="with: $parent.collectionListItemView">
+                            <div class="inp-select">
+                                <div class="inputBox clearfix">
+                                    <input class="autoCompleteInput" data-bind="textInput: collectionInputBoxText" placeholder="+ add new ..." type="text">
+                                </div>
+                                <div class="loader">
+                                    <mini-loader-component params="data: $data.loader()"></mini-loader-component>
+                                </div>
+                                <div data-bind="if: showCollectionList" class="autocompleteDropDown">
+                                    <div class="autocompleteDrop">
+                                        <div class="dropdownlist">
+                                            <ul data-bind="foreach: itemList">
+                                                <li class="clearfix" data-bind="click: $parent.relateWithParentCollection">
+                                                    <span>
+                                                        <i data-bind="css: itemTypeIconCss"></i>
+                                                    </span>
+                                                    <b data-bind="text: itemName"></b>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="existing-list">
+                                <ul class="item-list" data-bind="foreach: existingItemList">
+                                    <li class="clearfix" data-bind="css:{'active': isActive}, click: $parent.loadItemsToList">
+                                        <span class="item-icon">
+                                            <i data-bind="css: itemTypeIconCss"></i>
+                                        </span>
+                                        <div class="item-name">
+                                            <b data-bind="text: itemName"></b>
+                                        </div>
+                                        <em>
+                                            <i data-bind="clickBubble:false, click: $parent.breakupRelationWithParentCollection" class="fa fa-trash" aria-hidden="true"></i>
+                                        </em>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="col-hover-action" data-bind="fadedIf: collectionhoveraction">
+        <div class="action-body">
+            <div class="close-drop" data-bind="click: closeActionHover">
+                <i class="fa fa-close"></i>
+            </div>
+            <div class="body-content">
+
+                <!-- ko if: hoverModeCollectionCreate -->
+                <div class="content-body">
+                    <div class="content-body-title">
+                        <b>Create new collection</b>
+                    </div>
+                    <div class="new-col-create">
+                        <input data-bind="textInput: newCollectionName" type="text" placeholder="+ enter collection name">
+                        <div data-bind="clickBubble: false, click: createNewCollection" class="col-create-btn" title="Create">
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <!--/ko-->
+
+                <!-- ko ifnot: hoverModeCollectionCreate -->
+                <div class="content-body">
+                    
+                    <!-- ko ifnot: collectioncreatemode -->
+                        <div class="content-body-title">Add to collection</div>
+                        <div class="search-col">
+                            <input data-bind="textInput: collectionInputBoxText" type="text" placeholder="search collection . . .">
+                            <div class="search-loader">
+                                <mini-loader-component params="data: $data.loader()"></mini-loader-component>
+                            </div>
+                        </div>
+                        <!-- ko if: (collectionList().length>0) -->
+                        <ul data-bind="foreach: collectionList">
+                            <li data-bind="clickBubble: false, click: $parent.addItemsToCollection">
+                                <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
+                                <span data-bind="text: itemName"></span>
+                            </li>
+                        </ul>
+                        <!-- /ko -->
+                    <!-- /ko -->
+                    <div class="checkbox-content">
+                        <label class="chk-container">
+                            <input type="checkbox" data-bind="stopBubble: true, checked: collectioncreatemode">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="checkbox-content-txt">
+                            <b>Create as new collection</b>
+                        </div>
+                    </div>
+
+                    <!-- ko if: collectioncreatemode -->
+                    <div class="new-col-create">
+                        <input data-bind="textInput: newCollectionName" type="text" placeholder="+ enter collection name">
+                        <div data-bind="clickBubble: false, click: createCollectionWithSubCollection" class="col-create-btn" title="Create">
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ko if: (designerMode) -->
+    <div class="config" data-bind="with: configuration">
+
+        <div class="conf-header"> 
+            <span class="conf-title">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+                <b>Configuration Panel</b>
+            </span>
+            <span data-bind="clickBubble: false, click: $parent.closeConfigurationPanel" class="conf-action conf-close" title="Close">
+                <i class="fa fa-close"></i>
+            </span>
+            <span data-bind="clickBubble: false, click: $parent.save" class="conf-action conf-save" title="Save">
+                <i class="fa fa-floppy-o"></i>
+            </span>
+            <span data-bind="clickBubble: false, click: $parent.resetConfiguration" class="conf-action conf-reset" title="Reset">
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+            </span>
+        </div>
+
+        <div class="conf-body">
+            <div class="row body-row">
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <div class="conf-title">Collection list display : </div>
+                </div>
+                <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                    <div class="conf-item">
+                        <div class="conf-area cus-radio-btn">
+                            <input type="radio" name="type" value="ALL" data-bind="checked: collectionListType">
+                        </div>
+                        <div class="conf-area cus-radio-txt">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                            <span>All Type</span>
+                        </div>
+                    </div>
+                    <div class="conf-item">
+                        <div class="conf-area cus-radio-btn">
+                            <input type="radio" name="type" value="COLLECTION" data-bind="checked: collectionListType">
+                        </div>
+                        <div class="conf-area cus-radio-txt">
+                            <i class="fa fa-th-large" aria-hidden="true"></i>
+                            <span>Sub-Collection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row body-row">
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <div class="conf-title">Layout row id : </div>
+                </div>
+                <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                    <div class="conf-item">
+                        <div class="conf-area">
+                            <input type="text" name="type" value="ALL" data-bind="textInput: layoutRowId">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row body-row">
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <div class="conf-title">Talk to list :</div>
+                </div>
+                <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                    <div data-bind="with: listComponentDefinition">
+                        <div class="row row-conf-row">
+                            <div class="row col-conf-subrow">
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <div class="sub-row-title">Instance ID : </div>
+                                </div>
+                                <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                    <div class="sub-row-input">
+                                        <input data-bind="textInput: instanceId" type="text" placeholder="instance id">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row col-conf-subrow">
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <div class="sub-row-title">Component Name : </div>
+                                </div>
+                                <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                    <div class="sub-row-input">
+                                        <input data-bind="textInput: component" type="text" placeholder="component">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row body-row">
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <div class="conf-title">Talk to Related :</div>
+                </div>
+                <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                    <div data-bind="with: relatedItemComponentDefinition">
+                        <div class="row row-conf-row">
+                            <div class="row col-conf-subrow">
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <div class="sub-row-title">Instance ID : </div>
+                                </div>
+                                <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                    <div class="sub-row-input">
+                                        <input data-bind="textInput: instanceId" type="text" placeholder="instance id">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row col-conf-subrow">
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <div class="sub-row-title">Component Name : </div>
+                                </div>
+                                <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                    <div class="sub-row-input">
+                                        <input data-bind="textInput: component" type="text" placeholder="component">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row body-row">
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <div class="conf-title">Talk to Create New Item :</div>
+                </div>
+                <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                    <div data-bind="with: newItemComponentDefinition">
+                        <div class="row row-conf-row">
+                            <div class="row col-conf-subrow">
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <div class="sub-row-title">Instance ID : </div>
+                                </div>
+                                <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                    <div class="sub-row-input">
+                                        <input data-bind="textInput: instanceId" type="text" placeholder="instance id">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row col-conf-subrow">
+                                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                    <div class="sub-row-title">Component Name : </div>
+                                </div>
+                                <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                    <div class="sub-row-input">
+                                        <input data-bind="textInput: component" type="text" placeholder="component">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-bar">
+                <div class="headerDiv">
+                    <div class="inp-select">
+                        <div class="inputBox clearfix">
+                            <input class="autoCompleteInput" data-bind="textInput: inputBoxText" placeholder="choose collection to show for this component ..." type="text">
+                        </div>
+                        <div data-bind="if: showItemList">
+                            <div class="autocompleteDrop">
+                                <div class="itemListLoader">
+                                    <mini-loader-component params="data: $data.itemListLoader()"></mini-loader-component>
+                                </div>
+                                <div class="dropdownlist">
+                                    <ul data-bind="foreach: itemList">
+                                        <li class="clearfix" data-bind="click: $parent.selectItem">
+                                            <span>
+                                                <i class="fa fa-circle-o-notch"></i>
+                                            </span>
+                                            <b data-bind="text: itemName"></b>
+                                            <em><i class="fa fa-plus" aria-hidden="true"></i></em>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bodyContentDiv">
+                    <div class="bodyHeader">
+                        <h3>Collection Items</h3>
+                        <div class="loader">
+                            <mini-loader-component params="data: $data.loader()"></mini-loader-component>
+                        </div>
+                    </div>
+                    <ul class="item-list" data-bind="foreach: collectionItemList">
+                        <li class="clearfix">
+                            <span class="item-icon">
+                                <i class="fa fa-circle-o-notch"></i>
+                            </span>
+                            <div class="item-name">
+                                <b data-bind="text: itemName"></b>
+                            </div>
+                            <em>
+                                <i data-bind="click: $parent.removeCollectionItemFromList" class="fa fa-trash" aria-hidden="true"></i>
+                            </em>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>

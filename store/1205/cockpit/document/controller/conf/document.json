@@ -1,0 +1,19 @@
+{
+    "instance": "documentinstance1",
+    "configuration": {
+        "componentWidth":"30",
+        "layoutColumnId":"row2column2",
+        "listComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.genericlist.GenericListComponent",
+            "instanceId": "genericlistinstance1"
+        },
+        "actionMenuComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.actionmenu.ActionMenuComponent",
+            "instanceId": "actionmenuinstance1"
+        },
+        "searchBoxComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.searchbox.SearchBoxComponent",
+            "instanceId": "searchboxinstance1"
+        }
+    }
+}

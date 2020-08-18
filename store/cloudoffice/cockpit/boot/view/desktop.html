@@ -1,0 +1,167 @@
+<html><head> 
+  <title>Digital Workspace</title> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no"> 
+  <meta name="description" content=""> 
+  <meta name="author" content=""> 
+    <script src="properties.js" type="text/javascript"></script> 
+  <script type="text/javascript" src="https://cockpit.cloudoffice.io/content/data/js?input=cloudoffice/cockpit/boot/view/js/jquery.js"></script> 
+  <script src="https://cockpit.cloudoffice.io/content/data/js?input=cloudoffice/cockpit/boot/view/js/splash.js " type="text/javascript"></script> 
+  <style>
+            @font-face{
+                font-family: "FontAwesome";
+                font-weight: normal;
+                font-style : normal;
+                src : url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0");
+                src : url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"),
+                    url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2");
+            }
+        </style> 
+  <link rel="stylesheet" type="text/css" href="https://cockpit.cloudoffice.io/content/data/css?input=cloudoffice/cockpit/boot/view/css/font-awesome.min.css"> 
+  <link rel="stylesheet" type="text/css" media="screen" href="https://cockpit.cloudoffice.io/content/data/css?input=cloudoffice/cockpit/boot/view/css/bootstrap.min.css"> 
+  <link rel="stylesheet" type="text/css" media="screen" href="https://cockpit.cloudoffice.io/content/data/css?input=cloudoffice/cockpit/boot/view/css/style.css"> 
+  <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+  <!-- <script src="js/app.js" type="text/javascript"></script>--> 
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js"></script>--> 
+  <!--        <script type='text/javascript' 
+                src='http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js'></script>--> 
+  <!--        <script src="https://cockpit.cloudoffice.io/content/data/js?input=cloudoffice/cockpit/boot/view/server-agent.js" type="text/javascript"></script>--> 
+  <!--FONTS --> 
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,900" rel="stylesheet"> 
+ <link rel="stylesheet" type="text/css" href="https://cockpit.cloudoffice.io/content/css?input=cloudoffice/cockpit/layout/layoutdesigner"><link rel="stylesheet" type="text/css" href="https://cockpit.cloudoffice.io/content/css?input=1205/cockpit/layout/signin/layout33/view/style/layout"><link rel="stylesheet" type="text/css" href="https://cockpit.cloudoffice.io/content/css?input=1205/cockpit/signin/signin/instance1/view/style/signin"></head> 
+ <body style="overflow: hidden;width: 100%;height: 100%; font-family: roboto, sans-serif"> 
+  <div class="splash-bg" id="splash" style="overflow: hidden;z-index: 99999;position:fixed;"> 
+   <ul id="presentation" style="width: 100vw;height:85vh;
+                border-radius: 10px 0px;
+                margin:0 auto;opacity:1;vertical-align: top;"> 
+    <li class="loader-item activa" style="margin-top: 0px;"> 
+     <div>
+      <img width="150px" height="150px" src="https://cockpit.cloudoffice.io/content/data/image?input=cloudoffice/cockpit/boot/view/images/cloudofficelogo.png" style="margin-top: 50px;">
+     </div> 
+     <div style="font-size: 3em;letter-spacing:.3em;padding-top: 26px;">
+      GATEWAY TO CLOUD
+     </div> <span style="font-size: 1.5em;letter-spacing: .1em;padding-top: 20px;display: block;color: lightgray;">Build your own Internet<br> for your country, company or community</span> </li> 
+    <li class="loader-item"> 
+     <div>
+      <img width="150px" height="150px" src="https://cockpit.cloudoffice.io/content/data/image?input=cloudoffice/cockpit/boot/view/images/cloudofficelogo.png" style="margin-top: 50px;animation: wars 2s ease;">
+     </div> 
+     <div class="heading-cap">
+      cockpit
+     </div> 
+     <div class="heading">
+      Engine to build Intra-net
+     </div> 
+     <div class="sub-heading" style="padding:10px;color:#555"> 
+      <b style="margin-bottom:10px;display:block;font-weight: normal">Twelve-Factor Microservice architecture over HTTP/2</b> 
+      <b style="margin-bottom:10px;display:block;font-weight: normal;color: lightgray;">FRONTEND &amp; BACKEND single codebase, single build</b> 
+     </div> </li> 
+    <li class="loader-item"> 
+     <div>
+      <img src="https://cockpit.cloudoffice.io/content/data/image?input=cloudoffice/cockpit/boot/view/images/cloudofficelogo.png">
+     </div> 
+     <div class="heading">
+      JAVA in Browser - Blazing fast
+     </div> 
+     <div> 
+      <div class="sub-heading" style="padding:10px;color:#555"> 
+       <b style="margin-bottom:10px;display:block;font-weight: normal">FRONTEND REACTIVE JAVA FRAMEWORK</b> 
+       <b style="margin-bottom:10px;display:block;font-weight: normal;color: lightgray;">Java code works directly in browser through AOT compiling, no plug-in needed</b>
+       <br> Enjoy Java benefits over JS for large scale solutions with reactive framework
+       <br> 
+      </div> 
+     </div></li> 
+    <li class="loader-item"> 
+     <div>
+      <img src="https://cockpit.cloudoffice.io/content/data/image?input=cloudoffice/cockpit/boot/view/images/cloudofficelogo.png">
+     </div> 
+     <div class="heading">
+      Non-blocking Asynchronous Microservices &amp; API Gateway on NETTY
+     </div> 
+     <div> 
+      <div class="sub-heading" style="padding:10px;color:#555"> 
+       <b style="margin-bottom:10px;display:block;font-weight: normal">BACKEND JAVA FRAMEWORK</b> 
+       <b style="margin-bottom:10px;display:block;font-weight: normal;color: lightgray;">SSE/Websocket based realtime reactive communication</b>
+       <br> 
+      </div> 
+     </div></li> 
+    <li class="loader-item"> 
+     <div>
+      <img src="https://cockpit.cloudoffice.io/content/data/image?input=cloudoffice/cockpit/boot/view/images/cloudofficelogo.png">
+     </div> 
+     <div class="heading">
+      Develop Android, iOS and Desktop native Apps
+     </div> 
+     <div> 
+      <div class="sub-heading" style="padding:10px;color:#555"> 
+       <b style="margin-bottom:10px;display:block;font-weight: normal">MOBILE READY</b> 
+       <b style="color:gray">Write once - run everywhere</b>
+       <br> can use any Java API
+      </div> 
+     </div> </li> 
+   </ul> 
+   <div onclick="hideSplash()" class="loader-item-button fa fa-angle-double-down fa-3x"></div> 
+   <div class="getstarted-button" onclick="hideSplash()"> 
+    <div class="h3">
+     Get Started
+    </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+                   console.log("DOM fully loaded and parsed");
+                   document.querySelector("ul#presentation > li:first-child").classList.add("activa");
+                   document.querySelector("ul#presentation > li:first-child").style.marginTop=0;
+                    </script> 
+  <!--        <div>
+                    <div id="index-messagebar">
+                        <messagebar-component params="data:messagebar()"></messagebar-component>
+                    </div>
+                </div>--> 
+  <!-- APP CONTAINER --> 
+  <div style="overflow: hidden;width: 100vw;height: 100vh;" id="app-container"> 
+   <div style="overflow: hidden;width: 100vw;height: 100vh;" data-bind="component: {name:view().name ,params: {name:view().model}}">
+       
+   </div> 
+  </div> 
+  <!--        <script>
+                    var vm = bck2brwsr();
+                    var cockpitBaseController = vm.loadClass('io.cloudoffice.platform.cockpit.web.BrowserMain');
+                    cockpitBaseController.invoke('main');
+                </script>--> 
+  <!-- end of initialization --> 
+  <link rel="stylesheet" type="text/css" media="screen" href="https://cockpit.cloudoffice.io/content/data/css?input=cloudoffice/cockpit/boot/view/css/dev.css "> 
+  <link href="https://cockpit.cloudoffice.io/content/data?input=cloudoffice/cockpit/boot/view/css/perfect-scrollbar.css" rel="stylesheet" type="text/css"> 
+  <link rel="stylesheet" type="text/css" media="screen" href="https://cockpit.cloudoffice.io/content/data/css?input=cloudoffice/cockpit/boot/view/css/custom.css "> 
+  <link rel="stylesheet" type="text/css" media="screen" href="https://cockpit.cloudoffice.io/content/data/css?input=cloudoffice/cockpit/boot/view/css/co-prod.css "> 
+  <!--        <link rel="stylesheet" type="text/css" media="screen" href="css/uploadfile.css" />--> 
+  <!--        <link href="https://cockpit.cloudoffice.io/content/data?input=cloudoffice/cockpit/boot/view/css/splash.css" rel="stylesheet" type="text/css"/>--> 
+  <!-- Medium Text Editor start--> 
+  <script src="js/medium-editor.js"></script> 
+  <link rel="stylesheet" href="https://cockpit.cloudoffice.io/content/data/css?input=cloudoffice/cockpit/boot/view/css/medium-editor.css"> 
+  <link rel="stylesheet" href="https://cockpit.cloudoffice.io/content/data/css?input=cloudoffice/cockpit/boot/view/css/medium-editor-default-theme.css"> 
+  <!-- Medium Text Editor end--> 
+  <script src="js/moment.js" type="text/javascript"></script> 
+  <script src="js/perfect-scrollbar.js" type="text/javascript"></script> 
+  <script src="js/services.js " type="text/javascript"></script> 
+  <script type="text/javascript">
+                // window.localStorage.clear();
+                if (null !== window.localStorage.getItem("splashseen")) {
+                    $("#splash").hide();
+                }
+
+               
+        </script> 
+  <!-- initialize bck2brwsr --> 
+  <script type="text/javascript">
+            window.localStorage.clear();
+            window.localStorage.setItem("company", JSON.stringify('{"itemId":"1205","itemName":"Demo Company 01","itemType":"GROUP"}'));
+                    company = "1205";
+                    site = "cockpit";
+                    layout = "layout33";
+                    path = "/signin";
+                    componentClassPath = ["../../signin/controller/signin.js","../../togglemenu/controller/togglemenu.js","../../media/controller/media.js","../../text/controller/text.js","../../adminmenu/controller/adminmenu.js","../../collection/controller/collection.js","../../searchbox/controller/searchbox.js","../../profilemenu/controller/profilemenu.js","../../genericlist/controller/genericlist.js","../../articlelist/controller/articlelist.js","../../person/controller/person.js","../../document/controller/document.js","../../actionmenu/controller/actionmenu.js","../../relateditem/controller/relateditem.js","../../shareitem/controller/shareitem.js","../../tagitem/controller/tagitem.js","../../boot/controller/lib/html.js","../../boot/controller/lib/html.json.js","../../boot/controller/lib/html.boot.js","../../boot/controller/lib/emul-0.22-rt.js","../../boot/controller/lib/json-20180813.js","../../boot/controller/lib/ko4j.js","../../js/controller/js.js","../../ccore/controller/ccore.js","../../boot/controller/boot.js","../../layout/controller/layout.js"];
+        </script>  
+
+ 
+</body></html>

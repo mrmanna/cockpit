@@ -1,0 +1,12 @@
+{
+    "instance": "togglemenumenuinstance1",
+    "designerMode": true,
+    "configuration": {
+        "talkToComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.collection.CollectionComponent",
+            "instanceId": "collectioninstance1"
+        },
+        "componentWidthMinimum": "5",
+        "componentWidthMaximum": "20"
+    }
+}

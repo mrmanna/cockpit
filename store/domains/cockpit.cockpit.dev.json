@@ -1,0 +1,45 @@
+{
+    "workspace": {
+        "itemId": "1205",
+        "itemName": "Demo Company 01",
+        "itemType": "GROUP"
+    },
+    "site": {
+        "itemId": "cockpit",
+        "itemName": "COCKPIT",
+        "itemType": "SITE",
+        "authType": "private",
+        "subscribed": ["signin","togglemenu", "media", "text", "adminmenu", "collection", "searchbox", "profilemenu",
+             "genericlist", "articlelist", "person", "document", "actionmenu", "relateditem", "shareitem", "tagitem"]
+    },
+    "paths": [{
+        "path": "/messenger",
+        "layout": "layout34",
+        "isHome": false,
+        "isSecure": true
+    }, {
+        "path": "/file",
+        "layout": "layout33",
+        "mlayout": "mlayout33",
+        "isHome": true,
+        "isSecure": true
+    }, {
+        "path": "/person",
+        "layout": "layout33",
+        "mlayout": "mlayout33",
+        "isHome": false,
+        "isSecure": true
+    }, {
+        "path": "/signin",
+        "layout": "layout33",
+        "mlayout": "mlayout33",
+        "isHome": false,
+        "isSecure": false
+    }, {
+        "path": "/article",
+        "layout": "layout33",
+        "mlayout": "mlayout33",
+        "isHome": false,
+        "isSecure": true
+    }]
+}

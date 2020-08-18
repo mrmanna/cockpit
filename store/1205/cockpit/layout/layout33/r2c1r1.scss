@@ -1,0 +1,9 @@
+@import 'r2c1r1-variables.scss';
+@import 'r2c1r1c1.scss';
+@import 'r2c1r1c2.scss';
+##{$r2c1r1id}{
+position:$r2c1r1position;
+height:$r2c1r1height;
+width:$r2c1r1width;
+float:$r2c1r1float;
+}

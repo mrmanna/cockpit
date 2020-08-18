@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Digital Workspace</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="${server}images/cloudofficelogo.png">
+        <script src="${server}properties.js" type="text/javascript"></script>
+        <style>
+            @font-face{
+                font-family: "FontAwesome";
+                font-weight: normal;
+                font-style : normal;
+       src : url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0");
+       src : url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"),
+             url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+             url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+             url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
+             url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="${server}css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="${server}css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="${server}css/style.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="${server}css/dev.css" />
+        <link rel="stylesheet" type="text/css" href="${server}css/datepicker.css" />
+        <link href="${server}css/perfect-scrollbar.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="${server}css/custom.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="${server}css/co-prod.css" />
+        <link href="${server}css/splash.css" rel="stylesheet" type="text/css"/>
+        <!--        <link rel="stylesheet" type="text/css" media="screen" href="css/uploadfile.css" />-->
+        <link href="${server}css/splash.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="${serverJs}js/jquery.js"></script>
+        <script type="text/javascript" src="${serverJs}js/bootstrap.min.js"></script>
+        <script src="${serverJs}js/jquery-sortable.js" type="text/javascript"></script>
+        <script src="${serverJs}js/content-editor.js" type="text/javascript"></script>
+        <script src="${serverJs}js/tinymce/tinymce.min.js" type="text/javascript"></script>
+        <script src="${serverJs}js/compatibility.js" type="text/javascript"></script>
+        <script src="${serverJs}js/moment.js" type="text/javascript"></script>
+        <script src="${serverJs}js/perfect-scrollbar.js" type="text/javascript"></script>
+        <script src="${serverJs}js/services.js" type="text/javascript"></script>
+        <script src="${serverJs}js/splash.js" type="text/javascript"></script>
+
+
+
+        <!-- <script src="js/app.js" type="text/javascript"></script>-->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js"></script>-->
+        <!--        <script type='text/javascript' 
+                src='http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js'></script>-->
+
+        <script src="${serverJs}server-agent.js" type="text/javascript"></script>
+        <!--FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,900" rel="stylesheet">
+    </head>
+    <body style="overflow: hidden;width: 100%;height: 100%; ">
+
+        
+        <!-- APP CONTAINER -->
+        <div style="overflow: hidden;width: 100vw;height: 100vh;" id="app-container">
+            <div style="overflow: hidden;width: 100vw;height: 100vh;"  data-bind="component: {name:view().name ,params: {name:view().model}}"></div>
+        </div>
+
+        <!-- initialize bck2brwsr -->
+        <script type="text/javascript">
+                        window.localStorage.setItem("company",JSON.stringify(${companyJSON}));
+                        company = ${company};site = ${site};layout = ${layout};path = ${path};componentClassPath=${componentClassPath};
+         </script>
+     
+        <!-- end of initialization -->
+    </body>
+</html>

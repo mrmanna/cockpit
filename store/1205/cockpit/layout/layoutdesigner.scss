@@ -1,0 +1,189 @@
+	@import 'theme.scss';
+	
+	.design-grid{
+	    background-size: 5px 5px;
+    background-image: linear-gradient(to right, #ccc 1px, transparent 1px), linear-gradient(to bottom, #ccc 1px, transparent 1px);
+
+	}
+	%commonhover{
+		background:#888;
+		color:white;
+	}
+	.active{
+	@extend %commonhover;
+	}
+.layout {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    .designer{
+        position: absolute;
+        width: 20%;
+        border: 1px solid #ccc;
+        height: 100vh;
+        float: right;
+        right: 0;
+        background: #fff;
+		padding:5px;
+		.heading {
+					padding: 5px;
+					background: #bbb;
+					color: white;
+					font-size: 14px;
+					margin-bottom: 5px;
+					i{
+					float:right;
+					padding:5px;
+					cursor:pointer;
+					&:hover{
+						font-size:17px;
+						}
+					}
+				}
+	
+		.prop-box{
+			width: 300px;
+			height: 90vh;
+			position: fixed;
+			right: 20%;
+			z-index:99;
+			background: #fff;
+			margin-right: 5px;
+			box-shadow: -2px -1px 4px -1px #bbb;
+			.heading {
+					padding: 5px;
+					background: #bbb;
+					color: white;
+					margin-bottom: 5px;
+					span{
+						font-size:14px;
+					}
+					i{
+					float:right;
+					padding:5px;
+					cursor:pointer;
+					&:hover{
+						font-size:17px;
+						}
+					}
+				}
+			li{
+				    width: 100%;
+					padding: 3px;
+					position: relative;
+					float: left;
+				.key{
+					font-family: roboto;
+					font-weight: 500;
+					line-height: 25px;
+					float: left;
+					text-align: right;
+					width: 40%;
+					
+				}
+				input{
+					    height: 25px;
+						font-size: 12px;
+						border: 2px solid #eee;
+						padding: 3px;
+						min-width: 50%;
+						float: right;
+				}
+			}
+		}
+		.tree-box{
+			font-family: roboto;
+			font-weight: 500;
+			cursor:pointer;
+			h3{
+				font-size:18px;
+				background:#bbb;
+				color:white;
+				padding:5px;
+			}
+			.layout-tree{
+				margin-top: 5px;
+				padding:5px;
+				&:hover{
+						@extend %commonhover;
+						.changelayout,.configlayout,.changetheme{
+						display:block;
+						}
+					}
+				.changelayout,.configlayout,.changetheme{
+					display:none;
+					float:right;
+					margin-right:8px;
+					font-size:15px;
+					&:hover{
+						font-size:17px;
+					}
+				}
+				.layout-drop{
+					height:30vh;
+					width:100%;
+					background:white;
+					border:1px solid #efefef;
+					li{
+					padding:5px;
+					color:black;
+					text-indent:5px;
+						&:hover{
+							font-size:17px;
+							@extend %commonhover;
+						}
+						
+					}
+				}
+			}
+			.rowlayout{
+					    text-indent: 8px;
+						padding: 3px;
+						&:hover{
+						@extend %commonhover;
+							.icon{
+								display:block;
+							}
+						}
+						.icon{
+							display:none;
+							float:right;
+							margin-right:8px;
+							font-size:15px;
+							&:hover{
+								font-size:17px;
+							}
+						}
+					}
+			.column{
+					text-indent:15px;
+					padding:5px;
+					&:hover{
+						@extend %commonhover;
+					}
+					
+			}
+			.component{
+					text-indent:25px;
+					padding:5px;
+					&:hover{
+						@extend %commonhover;
+					}
+					
+			}
+		}
+    }
+
+    .designermode{
+        transform: scale(.78);
+		 -ms-transform: scale(.78); /* IE 9 */
+		-webkit-transform: scale(.78); /* Safari 3-8 */
+        margin-left: -10%;
+        height: 100vh;
+        width: 100vw;
+        background:#fff;
+    }
+}
+

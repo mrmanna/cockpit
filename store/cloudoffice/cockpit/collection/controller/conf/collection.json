@@ -1,0 +1,20 @@
+{
+    "instance": "collectioninstance1",
+    "configuration": {
+        "collectionListType": "ALL",
+        "collectionItemList": [],
+        "layoutRowId": "row2",
+        "listComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.genericlist.GenericListComponent",
+            "instanceId": "genericlistinstance1"
+        },
+        "relatedItemComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.relateditem.RelatedItemComponent",
+            "instanceId": "relatediteminstance1"
+        },
+        "newItemComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.document.DocumentComponent",
+            "instanceId": "documentinstance1"
+        }
+    }
+}

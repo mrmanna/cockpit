@@ -1,0 +1,11 @@
+@import 'theme.scss';
+@import 'layout-variables.scss';
+@import 'row1.scss';
+@import 'row2.scss';
+
+##{$id}{
+color:$color;
+height:$height;
+width:$width;
+}
+

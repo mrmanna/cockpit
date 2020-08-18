@@ -1,0 +1,345 @@
+<!--<div class="layout" data-bind="attr:{'id':id},css:{'layout':!designerOn(),'layout design-grid':designerOn}">-->
+<div class="layout" data-bind="attr:{'id': id, 'class': 'layout'}, css:{'design-grid': designerOn}">
+    <!-- ko if: designerOn -->
+    <div class="designer">
+        <!-- ko if: propOn -->
+        <div class="prop-box">
+            <div class="conf-header">
+                <span class="conf-title">
+                    <b data-bind="html:propPanel.title"></b>
+                </span>
+                <span data-bind="clickBubble: false, click: closePropPanel" class="conf-action conf-close" title="Close">
+                    <i class="fa fa-close"></i>
+                </span>
+                <span data-bind="clickBubble: false, click: saveProperties" class="conf-action conf-save" title="Save">
+                    <i class="fa fa-floppy-o"></i>
+                </span>
+                <span class="conf-action conf-reset" title="Reset">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </span>
+            </div>
+            <div data-bind="with:propPanel">
+                <ul data-bind="foreach: props">
+                    <li>
+                        <div class="key" data-bind="html:key"></div>
+                        <div class="value">
+                            <input type="text" data-bind="value:value">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--/ko-->
+
+        <div class="tree-box" id="designer-tree">
+
+            <div class="heading">
+                <span>Cockpit Designer</span>
+                <i class="fa fa-close" data-bind="clickBubble: false, click: toggleDesignMode" ></i>
+            </div>
+
+            <!-- ko if: updateloader -->
+            <div class="updateloader">
+                <i class="fa fa-cog fa-spin fa-fw"></i>
+                <span>Updating ...</span>
+                <i class="fa fa-close" data-bind="clickBubble: false, click: hideupdateloader" ></i>
+            </div>
+            <!--/ko-->
+
+            <div class="tree">
+                <div class="path-tree" data-bind="clickBubble: false, click: showPaths">
+                    <i class="fa fa-bookmark"></i>
+                    <span class="currentpath" data-bind="html: currentPath"></span>
+                    <i class="icon-right toggle-icon fa fa fa-angle-down"></i>
+                    <i class="icon-right newpath-icon fa fa-plus" data-bind="clickBubble: false, click: showNewPathPanel"></i>
+
+                    <div class="path-tree-drop" data-bind="visible: pathDrop, with: domain">
+                        <!-- ko if: paths().length>0 -->
+                        <ul data-bind="foreach: paths">
+                            <li onclick="LayoutManager.reload(this)">
+                                <i class="fa fa-bookmark"></i>
+                                <span data-bind="text: path"></span>
+                                <!-- ko ifnot: isHome -->
+                                <i class="remove fa fa-trash" data-bind="clickBubble: false, click: removepath" title="Remove path"></i>
+                                <i class="edit fa fa-home" aria-hidden="true" title="Mark as home path" data-bind="clickBubble: false, click: makepathashomepath"></i>
+                                <!--/ko-->
+                                <i class="edit fa fa-shield" data-bind="css:{'secured': isSecure}, clickBubble: false, click: togglesecuritystatus" aria-hidden="true" title="Make path secure"></i>
+                            </li>
+                        </ul>
+                        <!--/ko-->
+                    </div>
+                </div>
+                <div class="layout-tree">
+                    <!-- ko ifnot: editable -->
+                    <i class="fa fa-object-group"></i>
+                    <span data-bind="html:name, clickBubble: false, click: enableLayoutEdit"></span>
+                    <!--/ko-->
+                    <!-- ko if: editable -->
+                    <input data-bind="stopBubble: true, textInput: inputfieldvalue" type="text" name="rowname" class="editfield">
+                    <i class="fa fa-check" data-bind="clickBubble: false, click: updateLayoutName" aria-hidden="true"></i>
+                    <i class="fa fa-remove" data-bind="clickBubble: false, click: disableLayoutEdit" aria-hidden="true"></i>
+                    <!--/ko-->
+                    <i class="changelayout fa fa-angle-down" data-bind="clickBubble: false, click: showLayouts"></i>
+                    <i class="changelayout fa fa-plus" data-bind="clickBubble: false, click: createRow" title="Insert new row"></i>
+                    <i class="changetheme fa fa-paint-brush" data-bind="clickBubble: false, click: showThemes"></i>
+                    <i class="configlayout fa fa-wrench" data-bind="clickBubble: false, click: showSassVariables"></i>
+                    <div class="layout-drop" data-bind="visible: layoutDrop">
+                        <ul data-bind="foreach: props">
+                            <li data-bind="clickBubble: false, click:layoutAction">
+                                <i class="fa fa-li"></i>
+                                <span data-bind="html:value"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div data-bind="foreach: rows()">
+                    <div class="rowlayout" data-toggle="collapse" data-bind="attr:{'data-target':'#' + id() +'-drop'}" aria-expanded="false">
+                        <!-- ko ifnot: editable -->
+                        <i class="fa fa-bars"></i>
+                        <span data-bind="html: name, clickBubble: false, click: enableRowEdit"></span>
+                        <!--/ko-->
+                        <!-- ko if: editable -->
+                        <input data-bind="stopBubble: true, textInput: inputfieldvalue" type="text" name="rowname" class="editfield">
+                        <i class="fa fa-check" data-bind="clickBubble: false, click: updateRowName" aria-hidden="true"></i>
+                        <i class="fa fa-remove" data-bind="clickBubble: false, click: disableRowEdit" aria-hidden="true"></i>
+                        <!--/ko-->
+                        <i class="icon fa fa-remove" data-bind="clickBubble: false, click: deleteRow" title="Delete row"></i>
+                        <i class="icon fa fa-plus" data-bind="clickBubble: false, click: createColumn" title="Insert new column"></i>
+                        <i class="icon fa fa-sort-desc"></i>
+                        <i class="icon fa fa-sort-asc"></i>
+                        <i class="icon fa fa-paint-brush" data-bind="clickBubble: false, click:showSassVariables"></i>
+                    </div>
+                    <div class="rowlayout-drop collapse" data-bind="attr:{'id':id() +'-drop'}">
+                        <div data-bind="foreach:columns()">
+                            <div class="column"  data-toggle="collapse" data-bind="attr:{'data-target':'#' + id() +'-drop'}" aria-expanded="true">
+                                <!-- ko ifnot: editable -->
+                                <i class="fa fa-columns"></i>
+                                <span data-bind="html:name, clickBubble: false, click: enableColumnEdit"></span>
+                                <!--/ko-->
+                                <!-- ko if: editable -->
+                                <input data-bind="stopBubble: true, textInput: inputfieldvalue" type="text" name="rowname" class="editfield">
+                                <i class="fa fa-check" data-bind="clickBubble: false, click: updateColumnName" aria-hidden="true"></i>
+                                <i class="fa fa-remove" data-bind="clickBubble: false, click: disableColumnEdit" aria-hidden="true"></i>
+                                <!--/ko-->
+                                <i class="icon fa fa-remove" data-bind="clickBubble: false, click: deleteCoumn" title="Delete column"></i>
+                                <i class="icon fa fa-plus" data-bind="clickBubble:false, click: showComponentList" title="Insert component"></i>
+                                <i class="icon fa fa-sort-desc" ></i>
+                                <i class="icon fa fa-sort-asc"></i>
+                                <i class="icon fa fa-paint-brush" data-bind="clickBubble: false, click:showSassVariables"></i>
+                            </div>
+                            <div class="column-drop collapse in" data-bind="attr:{'id':id() +'-drop'}">
+                                <div data-bind="if:hasLayout">
+                                    <div data-bind="with:layout">
+                                        <div class="columnlayout" data-toggle="collapse" data-bind="attr:{'data-target':'#' + id() +'-drop'}" aria-expanded="false">
+                                            <i class="fa fa-window-maximize"></i>
+                                            <span data-bind="html:name"></span>
+                                        </div>	  
+                                        <div class="columnlayout-drop collapse" data-bind="attr:{'id':id() +'-drop'}">
+                                            <div data-bind="foreach: rows()">
+
+                                                <div class="rowlayout" data-toggle="collapse" data-bind="attr:{'data-target':'#' + id() +'-drop'}" aria-expanded="false">
+                                                    <i class="fa fa-bars collapsed"></i>
+                                                    <span data-bind="html:name"></span>
+                                                    <i class="icon fa fa-remove"></i>
+                                                    <i class="icon fa fa-plus"></i>
+                                                    <i class="icon fa fa-sort-desc" ></i>
+                                                    <i class="icon fa fa-sort-asc"></i>
+                                                    <i class="icon fa fa-paint-brush" data-bind="clickBubble: false, click:showSassVariables"></i>
+                                                </div>
+                                                <div class="rowlayout-drop collapse" data-bind="attr:{'id':id() +'-drop'}">
+                                                    <div data-bind="foreach:columns()">
+                                                        <div class="column"  data-toggle="collapse" data-bind="attr:{'data-target':'#' + id() +'-drop'}" aria-expanded="true">
+                                                            <i class="fa fa-th"></i>
+                                                            <span data-bind="html:name"></span>
+                                                            <i class="icon fa fa-remove"></i>
+                                                            <i class="icon fa fa-plus"></i>
+                                                            <i class="icon fa fa-sort-desc" ></i>
+                                                            <i class="icon fa fa-sort-asc"></i>
+                                                            <i class="icon fa fa-paint-brush" data-bind="clickBubble: false, click:showSassVariables"></i>
+                                                        </div>
+                                                        <div class="column-drop collapse in" data-bind="attr:{'id':id() +'-drop'}">
+                                                            <div data-bind="foreach:components()">
+                                                                <div class="component" data-bind="clickBubble:false, click: showConfig">
+                                                                    <i class="fa fa-cube"></i>
+                                                                    <span data-bind="html:name"></span>
+                                                                    <i class="icon fa fa-remove"></i>
+                                                                    <i class="icon fa fa-plus"></i>
+                                                                    <i class="icon fa fa-wrench" data-bind="clickBubble:false, click: showConfig"></i>
+                                                                    <i class="icon fa fa-paint-brush" data-bind="clickBubble:false, click: showStyle" ></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-bind="if:!hasLayout()">
+                                    <div data-bind="foreach:components()">
+                                        <div class="component">
+                                            <i class="fa fa-cube"></i>
+                                            <span data-bind="html:name"></span>
+                                            <i class="icon fa fa-remove" data-bind="clickBubble:false, click: removeComponent"></i>
+                                            <i class="icon fa fa-wrench" data-bind="clickBubble:false, click: showConfig"></i>
+                                            <i class="icon fa fa-paint-brush" data-bind="clickBubble:false, click: showStyle"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>	
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ko-->
+
+
+
+    <!-- ko if: (designerOn() && newPathPanelDisplay()) -->
+    <div data-bind="css:{'path-panel': designerOn}">
+        <div class="conf-header">
+            <span class="conf-title">
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+                <span>Path</span>
+            </span>
+            <span data-bind="clickBubble: false, click: hideNewPathPanel" class="conf-action conf-close" title="Close">
+                <i class="fa fa-close"></i>
+            </span>
+            <span data-bind="clickBubble: false, click: savePath" class="conf-action conf-save" title="Save">
+                <i class="fa fa-floppy-o"></i>
+            </span>
+        </div>
+        <div class="path-info" data-bind="with: temppath">
+            <input type="text" data-bind="textInput: path" placeholder="enter pathname ...">
+            <div class="checkbox-content">
+                <label class="chk-container">
+                    <input type="checkbox" data-bind="stopBubble: true, checked: isSecure">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="checkbox-content-txt">
+                    <b>Make path secure.</b>
+                </div>
+            </div>
+            <div class="checkbox-content">
+                <label class="chk-container">
+                    <input type="checkbox" data-bind="stopBubble: true, checked: isHome">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="checkbox-content-txt">
+                    <b>Make path as home.</b>
+                </div>
+            </div>
+            <!-- ko if: isHome -->
+            <div class="checkbox-alert">
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                <span>Your current home path will be changed !!</span>
+            </div>
+            <!--/ko-->
+        </div>
+    </div>
+    <!--/ko-->
+
+
+
+
+
+
+
+
+
+
+    <!-- ko if: (designerOn() && componentListDisplay()) -->
+    <div data-bind="css:{'subscribed-comp': designerOn}">
+        <div class="conf-header">
+            <span class="conf-title">
+                <i class="fa fa-cube"></i>
+                <span>Insert component @ </span>
+                <!-- ko with: subscribedComponentDropZone -->
+                <span data-bind="text: name"></span>
+                <!-- /ko -->
+                <!-- ko if: componentListLoader -->
+                <span>
+                    <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+                </span>
+                <!--/ko-->
+            </span>
+            <span data-bind="clickBubble: false, click: hideComponentList" class="conf-action conf-close" title="Close">
+                <i class="fa fa-close"></i>
+            </span>
+        </div>
+
+        <!-- ko if: subscribedComponents().length>0 -->
+        <ul class="comp-list" data-bind="foreach: subscribedComponents">
+            <li class="comp-item" data-bind="clickBubble: false, click: $parent.insertComponent">
+                <div class="comp-image">
+                    <i data-bind="attr: {class: icon}"></i>
+                </div>
+                <div class="comp-name">
+                    <span data-bind="text: name"></span>
+                </div>
+            </li>
+        </ul>
+        <!--/ko-->
+    </div>
+    <!--/ko-->
+
+
+
+
+
+
+
+
+
+
+    <div data-bind="css:{'designermode':designerOn}">
+        <div data-bind="foreach: rows()">
+            <div data-bind="attr:{'id':id}" class="drow">
+                <div data-bind="foreach:columns()">
+                    <div data-bind="attr:{'id':id}" class="dcolumn">
+                        <div data-bind="if:hasLayout">
+                            <div data-bind="with:layout" class="dlayout">
+                                <div data-bind="foreach: rows()">
+                                    <div data-bind="attr:{'id':id}"  class="drow">
+                                        <div data-bind="foreach:columns()">
+                                            <div data-bind="attr:{'id':id}"  class="dcolumn">
+                                                <div data-bind="foreach:components()">
+                                                    <!--                                                    <div data-bind="if:instance">
+                                                                                                            <div data-bind="component: {name:name ,params: {name:model+'.'+instanceId}}" class="dcomp"></div>
+                                                                                                        </div>-->
+                                                    <div data-bind="if:!instance()">
+                                                        <div data-bind="component: {name:name ,params: {name:model}}" class="dcomp"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-bind="if:!hasLayout()">
+                            <div data-bind="foreach:components()">
+                                <div data-bind="if:instance">
+                                    <div data-bind="component: {name:name ,params: {name:instanceName}}" class="dcomp"></div>
+                                </div>
+                                <div data-bind="if:!instance()">
+                                    <div data-bind="component: {name:name ,params: {name:model}}" class="dcomp"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ko if: isLoggedInUserCompanyAdmin -->
+    <div class="designmode-btn" data-bind="clickBubble: false, click: toggleDesignMode">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+    </div>
+    <!--/ko-->
+</div>
+
+

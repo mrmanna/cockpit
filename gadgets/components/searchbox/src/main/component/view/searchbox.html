@@ -1,0 +1,209 @@
+<div data-bind="attr:{'id': instance}">
+    <div class="searchbox">
+        <div class="bar">
+            <div class="body">
+
+                <!-- ko ifnot: (filters().length > 0) -->
+                <div class="search-overlay">
+                    <div class="overlay-autocomplete">
+                        <div class="autocomplete-section">
+                            <div class="lft-search-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
+                            <input type="text" name="lname" data-bind="textInput: autocompletetext, enterkey: enterPressed, attr: {placeholder: autocompletePlaceholderText}">
+                            <mini-loader-component params="data: $data.loader()"></mini-loader-component>
+                        </div>
+                        <!-- ko if: (autocompleteresults().length > 0) -->
+                        <ul data-bind="foreach: autocompleteresults" class="autocomplete-result">
+                            <!-- ko if: (itemType() === 'PERSON') -->
+                            <li data-bind="clickBubble: false, click: $parent.setFilterFromAutoComplete">
+                                <img data-bind="attr: {src: avatar}" alt="(I)">
+                                <span data-bind="text: itemName"></span>
+                            </li>
+                            <!-- /ko -->
+
+                            <!-- ko if: (itemType() !== 'PERSON') -->                        
+                            <li data-bind="clickBubble: false, click: $parent.setFilterFromAutoComplete">
+                                <i data-bind="attr: {'class': itemTypeIconClass}, style: {'color': itemTypeIconColor}" aria-hidden="true"></i>
+                                <span data-bind="text: itemName"></span>
+                            </li>
+                            <!-- /ko -->
+                        </ul>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <!-- /ko -->
+
+                <!-- ko if: (filters().length > 0) -->
+                <div class="title clearfix">
+                    <!-- SHOW FILTER LIST BADGES WITH REMOVE BUTTON AND STYLE ATTR BACKGROUND SHOULD BE DYNAMIC-->
+                    <div class="txt">
+
+                        <div data-bind="foreach: filters">
+                            <div class="filter-badge">
+                                <span class="filter-name">
+                                    <b data-bind="text: itemType"></b>
+                                </span>
+                                <span data-bind="text: itemName" class="filter-name"></span>
+                                <i data-bind="clickBubble: false, click: $parent.removeFilters" class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="fa fa-search" ></i>
+                </div>
+                <!-- /ko -->
+            </div>
+
+            <!-- ko if: designerMode -->
+            <div class="config" data-bind="with: configuration">
+
+                <div class="conf-header"> 
+                    <span class="conf-title">
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                        <b>Configuration Panel</b>
+                    </span>
+                    <!-- ko if: configurationProgressLoader -->
+                    <span class="conf-progress">
+                        <i class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></i>
+                        <span>updating configuration</span>
+                    </span>
+                    <!-- /ko -->
+                    <span data-bind="clickBubble: false, click: $parent.closeConfigurationPanel" class="conf-action conf-close" title="Close">
+                        <i class="fa fa-close"></i>
+                    </span>
+                    <span data-bind="clickBubble: false, click: $parent.save" class="conf-action conf-save" title="Save">
+                        <i class="fa fa-floppy-o"></i>
+                    </span>
+                    <span data-bind="clickBubble: false, click: $parent.resetConfiguration" class="conf-action conf-reset" title="Reset">
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="conf-body">
+                    <div class="filter">
+                        <label class="filterswitch">
+                            <input type="checkbox" data-bind="checked: hasItemFilter">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    
+                    <!-- ko if: hasItemFilter -->
+                    <div class="row body-row">
+                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                            <div class="conf-title">Item filter :</div>
+                        </div>
+                        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                            <!-- ko if: (filters().length>0) -->
+                            <div data-bind="foreach: filters">
+                                <div class="conf-item">
+                                    <div class="conf-area cus-checkbox-btn">
+                                        <input type="checkbox" data-bind="checked: isSelected, value: itemType">
+                                    </div>
+                                    <div class="conf-area cus-checkbox-txt">
+                                        <span data-bind="text: itemName"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /ko -->
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                    
+                    <div class="row body-row">
+                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                            <div class="conf-title">Talk to List :</div>
+                        </div>
+                        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                            <div data-bind="with: listComponentDefinition">
+                                <div class="row row-conf-row">
+                                    <div class="row col-conf-subrow">
+                                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                            <div class="sub-row-title">Instance ID : </div>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                            <div class="sub-row-input">
+                                                <input data-bind="textInput: instanceId" type="text" placeholder="instance id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row col-conf-subrow">
+                                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                            <div class="sub-row-title">Component Name : </div>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                            <div class="sub-row-input">
+                                                <input data-bind="textInput: component" type="text" placeholder="component">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row body-row">
+                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                            <div class="conf-title">Talk to Detail :</div>
+                        </div>
+                        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                            <div data-bind="with: detailComponentDefinition">
+                                <div class="row row-conf-row">
+                                    <div class="row col-conf-subrow">
+                                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                            <div class="sub-row-title">Instance ID : </div>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                            <div class="sub-row-input">
+                                                <input data-bind="textInput: instanceId" type="text" placeholder="instance id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row col-conf-subrow">
+                                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                            <div class="sub-row-title">Component Name : </div>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                            <div class="sub-row-input">
+                                                <input data-bind="textInput: component" type="text" placeholder="component">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row body-row">
+                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                            <div class="conf-title">Talk to Action Menu :</div>
+                        </div>
+                        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                            <div data-bind="with: actionMenuComponentDefinition">
+                                <div class="row row-conf-row">
+                                    <div class="row col-conf-subrow">
+                                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                            <div class="sub-row-title">Instance ID : </div>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                            <div class="sub-row-input">
+                                                <input data-bind="textInput: instanceId" type="text" placeholder="instance id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row col-conf-subrow">
+                                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                            <div class="sub-row-title">Component Name : </div>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                            <div class="sub-row-input">
+                                                <input data-bind="textInput: component" type="text" placeholder="component">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+</div>

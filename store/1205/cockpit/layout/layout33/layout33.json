@@ -1,0 +1,104 @@
+{
+    "id": "layout33",
+    "name": "Cockpit 33 Layout",
+    "themeId": "theme1",
+    "propOn": false,
+    "style": {},
+    "designerOn": false,
+    "rows": [
+        {
+            "id": "row1",
+            "name": "First Row",
+            "columns": [
+                {
+                    "id": "row1column1",
+                    "name": "First Column",
+                    "components": [
+                        {
+                            "name": "media-component",
+                            "model": "io.cloudoffice.platform.cockpit.media.MediaView",
+                            "instance":true,
+                            "instanceId":"instance1"
+                        }
+                    ]
+                },
+                {
+                    "id": "row1column2",
+                    "name": "Second Column",
+                    "components": [
+                        {
+                            "name": "searchbox-component",
+                            "model": "io.cloudoffice.platform.cockpit.searchbox.SearchBoxView"
+                        }
+                    ]
+                },
+                {
+                    "id": "row1column3",
+                    "name": "Third Column",
+                    "components": [
+                        {
+                            "name": "profile-menu-component",
+                            "model": "io.cloudoffice.platform.cockpit.profilemenu.ProfileMenuView"
+                        }
+                    ]
+                },
+                {
+                    "id": "row1column4",
+                    "name": "Fourth Column",
+                    "components": [
+                        {
+                            "name": "admin-menu-component",
+                            "model": "io.cloudoffice.platform.cockpit.adminmenu.AdminMenuView"
+                        }
+                    ]
+                }
+
+            ]
+        },
+        {
+            "id": "row2",
+            "name": "Second Row",
+            "columns": [
+			
+                {
+                    "id": "row2column1",
+                    "name": "Row2 First Column",
+                    "hasLayout": true,
+                    "layout": {
+                        "id": "r2c1l1",
+                        "name": "R2C1 Layout",
+                        "rows": [{
+                                "id": "r2c1r1",
+                                "name": "R2C1 Row1",
+                                "columns": [{
+                                        "id": "r2c1r1c1",
+                                        "name": "R2C1R1 C1",
+                                        "hasLayout": false,
+                                        "components": [
+                                            {
+                                                "name": "recents-list-component",
+                                                "model": "io.cloudoffice.platform.cockpit.recentslist.RecentsListView"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "r2c1r1c2",
+                                        "name": "R2C1R1 C2",
+                                        "hasLayout": false,
+                                        "components": [
+                                            {
+                                                "name": "centercolumnlayout-component",
+						"model": "io.cloudoffice.platform.cockpit.centercolumnlayout.CenterColumnLayout"
+												
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }]
+                    }
+
+                }
+            ]
+        }
+    ]
+}

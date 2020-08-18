@@ -1,0 +1,16 @@
+{
+   "ports":[      
+       {
+           "id":3,
+           "server":{
+               "serverHost":"localhost",
+               "serverPort":8484,
+               "domain":"*.cloudoffice.io",
+               "name":"METRICS",
+               "path":"/metrics",
+               "secure":false,
+               "proxy":false
+           }
+       }
+   ]
+}

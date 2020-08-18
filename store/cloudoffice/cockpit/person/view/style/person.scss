@@ -1,0 +1,401 @@
+@import 'theme.scss';
+@import 'person-variables.scss';
+##{$id}{
+    float: left;
+    width: 100%;
+    padding: $padding;
+    margin: $margin;
+    .person{
+        height:$height;
+        .header-view{
+            width: 100%;
+            height: 40px;
+            padding: 5px;
+            background: $background;
+            border-bottom: $border;
+            .header-check{
+                width: auto;
+                height: 100%;
+                float: left;
+                text-align: left;
+                padding: 6px;
+                font-size: 14px;
+                input{
+                    height: 16px;
+                    width: 16px;
+                    margin: 0;
+                    cursor: pointer;
+                }
+            }
+            .header-pagination{
+                width: auto;
+                height: 100%;
+                float: right;
+                text-align: right;
+                padding: 6px;
+                font-size: 14px;
+                span{
+                    margin: 0px 4px;
+                }
+                i{
+                    cursor: pointer;
+                    margin-left: 20px;
+                }
+            }
+            .header-actions{
+                text-align: center;
+                font-size: 14px;
+                width: 28px;
+                height: 28px;
+                border: none;
+                border-radius: 50%;
+                padding: 6px;
+            }
+            .header-actions:hover{
+                background: rgba(0, 0, 0, 0.05);
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                cursor: pointer;
+            }
+            .action-left{
+                float: left;
+            }
+            .action-right{
+                float: right;
+            }
+        }
+        .edit-view{
+            @extend %customscroll;
+            max-height: 84vh;
+            .person-item{
+                padding:20px 0;
+                .loader{
+                    color: #0796d8;
+                    text-align: center;
+                    font-size: 35px;
+                }
+                .person-item-contents{
+                    width:100%;
+                    .inp-row{
+                        padding-bottom: 10px;
+                        .checkbox-list{
+                            float: left;
+                            padding: 0px;
+                            li {
+                                span {
+                                    color: #9e9f9d;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                        .inp-label{
+                            float: left;
+                            width: 25%;
+                            font-size: 14px;
+                            font-weight: bold;
+                            text-align: right;
+                            padding-right: 20px;
+                            margin: 0;
+                        }
+                        .inp-field{
+                            float: left;
+                            width: 60%;
+                            height: 34px;
+                            font-size: 14px;
+                            border-radius: 0;
+                            box-shadow:0;
+                            -moz-box-shadow: 0;
+                            -webkit-box-shadow: 0;
+                            border: 1px solid #c4c4c4;
+                            padding: 6px 12px;
+                        }
+                        .inp-field:focus {
+                            outline: none;
+                            border: 1px solid #7bc1f7;
+                            box-shadow: 0;
+                            -moz-box-shadow: 0;
+                            -webkit-box-shadow: 0;
+                        }
+                    }
+                    .header-row{
+                        padding-bottom: 25px;
+                        .img{
+                            width: 25%;
+                            float: left;
+                            text-align: right;
+                            .img-circle {
+                                border-radius: 50%;
+                            }
+                        }
+                        .name{
+                            width: 75%;
+                            padding-top: 35px;
+                            font-size: 2em;
+                            padding-left: 30px;
+                        }
+                    }
+                    .inp-row:after{
+                        display: table;
+                        content: " ";
+                        clear: both;
+                    }
+                    .collapsible-area {
+                        border-top: 1px solid #e2e4e3;
+                        margin-bottom: 10px;
+                        padding: 10px 0 0 0;
+                    }
+                    .btnList{
+                        width: 85%;
+                        text-align: right;
+                        padding: 20px 0 20px 0;
+                        .btn{
+                            border: 2px solid transparent;
+                            border-radius: 0;
+                            cursor: pointer;
+                            font-size: 14px;
+                            font-weight: normal;
+                            padding: 6px 12px;
+                            background-color: #fff;
+                            border-color: #ccc;
+                            color: #333;
+                            margin-left: 10px;
+                        }
+                        .btn:hover {
+                            border-color: #adadad;
+                            background-color: #e6e6e6;
+                            color: #333;
+                        }
+                    }
+                    .btnList:after{
+                        display: table;
+                        content: " ";
+                        clear: both;
+                    }
+                }
+            }
+        }
+        .meta-view{
+            @extend %customscroll;
+            max-height: 84vh;
+            padding: 15px 0 15px 15px;
+            .loader{
+                color: #0796d8;
+                text-align: center;
+                font-size: 35px;
+            }
+            .item-contents{
+                width: 100%;
+                .header-row{
+                    padding-bottom: 30px;
+                    .img{
+                        width: 32%;
+                        float: left;
+                        text-align: right;
+                        .img-circle {
+                            border-radius: 50%;
+                        }
+                    }
+                    .name{
+                        width: 68%;
+                        font-size: 1.7em;
+                        padding-top: 22px;
+                        padding-left: 10px;
+                    }
+                }
+                .single-row{
+                    display: inline-block;
+                    font-size: 15px;
+                    width: 100%;
+                    .name-label{
+                        float: left;
+                        width: 30%;
+                        text-align: right;
+                    }
+                    .value-label{
+                        float: left;
+                        width: 70%;
+                        padding-left: 30px;
+                    }
+                }
+            }
+        }
+        .config{
+            position:fixed;
+            width:100vw;
+            height:100vh;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            background: #555;
+            color: #DCDCDC;
+            z-index: 999;
+            .conf-header{
+                font-size: 2em;
+                line-height: 2em;
+                padding-left: 20px;
+                .conf-title{
+                    i{
+                        cursor: default;
+                    }
+                    b{
+                        padding-left: 5px;
+                    }
+                }
+                .conf-progress{
+                    background: #3CB371;
+                    border: 1px solid #3CB371;
+                    border-radius: 15px;
+                    color: #fff;
+                    font-size: 18px;
+                    i{
+                        font-size: 18px;
+                    }
+                    span{
+                        padding-right: 7px;
+                    }
+                }
+                .conf-action{
+                    float: right;
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    border-left: 1px solid #cdcecd;
+                }
+                .conf-action:hover{
+                    color: #fff;
+                    cursor: pointer;
+                }
+                .conf-close:hover{
+                    background: #DC143C;
+                    border-color: #DC143C;
+                }
+                .conf-save:hover{
+                    background: #3CB371;
+                    border-color: #3CB371;
+                }
+                .conf-reset:hover{
+                    background: #3498DB;
+                    border-color: #3498DB;
+                }
+            }
+            .conf-body{
+                @extend %customscroll;
+                background: #F0F8FF;
+                font-size: 14px;
+                color: #555;
+                height: 100%;
+                padding: 10px 20px;
+                .body-row{
+                    margin-bottom: 10px;
+                }
+                .conf-title{
+                    font-size: 24px;
+                    font-weight: bold;
+                    text-align: right;
+                }
+                .conf-item{
+                    width: auto;
+                    float: left;
+                    .conf-area{
+                        float:left;
+                        input[type="text"]{
+                            height: 40px;
+                            margin-left: 12px;
+                            border: none;
+                            outline: 0;
+                            padding: 5px 10px;
+                            font-size: 18px;
+                            font-weight: bold;
+                        }
+                    }
+                    .cus-radio-btn{
+                        input{
+                            height: 24px;
+                            width: 24px;
+                            cursor: pointer;
+                            margin: 0px 10px 0px 10px;
+                        }
+                    }
+                    .cus-radio-txt{
+                        i{
+                            font-size: 20px;
+                        }
+                        span{
+                            font-size: 20px;
+                            padding-left: 10px;
+                            font-weight: bold;
+                        }
+                    }
+                    .cus-checkbox-btn{
+                        input{
+                            height: 24px;
+                            width: 24px;
+                            cursor: pointer;
+                            margin: 0px 10px 0px 10px;
+                        }
+                    }
+                    .cus-checkbox-txt{
+                        span{
+                            font-size: 20px;
+                            padding-left: 10px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                .row-conf-row{
+                    padding: 20px;
+                    width: 90%;
+                    margin-left: 12px;
+                    border-radius: 5px;
+                    background: rgba(52, 152, 219, 0.05);
+                    .col-conf-title{
+                        font-size: 20px;
+                        font-weight: bold;
+                        margin-bottom: 14px;
+                        i{
+                            margin-right: 10px;
+                        }
+                        span{
+                            margin-right: 5px;
+                        }
+                    }
+                    .col-conf-subrow{
+                        height: 40px;
+                        margin-bottom: 5px;
+                        .sub-row-title{
+                            height: 40px;
+                            font-size: 18px;
+                            font-weight: bold;
+                            text-align: right;
+                            padding-top: 8px;
+                        }
+                        .sub-row-input{
+                            height: 40px;
+                            input[type="text"]{
+                                width: 100%;
+                                border: none;
+                                padding: 5px 10px;
+                                font-size: 18px;
+                                font-weight: bold;
+                                height: 100%;
+                            }
+                            input[type="number"]{
+                                width: 100%;
+                                border: none;
+                                padding: 5px 10px;
+                                font-size: 18px;
+                                font-weight: bold;
+                                height: 100%;
+                            }
+                            input[type="checkbox"]{
+                                height: 22px;
+                                width: 22px;
+                                cursor: pointer;
+                                margin: 10px 10px 0px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

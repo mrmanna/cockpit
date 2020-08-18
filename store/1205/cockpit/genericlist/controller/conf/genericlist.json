@@ -1,0 +1,92 @@
+{
+    "instance": "genericlistinstance1",
+    "configuration": {
+        "visibleCreateButon": "SHOW",
+        "defaultitemview": "LIST",
+        "listItemCount":"10",
+        "filters": [{
+            "itemId": "1",
+            "itemType": "PERSON",
+            "itemName": "Person",
+            "filterType": null,
+            "isSelected": false
+        }, {
+            "itemId": "3",
+            "itemType": "FILE",
+            "itemName": "Documents",
+            "filterType": null,
+            "isSelected": true
+        }, {
+            "itemId": "4",
+            "itemType": "ORGANIZATION",
+            "itemName": "Organization",
+            "filterType": null,
+            "isSelected": false
+        }],
+        "columns": [{
+            "columnId": "NAME",
+            "columnHeader": "Creator",
+            "columnIndex": 1,
+            "columnPosition": "left",
+            "columnWidth": "50%",
+            "isVisible": true,
+            "isSortable": false
+        }, {
+            "columnId": "CREATOR",
+            "columnHeader": "Creator",
+            "columnIndex": 2,
+            "columnPosition": "left",
+            "columnWidth": "20%",
+            "isVisible": true,
+            "isSortable": false
+        }, {
+            "columnId": "VERSION",
+            "columnHeader": "Version",
+            "columnIndex": 3,
+            "columnPosition": "left",
+            "columnWidth": "10%",
+            "isVisible": true,
+            "isSortable": false
+        }, {
+            "columnId": "SIZE",
+            "columnHeader": "Size",
+            "columnIndex": 4,
+            "columnPosition": "left",
+            "columnWidth": "10%",
+            "isVisible": true,
+            "isSortable": false
+        }, {
+            "columnId": "PHONE",
+            "columnHeader": "Phone",
+            "columnIndex": 5,
+            "columnPosition": "left",
+            "columnWidth": "20%",
+            "isVisible": false,
+            "isSortable": false
+        }, {
+            "columnId": "EMAIL",
+            "columnHeader": "Email",
+            "columnIndex": 6,
+            "columnPosition": "left",
+            "columnWidth": "20%",
+            "isVisible": false,
+            "isSortable": false
+        }],
+        "detailComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.document.DocumentComponent",
+            "instanceId": "documentinstance1"
+        },
+        "actionMenuComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.actionmenu.ActionMenuComponent",
+            "instanceId": "actionmenuinstance1"
+        },
+        "collectionComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.collection.CollectionComponent",
+            "instanceId": "collectioninstance1"
+        },
+        "searchBoxComponentDefinition": {
+            "component": "io.cloudoffice.platform.cockpit.searchbox.SearchBoxComponent",
+            "instanceId": "searchboxinstance1"
+        }
+    }
+}

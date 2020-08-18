@@ -1,0 +1,23 @@
+<div data-bind="attr:{'id':instance}">
+    <div id="login-loader">
+        <loader-component params="data:$data.loader()"></loader-component>
+    </div>
+    <div class="login-page hero-bkg-animated"  id="login" style="overflow: hidden;width: 100vw;height: 100vh;">
+        <div class="form-signin mask" style="overflow: hidden;width: 100vw;height: 80vh; opacity: .7;">
+            <div class="form-signin-heading"><img src="/content/data/image?input=cloudoffice/cockpit/boot/view/images/cloudofficelogo.png" height="35px" width="50px"/></div>
+            <input type="email" data-bind="textInput:username, enterkey: enterPressed" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <input type="password" data-bind="textInput:password, enterkey: enterPressed" id="inputPassword" class="form-control" placeholder="Password" required>
+
+            <button class="btn btn-info" type="button" data-bind="click:login"><i class="fa fa-chevron-right fa-1andhalf"></i></button>
+
+            <footer>
+                <!--                <ul class="list-inline">
+                                    <li><a href="#">Forget Password</a></li>
+                                    <li><a href="#">Register</a></li>
+                                </ul>-->
+                <p>2018 All Rights Reserved. cloudoffice.io</p>
+            </footer>
+        </div>
+
+    </div> 
+</div><!-- /container -->

@@ -1,0 +1,136 @@
+.design-grid {
+  background-size: 5px 5px;
+  background-image: linear-gradient(to right, #ccc 1px, transparent 1px), linear-gradient(to bottom, #ccc 1px, transparent 1px); }
+
+.active, .layout .designer .tree-box .layout-tree:hover, .layout .designer .tree-box .layout-tree .layout-drop li:hover, .layout .designer .tree-box .rowlayout:hover, .layout .designer .tree-box .column:hover, .layout .designer .tree-box .component:hover {
+  background: #888;
+  color: white; }
+
+.layout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; }
+  .layout .designer {
+    position: absolute;
+    width: 20%;
+    border: 1px solid #ccc;
+    height: 100vh;
+    float: right;
+    right: 0;
+    background: #fff;
+    padding: 5px; }
+    .layout .designer .heading {
+      padding: 5px;
+      background: #bbb;
+      color: white;
+      font-size: 14px;
+      margin-bottom: 5px; }
+      .layout .designer .heading i {
+        float: right;
+        padding: 5px;
+        cursor: pointer; }
+        .layout .designer .heading i:hover {
+          font-size: 17px; }
+    .layout .designer .prop-box {
+      width: 300px;
+      height: 90vh;
+      position: fixed;
+      right: 20%;
+      z-index: 99;
+      background: #fff;
+      margin-right: 5px;
+      box-shadow: -2px -1px 4px -1px #bbb; }
+      .layout .designer .prop-box .heading {
+        padding: 5px;
+        background: #bbb;
+        color: white;
+        margin-bottom: 5px; }
+        .layout .designer .prop-box .heading span {
+          font-size: 14px; }
+        .layout .designer .prop-box .heading i {
+          float: right;
+          padding: 5px;
+          cursor: pointer; }
+          .layout .designer .prop-box .heading i:hover {
+            font-size: 17px; }
+      .layout .designer .prop-box li {
+        width: 100%;
+        padding: 3px;
+        position: relative;
+        float: left; }
+        .layout .designer .prop-box li .key {
+          font-family: roboto;
+          font-weight: 500;
+          line-height: 25px;
+          float: left;
+          text-align: right;
+          width: 40%; }
+        .layout .designer .prop-box li input {
+          height: 25px;
+          font-size: 12px;
+          border: 2px solid #eee;
+          padding: 3px;
+          min-width: 50%;
+          float: right; }
+    .layout .designer .tree-box {
+      font-family: roboto;
+      font-weight: 500;
+      cursor: pointer; }
+      .layout .designer .tree-box h3 {
+        font-size: 18px;
+        background: #bbb;
+        color: white;
+        padding: 5px; }
+      .layout .designer .tree-box .layout-tree {
+        margin-top: 5px;
+        padding: 5px; }
+        .layout .designer .tree-box .layout-tree:hover .changelayout, .layout .designer .tree-box .layout-tree:hover .configlayout, .layout .designer .tree-box .layout-tree:hover .changetheme {
+          display: block; }
+        .layout .designer .tree-box .layout-tree .changelayout, .layout .designer .tree-box .layout-tree .configlayout, .layout .designer .tree-box .layout-tree .changetheme {
+          display: none;
+          float: right;
+          margin-right: 8px;
+          font-size: 15px; }
+          .layout .designer .tree-box .layout-tree .changelayout:hover, .layout .designer .tree-box .layout-tree .configlayout:hover, .layout .designer .tree-box .layout-tree .changetheme:hover {
+            font-size: 17px; }
+        .layout .designer .tree-box .layout-tree .layout-drop {
+          height: 30vh;
+          width: 100%;
+          background: white;
+          border: 1px solid #efefef; }
+          .layout .designer .tree-box .layout-tree .layout-drop li {
+            padding: 5px;
+            color: black;
+            text-indent: 5px; }
+            .layout .designer .tree-box .layout-tree .layout-drop li:hover {
+              font-size: 17px; }
+      .layout .designer .tree-box .rowlayout {
+        text-indent: 8px;
+        padding: 3px; }
+        .layout .designer .tree-box .rowlayout:hover .icon {
+          display: block; }
+        .layout .designer .tree-box .rowlayout .icon {
+          display: none;
+          float: right;
+          margin-right: 8px;
+          font-size: 15px; }
+          .layout .designer .tree-box .rowlayout .icon:hover {
+            font-size: 17px; }
+      .layout .designer .tree-box .column {
+        text-indent: 15px;
+        padding: 5px; }
+      .layout .designer .tree-box .component {
+        text-indent: 25px;
+        padding: 5px; }
+  .layout .designermode {
+    transform: scale(.78);
+    -ms-transform: scale(.78);
+    /* IE 9 */
+    -webkit-transform: scale(.78);
+    /* Safari 3-8 */
+    margin-left: -10%;
+    height: 100vh;
+    width: 100vw;
+    background: #fff; }

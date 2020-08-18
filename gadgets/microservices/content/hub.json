@@ -1,0 +1,16 @@
+{
+   "ports":[      
+       {
+           "id":3,
+           "server":{
+               "serverHost":"localhost",
+               "serverPort":8282,
+               "domain":"*.cockpit.dev",
+               "name":"SHELL",
+               "path":"/",
+               "secure":false,
+               "proxy":false
+           }
+       }
+   ]
+}

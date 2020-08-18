@@ -1,0 +1,68 @@
+<div class="meta-view">
+    <div class="loader">
+        <mini-loader-component params="data: $data.loader()"></mini-loader-component>
+    </div>
+    <div class="header">
+        <span>
+            <i data-bind="attr: {class: fileTypeIcon}, style: {color: fileTypeIconColor}" aria-hidden="true"></i>
+        </span>
+        <b data-bind="text: title"></b>
+    </div>
+    <!-- ko if: (isImage) -->
+    <div class="image-row">
+        <!-- ko if: (null!==dataURL && dataURL().length>0) -->
+        <img data-bind="style: {maxWidth: viewerWidth},attr: {src: dataURL}" alt="image">
+        <!-- /ko -->
+    </div>
+    <!-- /ko-->
+    <!-- ko ifnot: (isImage) -->
+    <div class="file-row">
+        <object data-bind="style: {width: viewerWidth, height: viewerHeight},attr: {data: dataURL}"></object>
+    </div>
+    <!-- /ko-->
+    <div class="single-row">
+        <div class="name-label">Type</div>
+        <div class="capitalize value-label" data-bind="text: fileType"></div>
+    </div>
+    <div class="single-row">
+        <div class="name-label">Size</div>
+        <div class="value-label" data-bind="text: fileSize"></div>
+    </div>
+    <div class="single-row">
+        <div class="name-label">Version</div>
+        <div class="value-label">
+            <div class="version" data-bind="text: version"></div>
+            <i aria-hidden="true" class="fa fa-pencil" data-bind="click: enableEditMode"></i>
+        </div>
+    </div>
+    <div class="single-row">
+        <div class="name-label">Owner</div>
+        <div class="value-label" data-bind="text: createdBy">me</div>
+    </div>
+    <div class="single-row">
+        <div class="name-label">Modified</div>
+        <div class="value-label" data-bind="text: lastModifiedDate"></div>
+    </div>
+    <div class="single-row">
+        <div class="name-label">Created</div>
+        <div class="value-label" data-bind="text: createdDate"></div>
+    </div>
+    <div class="single-row">
+        <div class="name-label">Related</div>
+        <div class="value-label" data-bind="foreach: relatedItemList">
+            <div>
+                <i data-bind="css: itemTypeIconCss"></i>
+                <b data-bind="text: itemName"></b>
+            </div>
+        </div>
+    </div>
+    <div class="single-row">
+        <div class="name-label">Shared</div>
+        <div class="value-label" data-bind="foreach: sharedItemList">
+            <div>
+                <i data-bind="css: itemTypeIconCss"></i>
+                <b data-bind="text: itemName"></b>
+            </div>
+        </div>
+    </div>
+</div>
